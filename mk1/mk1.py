@@ -9,16 +9,17 @@ from pymatgen.io.cif import CifParser
 
 class crystalClass:
     def file_readin(filething):
-        # if filething.endswith('.cif' or '.txt' or '.POSCAR'):
-    
-        structure  = pymatgen.core.Structure.from_file(filething)
-        # Supported formats include CIF, POSCAR/CONTCAR, CHGCAR, LOCPOT, 
-        # vasprun.xml, CSSR, Netcdf and pymatgen’s JSON-serialized structures.
+        if filething.startswith('mp-'):
+            with MPRester(api_key="something") as mpr:
+                data = mpr.materials.get_data_by_id(filething)
 
-        visualized = AseAtomsAdaptor.get_atoms(structure)
+        else:
+            structure = pymatgen.core.Structure.from_file(filething)
+            visualized = AseAtomsAdaptor.get_atoms(structure)
+            # Supported formats include CIF, POSCAR/CONTCAR, CHGCAR, LOCPOT, 
+            # vasprun.xml, CSSR, Netcdf and pymatgen’s JSON-serialized structures.
         return(view(visualized))
     file_readin('mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt')
 
-# print(data)
 
 
