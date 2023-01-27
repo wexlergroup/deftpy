@@ -1,21 +1,23 @@
 import pymatgen.core.structure
 from pymatgen.io.ase import AseAtomsAdaptor
 from ase.visualize import view
-from pymatgen.io.cif import CifParser
-from mp_api.client import MPRester
+from pymatgen.ext.matproj import MPRester
 
-# with MPRester(api_key="c") as mpr:
-#     data = mpr.materials.get_data_by_id("mp-4019")
+# for using data from the Materials Project, enter a tuple with the 
+# mp-id as the first element and your api key as the second element
+def file_readin(*args):
+    if args[0].startswith('mp-'):
+        with MPRester(api_key=(args[1])) as mpr:
+            data = mpr.materials.get_data_by_id(args[0]) 
+    else:
+        structure = pymatgen.core.Structure.from_file(args[0])
+        visualized = AseAtomsAdaptor.get_atoms(structure)
+        #works with cif, vasp, and poscar files
 
-class crystalClass:
-    def file_readin(filething):
-        if filething.startswith('mp-'):
-            with MPRester(api_key="C4VoKwbKXbVC9dk85Uq5G5tig1LWbPKu") as mpr:
-                data = mpr.materials.get_data_by_id(filething)
+    return(view(visualized))
+file_readin("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
 
-        else:
-            structure = pymatgen.core.Structure.from_file(filething)
-            visualized = AseAtomsAdaptor.get_atoms(structure)
-            # works with cif, vasp, and poscar files
-        return(view(visualized))
-    file_readin("mp-4019")
+
+#test against vesta output
+
+
