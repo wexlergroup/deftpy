@@ -17,6 +17,12 @@ def file_readin(*args):
     return(view(visualized))
 file_readin("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
 
+def blah(*args):
+    structure = pymatgen.core.Structure.from_file(args[0])
+    for x in structure.sites():
+        print(x)
+blah("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
+
 
 #test against vesta output
 
