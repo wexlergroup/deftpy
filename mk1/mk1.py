@@ -37,22 +37,22 @@ def blah(*args):
     unique_structures = {}
     # unique_structures[0] = struc without 0 in dic
 
-    for i in not 0:
-        n_dupl = 0
-        for j in unique_structures:
-            if structure_matcher.fit(new, old) == True:
-                n_dupl += 1
-        if n_dupl == 0:
-            unique_structures[i] = vac_struct.values()[i]
+    # for i in not 0:
+    #     n_dupl = 0
+    #     for j in unique_structures:
+    #         if structure_matcher.fit(new, old) == True:
+    #             n_dupl += 1
+    #     if n_dupl == 0:
+    #         unique_structures[i] = vac_struct.values()[i]
 
             # or nested for
 
 
-        loop over structures in unique_structures:
-            if structure_matcher.fit(new, old) != True:
-                unique_structures[i] = new_struct[i]
-            else:
-                unique_structures[i] = vac_structures[i]
+        # loop over structures in unique_structures:
+        #     if structure_matcher.fit(new, old) != True:
+        #         unique_structures[i] = new_struct[i]
+        #     else:
+        #         unique_structures[i] = vac_structures[i]
     
     structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
     vac_list = []
