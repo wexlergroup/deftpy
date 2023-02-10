@@ -21,9 +21,11 @@ def file_readin(*args):
     return(view(visualized))
 
 
-
+print('hi2')
 def blah(*args):
     structure = pymatgen.core.Structure.from_file(args[0])
+    structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
+
     iO = []
     vac_structures = {}
     for i, site in enumerate(structure.sites):
@@ -35,7 +37,27 @@ def blah(*args):
         vac_structures[i] = new_struct
     
     unique_structures = {}
-    # unique_structures[0] = struc without 0 in dic
+
+    for i in iO:
+        n_dupl = 0
+        for j in vac_structures:
+            if structure_matcher.fit(vac_structures[i], structure) == True:
+                n_dupl += 1
+        if n_dupl == 0:
+            unique_structures[i] = vac_structures[i]
+        
+    return(unique_structures)
+    
+data = blah("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
+print(data)
+
+
+
+
+
+
+
+        # unique_structures[0] = struc without 0 in dic
 
     # for i in not 0:
     #     n_dupl = 0
@@ -54,10 +76,10 @@ def blah(*args):
         #     else:
         #         unique_structures[i] = vac_structures[i]
     
-    structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
-    vac_list = []
-    for i in vac_structures:
-        vac_list.append(structure_matcher.group_structures(vac_structures[i], structure))
-    return(vac_list)
-data = blah("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
-print(data)
+
+
+
+    # vac_list = []
+    # for i in vac_structures:
+    #     vac_list.append(structure_matcher.group_structures(vac_structures[i], structure))
+    # return(vac_list)
