@@ -37,11 +37,12 @@ def blah(*args):
         vac_structures[i] = new_struct
     
     unique_structures = {}
-
-    for i in iO:
+    unique_structures[0] = vac_structures[0]  
+    
+    for i in vac_structures[1:]:
         n_dupl = 0
-        for j in vac_structures:
-            if structure_matcher.fit(vac_structures[i], structure) == True:
+        for j in unique_structures[1:]:
+            if structure_matcher.fit(vac_structures[i], vac_structures[j]) == True:
                 n_dupl += 1
         if n_dupl == 0:
             unique_structures[i] = vac_structures[i]
