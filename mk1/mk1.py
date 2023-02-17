@@ -3,7 +3,10 @@ from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.analysis.structure_matcher import StructureMatcher
 from ase.visualize import view
 from pymatgen.ext.matproj import MPRester
-
+#import CrystalNN
+from pymatgen.analysis.local_env import CrystalNN
+import pandas as pd
+from pymatgen.core.composition import Composition
 # for using data from the Materials Project, enter a tuple with the 
 # mp-id as the first element and your api key as the second element
 
@@ -22,7 +25,7 @@ def file_readin(*args):
 
 
 print('hi2')
-def blah(*args):
+def oxygenCN(*args):
     structure = pymatgen.core.Structure.from_file(args[0])
     structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
 
@@ -47,14 +50,47 @@ def blah(*args):
         if n_dupl == 0:
             unique_structures[i] = vac_structures[i]
         
-    return(unique_structures)
+        struc_NN = {}
+        for x in unique_structures:
+            struc_NN[x] = CrystalNN().get_nn_info(unique_structures[x], 0)
+        
+
+    crystal_df = pd.DataFrame.from_dict(struc_NN, orient='index')
+      
+
+        # speed  - 359
+    return(crystal_df)
     
-data = blah("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
-print(data)
+# data = oxygenCN("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
+# print(data)
+
+def non_o_oxidation_state(*args):
+    structure = pymatgen.core.Structure.from_file(args[0])
+    notO = []
+    for i, site in enumerate(structure.sites):
+        if site.specie.symbol != 'O':
+            notO.append(i) 
+    
+    oxi_states = {}
+    for j in notO:
+        oxi_states[j] = structure[j].specie.add_charges_from_oxi_state_guesses
+
+    return(oxi_states)
+# non_o_oxidation_state("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
+
+# add_charges_from_oxi_state_guesses
+    
 
 
-
-
+structure = pymatgen.core.Structure.from_file("mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt")
+wu = []
+for site in (structure.sites):
+    if site.specie.symbol == 'O':
+        wu.append(site)
+oxi_states = {}
+for j in wu:
+    oxi_states[j] = structure[j].specie.add_charges_from_oxi_state_guesses
+print(oxi_states)
 
 
 
