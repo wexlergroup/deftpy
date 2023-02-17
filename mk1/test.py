@@ -10,4 +10,3 @@ for i in range(6,10):
     c[i] = i
 
 
-print(c{1})
