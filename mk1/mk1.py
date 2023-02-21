@@ -29,7 +29,7 @@ def oxygenCN(*args):
     structure = pymatgen.core.Structure.from_file(args[0])
     structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
     structure.add_oxidation_state_by_guess()
-    iO = []
+    iO = [] 
     vac_structures = {}
     for i, site in enumerate(structure.sites):
         if site.specie.symbol == 'O':
