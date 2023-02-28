@@ -9,7 +9,7 @@ import pandas as pd
 from pymatgen.core.composition import Composition
 
 
-structure = pymatgen.core.Structure.from_file('mk1/crystal_files/ICSD_HfO2_CIF.cif')
+structure = pymatgen.core.Structure.from_file('mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt')
 structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
 structure.add_oxidation_state_by_guess()
 
@@ -45,5 +45,13 @@ for i in range(len(unique_structures.keys())):
     distance_cutoffs=None, x_diff_weight=0).get_nn_info(structure, pos_arg)
 
 
+
 print(struc_NN.values())
 
+df_struc = pd.DataFrame(struc_NN)
+print(df_struc.head())
+
+pd.DataFrame.to_csv(df_struc, 'mk1/crystal_files/df_struc.csv')
+
+for i in df_struc:
+    
