@@ -8,8 +8,9 @@ from pymatgen.analysis.local_env import CrystalNN
 import pandas as pd
 from pymatgen.core.composition import Composition
 
-
-structure = pymatgen.core.Structure.from_file('mk1/crystal_files/OQMD_CaTiO3_POSCAR.txt')
+structure_name = 'CaTiO3'
+filename = 'mk1/crystal_files/OQMD_' + structure_name + '_POSCAR.txt'
+structure = pymatgen.core.Structure.from_file(filename)
 structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
 structure.add_oxidation_state_by_guess()
 
@@ -46,12 +47,26 @@ for i in range(len(unique_structures.keys())):
 
 
 
-print(struc_NN.values())
+# print(struc_NN.values())
 
-df_struc = pd.DataFrame(struc_NN)
-print(df_struc.head())
+# df_struc = pd.DataFrame(struc_NN)
+# # print(df_struc.head())
 
-pd.DataFrame.to_csv(df_struc, 'mk1/crystal_files/df_struc.csv')
+# pd.DataFrame.to_csv(df_struc, 'mk1/crystal_files/df_struc.csv')
 
-for i in df_struc:
-    
+# for i in df_struc:
+#     print (i)
+#     print ('hola')
+
+
+
+#desired format for df_struc:
+
+#material name | index of unique oxygen | # of neighbor types | neighbor 1 (n1) | charge of n1 | CN of n1 | neighbor 2 (n2) | charge of n2 | CN of n2 |, etc 
+# print(struc_NN)
+neighbor_number = 1
+data = [[1, 2, 3],[2, 3, 4]]
+df_struc = pd.DataFrame(data, columns=['Material Name', 'Unique Oxygen Index', '# of neighbors'])
+
+pd.DataFrame.to_csv(df_struc, 'mk1/crystal_files/df_struc.csv', index=False)
+

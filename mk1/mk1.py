@@ -27,6 +27,7 @@ def file_readin(*args):
 print('hi2')
 def oxygenCN(*args):
     structure = pymatgen.core.Structure.from_file(args[0])
+    structure_name 
     structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
     structure.add_oxidation_state_by_guess()
     iO = [] 
@@ -102,6 +103,7 @@ print(data)
 # it in the df and checking if its there before doing it again
 
 CeMnO3
+
 
 def non_o_oxidation_state(*args):
     structure = pymatgen.core.Structure.from_file(args[0])
