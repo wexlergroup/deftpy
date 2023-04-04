@@ -11,14 +11,18 @@ import pandas as pd
 import numpy as np
 
 class Crystal:
-    def unique_oxygens(self, filepath):
+
+    def crystal_file(self, filepath):
+        self.crystal_file = pymatgen.core.Structure.from_file(filepath)
+
+    def unique_oxygens(self):
         '''returns a dictionary where keys are indices of
         unique oxygens in the structure and values are  '''
         iO = []
         vac_structures = {}
         unique_structures = {}
 
-        structure = pymatgen.core.Structure.from_file(filepath)
+        structure = self.crystal_file
         structure_matcher = pymatgen.analysis.structure_matcher.StructureMatcher()
         structure.add_oxidation_state_by_guess()
 
@@ -42,10 +46,10 @@ class Crystal:
                 unique_structures[i] = vac_structure
         return unique_structures
 
-    def non_o_oxidation_states(self, filepath):
+    def non_o_oxidation_states(self):
         notO = []
         oxi_states = {}
-        structure = pymatgen.core.Structure.from_file(filepath)
+        structure = self.crystal_file
         
         for i, site in enumerate(structure.sites):
             if site.specie.symbol != 'O':

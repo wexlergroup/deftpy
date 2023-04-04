@@ -58,15 +58,13 @@ for i in range(len(unique_structures.keys())):
 #     print (i)
 #     print ('hola')
 
-
-
 #desired format for df_struc:
 
 #material name | index of unique oxygen | # of neighbor types | neighbor 1 (n1) | charge of n1 | CN of n1 | neighbor 2 (n2) | charge of n2 | CN of n2 |, etc 
 # print(struc_NN)
+
 neighbor_number = 1
-data = [[1, 2, 3],[2, 3, 4]]
+data = [[structure_name],[],[neighbor_number],[]]
 df_struc = pd.DataFrame(data, columns=['Material Name', 'Unique Oxygen Index', '# of neighbors'])
 
 pd.DataFrame.to_csv(df_struc, 'mk1/crystal_files/df_struc.csv', index=False)
-
