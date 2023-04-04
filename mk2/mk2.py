@@ -17,7 +17,7 @@ class Crystal:
 
     def unique_oxygens(self):
         '''returns a dictionary where keys are indices of
-        unique oxygens in the structure and values are  '''
+        unique oxygens in the structure and values are '''
         iO = []
         vac_structures = {}
         unique_structures = {}
@@ -47,6 +47,7 @@ class Crystal:
         return unique_structures
 
     def non_o_oxidation_states(self):
+        '''returns a dictionary where'''
         notO = []
         oxi_states = {}
         structure = self.crystal_file
@@ -60,9 +61,6 @@ class Crystal:
             return oxi_states
          
     
-    def unique_o_neighbors(self, filepath):
-        return 
-    
-    def blah(self, blah):
-
+    # def unique_o_neighbors(self, filepath):
+    #     return 
     
