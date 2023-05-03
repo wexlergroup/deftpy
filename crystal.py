@@ -35,13 +35,32 @@ class Crystal:
     """
 
     def __init__(self, structure: Structure):
+        """
+        Initializes a new Crystal object with the given pymatgen Structure object.
+
+        Args:
+            structure (Structure): The pymatgen Structure object representing the crystal structure.
+        """
+
         self.structure = structure
 
     def visualize(self):
+        """
+        Opens a visualization window of the crystal structure using ASE's view function.
+
+        Args:
+            none
+        """
         atoms = AseAtomsAdaptor.get_atoms(self.structure)
         view(atoms)
 
     def unique_oxygen(self, structure):
+        """
+        Identifies and stores the unique oxygen sites in the crystal structure as a dictionary of pymatgen Structure objects.
+
+        Args:
+            structure (Structure): The pymatgen Structure object representing the crystal structure.
+        """
         structure.add_oxidation_state_by_guess()
         iO = []
         vac_structures = {}
@@ -69,6 +88,12 @@ class Crystal:
         self.unique_oxygens = unique_oxygens
 
     def non_oxygen(self, structure):
+        """
+        Identifies and stores the non-oxygen sites in the crystal structure as a dictionary of pymatgen Site objects.
+
+        Args:
+            structure (Structure): The pymatgen Structure object representing the crystal structure.
+        """
         nonO = {}
         for i, site in enumerate(structure.sites):
             if site.specie.symbol != 'O':
@@ -142,6 +167,17 @@ def non_oxygen_oxi_state(crystal: Crystal) -> dict:
 
 
 def crystal_data(crystal: Crystal):
+    """
+    Generates a dataframe of crystal structure data, in the following format: 
+    | Index of Unique Oxygen | Coordination Number | 
+
+    Args:
+        crystal (Crystal): The Crystal object to analyze.
+    
+    Returns:
+        dataframe: A dataframe containing the crystal structure data.
+
+    """
     structure = crystal.structure
     unique_oxygens = crystal.unique_oxygens
     nonO = crystal.nonO
