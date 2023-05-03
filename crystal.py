@@ -123,6 +123,16 @@ def oxygen_cn(crystal: Crystal) -> dict:
     return(struc_NN)
 
 def non_oxygen_oxi_state(crystal: Crystal) -> dict:
+    """
+    Computes the oxidation states of the non-oxygen atoms in a crystal structure.
+    
+    Args:
+        crystal (Crystal): The Crystal object to analyze.
+        
+    Returns:
+        dict: A dictionary where the keys are the indices of the non-oxygen atoms in the
+        structure, and the values are the oxidation states of the atoms.
+    """
     structure = crystal.structure
     nonO = crystal.nonO
     nonO_oxi_state = {}
@@ -138,7 +148,7 @@ def crystal_data(crystal: Crystal):
 
     data = []
 
-    
+
 
         
     return('hi')
