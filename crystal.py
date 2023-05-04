@@ -1,9 +1,11 @@
 # standard library imports
 from typing import Union, Any
+import unittest as ut
 
 # third-party imports
 import numpy as np
 import pandas as pd
+from pandas import DataFrame
 from ase.visualize import view
 from pymatgen.analysis.local_env import CrystalNN
 from pymatgen.analysis.structure_matcher import StructureMatcher as structure_matcher
@@ -166,7 +168,7 @@ def non_oxygen_oxi_state(crystal: Crystal) -> dict:
     return(nonO_oxi_state)
 
 
-def crystal_data(crystal: Crystal):
+def crystal_data(crystal: Crystal) -> DataFrame:
     """
     Generates a dataframe of crystal structure data, in the following format: 
     | Material Name | Index of Unique Oxygen | Coordination Number | Neighbor 1: charge, CN | Neighbor 2: charge, CN | etc. | 
@@ -195,4 +197,9 @@ def crystal_data(crystal: Crystal):
     crystal_df = pd.DataFrame(data, columns = ['Material Name', 'Index of Unique Oxygen', 'Coordination Number', 'Oxidation State', 'Element'])
 
 
-    return(data)
+    return(crystal_df)
+
+
+
+
+    # class TestCrystalFeatures():
