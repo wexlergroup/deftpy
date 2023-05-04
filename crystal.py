@@ -169,7 +169,7 @@ def non_oxygen_oxi_state(crystal: Crystal) -> dict:
 def crystal_data(crystal: Crystal):
     """
     Generates a dataframe of crystal structure data, in the following format: 
-    | Index of Unique Oxygen | Coordination Number | 
+    | Material Name | Index of Unique Oxygen | Coordination Number | Neighbor 1: charge, CN | Neighbor 2: charge, CN | etc. | 
 
     Args:
         crystal (Crystal): The Crystal object to analyze.
@@ -184,7 +184,15 @@ def crystal_data(crystal: Crystal):
 
     data = []
 
+    for i in range(len(unique_oxygens.keys())):
+        pos_arg = list(unique_oxygens.keys())[i]
+        data.append([structure.formula, pos_arg, oxygen_cn(crystal)[i][pos_arg]['coordination_no'], oxygen_cn(crystal)[i][pos_arg]['site'].specie.oxi_state, oxygen_cn(crystal)[i][pos_arg]['site'].specie.symbol])
+        for j in range(len(oxygen_cn(crystal)[i][pos_arg]['bonds'])):
+            data[i].append([oxygen_cn(crystal)[i][pos_arg]['bonds'][j]['site'].specie.oxi_state, oxygen_cn(crystal)[i][pos_arg]['bonds'][j]['site'].specie.symbol])
+    
+    # next, put data into a pandas dataframe for easier manipulation
+
+    crystal_df = pd.DataFrame(data, columns = ['Material Name', 'Index of Unique Oxygen', 'Coordination Number', 'Oxidation State', 'Element'])
 
 
-        
-    return('hi')
+    return(data)
