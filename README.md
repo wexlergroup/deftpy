@@ -1,6 +1,6 @@
-# deftPy
+# deftpy
 
-deftPy is a Python module that defines a Crystal class and some functions that analyze the properties of a crystal structure. 
+deftpy is a Python module that defines a Crystal class and some functions that analyze the properties of a crystal structure. 
 
 The Crystal class has three attributes:
 
