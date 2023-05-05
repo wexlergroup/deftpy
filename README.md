@@ -1,6 +1,6 @@
-# pyoxvac
+# deftPy
 
-Pyoxvac is a Python module that defines a Crystal class and some functions that analyze the properties of a crystal structure. 
+deftPy is a Python module that defines a Crystal class and some functions that analyze the properties of a crystal structure. 
 
 The Crystal class has three attributes:
 
