@@ -12,8 +12,8 @@ from pymatgen.analysis.local_env import CrystalNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 
-EB_DICT = {"filepath": "../data/Eb.csv", "column_name": "Eb", "comparison": "os"}
-VR_DICT = {"filepath": "../data/Vr.csv", "column_name": "Vr", "comparison": "n"}
+EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
+VR_DICT = {"filepath": "../data/features/Vr.csv", "column_name": "Vr", "comparison": "n"}
 
 
 
