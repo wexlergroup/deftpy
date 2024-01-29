@@ -11,6 +11,7 @@ from pymatgen.analysis.defects.generators import VacancyGenerator
 from pymatgen.analysis.local_env import CrystalNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
+from pymatgen.io.vasp import Poscar
 
 EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
 VR_DICT = {"filepath": "../data/features/Vr.csv", "column_name": "Vr", "comparison": "n"}
@@ -69,13 +70,19 @@ class Crystal:
         Examples:
             # TODO: Add examples
         """
-        # Check if the string is of valid format before trying to parse
-        if not re.match(r"[A-Za-z]+\d+\+", species_string):
+        if species_string == "":
+            return None, "", 0
+        
+        # Check if the string is of valid species format
+        if re.match(r"[A-Za-z]+\d+\+", species_string):
+            species = Species.from_str(species_string)
+            return species, species.symbol, species.oxi_state
+        else:
+            # Handle strings without numbers or not in expected format
             split_str = Crystal._split_before_first_number(species_string)
-            return None, split_str[0], round(float(split_str[1][:-1]))
-
-        species = Species.from_string(species_string)
-        return species, species.symbol, species.oxi_state
+            symbol = split_str[0] if split_str else species_string
+            oxi_state = round(float(split_str[1][:-1])) if len(split_str) > 1 else 0
+            return None, symbol, oxi_state
 
     def __init__(
             self,
@@ -101,11 +108,13 @@ class Crystal:
         Examples:
             # TODO: Add examples
         """
-# TODO: fix structure issues in kumagai, add more error handling
         if filepath:
             self.structure = Structure.from_file(filepath)
+            if filepath.endswith(".txt"):  # Assuming your POSCAR files have a .txt extension
+                self.structure.add_oxidation_state_by_guess()
         elif poscar_string:
             self.structure = Structure.from_str(poscar_string, fmt="poscar")
+            self.structure.add_oxidation_state_by_guess()
         elif pymatgen_structure:
             self.structure = pymatgen_structure
         else:
@@ -169,7 +178,7 @@ class Crystal:
             for cn_dict in self.cn_dicts:
                 value = {}
                 for species_string, cn in cn_dict.items():
-                    species = Species.from_string(species_string)
+                    species = Species.from_str(species_string)
                     symbol = species.symbol
                     oxidation_state = species.oxi_state
                     condition = (dataframe.elem == symbol) & (dataframe[comparison] == oxidation_state)
