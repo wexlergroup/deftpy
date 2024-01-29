@@ -171,7 +171,7 @@ def main():
             axs[i].set_ylabel("$E_v$ (eV)")
 
     plt.tight_layout()
-    plt.savefig("kumagai_fit_binary_test.png", dpi=300)
+    plt.savefig("../data/papers/kumagai/figures/kumagai_fit_binary_test.png", dpi=300)
 
 
 if __name__ == "__main__":

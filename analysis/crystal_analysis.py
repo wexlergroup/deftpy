@@ -101,6 +101,7 @@ class Crystal:
         Examples:
             # TODO: Add examples
         """
+# TODO: fix structure issues in kumagai, add more error handling
         if filepath:
             self.structure = Structure.from_file(filepath)
         elif poscar_string:
@@ -162,21 +163,30 @@ class Crystal:
         Examples:
             # TODO: Add examples
         """
-        self._initialize_structure_analysis()
-        values = []
-        for cn_dict in self.cn_dicts:
-            value = {}
-            for species_string, cn in cn_dict.items():
-                species = Species.from_string(species_string)
-                symbol = species.symbol
-                oxidation_state = species.oxi_state
-                condition = (dataframe.elem == symbol) & (dataframe[comparison] == oxidation_state)
-                if not dataframe.loc[condition, column_name].empty:
-                    value[species_string] = dataframe.loc[condition, column_name].iloc[0]
-                else:
-                    value[species_string] = np.nan
-            values.append(value)
+        try:
+            self._initialize_structure_analysis()
+            values = []
+            for cn_dict in self.cn_dicts:
+                value = {}
+                for species_string, cn in cn_dict.items():
+                    species = Species.from_string(species_string)
+                    symbol = species.symbol
+                    oxidation_state = species.oxi_state
+                    condition = (dataframe.elem == symbol) & (dataframe[comparison] == oxidation_state)
+                    if not dataframe.loc[condition, column_name].empty:
+                        value[species_string] = dataframe.loc[condition, column_name].iloc[0]
+                    else:
+                        value[species_string] = np.nan
+                values.append(value)
+            return values
+        except KeyError as e:
+            raise ValueError(f"Missing required column in dataframe: {e}")
+        except IndexError:
+            raise ValueError("Index error occurred while accessing dataframe")
+        except Exception as e:
+            raise ValueError(f"An unexpected error occurred: {e}")
         return values
+
 
     def visualize(self):
         """
