@@ -50,6 +50,7 @@ def process_structure(defect, df_plot, data_path):
                 poscar = Poscar.from_str(contcar)
                 #crystal = Crystal(poscar_string=poscar)
                 structure = poscar.structure
+                print(structure)
                 #assign oxidation states
                 print('check2.45')
                 oxi_states = {"O": -2, str(df_plot.loc[df_plot['full_name'] == full_name, "metal"].iloc[0]): float(df_plot.loc[df_plot['full_name'] == full_name, "oxi_state"].iloc[0])}

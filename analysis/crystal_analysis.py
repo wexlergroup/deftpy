@@ -167,7 +167,8 @@ class Crystal:
         if sum([x.oxi_state != 0 for x in self.structure.species]) == 0:
             self.structure.add_oxidation_state_by_guess()
         print('initialize_structure_analysis: 1')
-        vacancy_generator = VacancyGenerator()
+        vacancy_generator = VacancyGenerator() # if available, take in a vacancy instead of generating (bottleneck)
+        # bulk visual data json
         print('initialize_structure_analysis: 2')
         vacancies = vacancy_generator.get_defects(self.structure)
         print('initialize_structure_analysis: 3')
