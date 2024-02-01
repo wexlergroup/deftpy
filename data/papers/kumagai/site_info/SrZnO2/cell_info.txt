@@ -1,0 +1,45 @@
+Space group: Pnma
+Transformation matrix: [2, 0, 0]  [0, 3, 0]  [0, 0, 1]
+Cell multiplicity: 6
+
+   Irreducible element: Sr1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 3.326
+          Coordination: {'Sr': [3.3, 3.3], 'Zn': [2.99, 3.13, 3.13, 3.25, 3.25], 'O': [2.56, 2.56, 2.56, 2.56, 2.6, 2.6, 2.73, 3.31]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.1464925  0.0833333  0.3713187
+     Electronegativity: 0.95
+       Oxidation state: 2
+
+   Irreducible element: Zn1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.483
+          Coordination: {'O': [1.91, 1.95, 1.95, 1.96]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.3899520  0.2500000  0.3652404
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.535
+          Coordination: {'Zn': [1.95, 1.95]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.1196949  0.0833333  0.0449084
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.483
+          Coordination: {'Zn': [1.91, 1.96]}
+      Equivalent atoms: 72..95
+Fractional coordinates: 0.2317901  0.0833333  0.7570480
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

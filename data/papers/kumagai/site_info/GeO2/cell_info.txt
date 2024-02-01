@@ -1,0 +1,25 @@
+Space group: P3_121
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Ge1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.31
+          Coordination: {'O': [1.78, 1.78, 1.78, 1.78]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.2757650  0.2757650  0.0000000
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.31
+          Coordination: {'Ge': [1.78, 1.78]}
+      Equivalent atoms: 24..71
+Fractional coordinates: 0.1548511  0.1954210  0.3755548
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

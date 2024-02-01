@@ -1,0 +1,65 @@
+Space group: P3_121
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Ba1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 3.43
+          Coordination: {'O': [2.64, 2.64, 2.8, 2.8, 2.87, 2.87, 2.98, 2.98, 3.0, 3.0]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.1946301  0.1946301  0.2500000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: B1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 1.886
+          Coordination: {'O': [1.45, 1.45, 1.52, 1.52]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.4512947  0.4512947  0.2500000
+     Electronegativity: 2.04
+       Oxidation state: 3
+
+   Irreducible element: As1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.177
+          Coordination: {'O': [1.67, 1.67, 1.75, 1.75]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.3017047  0.0000000  0.1666667
+     Electronegativity: 2.18
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 1.886
+          Coordination: {'B': [1.45, 1.45]}
+      Equivalent atoms: 72..95
+Fractional coordinates: 0.4862753  0.4862753  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.177
+          Coordination: {'As': [1.67]}
+      Equivalent atoms: 96..119 144..167
+Fractional coordinates: 0.2821642  0.0753906  0.2429226
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 1.981
+          Coordination: {'B': [1.52], 'As': [1.75]}
+      Equivalent atoms: 120..143 168..191
+Fractional coordinates: 0.0729979  0.4109319  0.4062042
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

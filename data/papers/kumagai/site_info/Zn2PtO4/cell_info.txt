@@ -1,0 +1,55 @@
+Space group: Imma
+Transformation matrix: [0, 2, 2]  [2, 0, 2]  [1, 1, 0]
+Cell multiplicity: 8
+
+   Irreducible element: Zn1
+        Wyckoff letter: e
+         Site symmetry: mm2
+         Cutoff radius: 2.48
+          Coordination: {'O': [1.91, 1.91, 2.02, 2.02]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.2500000  0.1250000  0.3510197
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Zn2
+        Wyckoff letter: d
+         Site symmetry: .2/m.
+         Cutoff radius: 2.629
+          Coordination: {'O': [2.02, 2.02, 2.02, 2.02, 2.14, 2.14]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.1250000  0.1250000  -0.2500000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Pt1
+        Wyckoff letter: b
+         Site symmetry: 2/m..
+         Cutoff radius: 2.627
+          Coordination: {'O': [2.02, 2.02, 2.03, 2.03, 2.03, 2.03]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.2500000  0.0000000  0.0000000
+     Electronegativity: 2.28
+       Oxidation state: 0
+
+   Irreducible element: O1
+        Wyckoff letter: h
+         Site symmetry: m..
+         Cutoff radius: 2.48
+          Coordination: {'Zn': [1.91, 2.02, 2.02], 'Pt': [2.02]}
+      Equivalent atoms: 48..63 88..95 104..111
+Fractional coordinates: 0.0000000  0.2595288  0.2638633
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: .m.
+         Cutoff radius: 2.621
+          Coordination: {'Zn': [2.02, 2.14], 'Pt': [2.03, 2.03]}
+      Equivalent atoms: 64..87 96..103
+Fractional coordinates: 0.1346369  0.1250000  -0.0001457
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

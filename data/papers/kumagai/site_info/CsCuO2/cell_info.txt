@@ -1,0 +1,35 @@
+Space group: Cmcm
+Transformation matrix: [2, 2, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Cs1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 3.782
+          Coordination: {'Cu': [3.45, 3.45, 3.75], 'O': [2.91, 2.91, 3.11, 3.11, 3.11, 3.11]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.2500000  0.1851347  0.3750000
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Cu1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 2.354
+          Coordination: {'O': [1.81, 1.81, 1.81, 1.81]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.2500000  0.4981634  0.3750000
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: m..
+         Cutoff radius: 2.354
+          Coordination: {'Cu': [1.81, 1.81]}
+      Equivalent atoms: 32..63
+Fractional coordinates: 0.2500000  0.3992776  0.0017974
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

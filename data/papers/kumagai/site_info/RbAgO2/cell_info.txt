@@ -1,0 +1,35 @@
+Space group: Cmcm
+Transformation matrix: [3, 3, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Rb1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 3.611
+          Coordination: {'Ag': [3.4, 3.4], 'O': [2.78, 2.78, 2.95, 2.95, 2.95, 2.95]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.1666667  -0.2008181  0.1250000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Ag1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 2.589
+          Coordination: {'O': [1.99, 1.99, 2.0, 2.0]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.1666667  -0.4971884  0.1250000
+     Electronegativity: 1.93
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: m..
+         Cutoff radius: 2.589
+          Coordination: {'Ag': [1.99, 2.0]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.1666667  -0.3910635  0.4971749
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

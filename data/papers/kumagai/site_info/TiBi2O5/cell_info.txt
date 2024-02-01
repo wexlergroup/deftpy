@@ -1,0 +1,55 @@
+Space group: Cmc2_1
+Transformation matrix: [1, 1, 0]  [-3, 3, 0]  [0, 0, 3]
+Cell multiplicity: 18
+
+   Irreducible element: Ti1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.349
+          Coordination: {'O': [1.81, 1.81, 1.86, 1.87]}
+      Equivalent atoms: 0..35
+Fractional coordinates: 0.5000000  0.1039035  0.0877867
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: Bi1
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.86
+          Coordination: {'O': [2.2, 2.27, 2.32, 2.43, 2.48, 2.54]}
+      Equivalent atoms: 36..107
+Fractional coordinates: 0.6698535  -0.0715200  0.0803382
+     Electronegativity: 2.02
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.349
+          Coordination: {'Ti': [1.81]}
+      Equivalent atoms: 108..143 216..251
+Fractional coordinates: 0.5964929  0.0517281  0.1146407
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.86
+          Coordination: {'Bi': [2.2, 2.27, 2.32, 2.54], 'O': [2.74, 2.74, 2.78, 2.79, 2.79]}
+      Equivalent atoms: 144..215
+Fractional coordinates: 0.7521936  -0.0040602  0.1708913
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.423
+          Coordination: {'Ti': [1.86, 1.87]}
+      Equivalent atoms: 252..287
+Fractional coordinates: 0.5000000  -0.1326460  0.1442231
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,75 @@
+Space group: P6_3mc
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 18
+
+   Irreducible element: Na1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 3.525
+          Coordination: {'Be': [3.19, 3.19, 3.19, 3.19, 3.19, 3.19, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2], 'Sb': [3.32, 3.34, 3.34, 3.34], 'O': [2.71, 2.71, 2.71, 2.72, 2.72, 2.72, 2.72, 2.72, 2.72, 2.73, 2.73, 2.73]}
+      Equivalent atoms: 0..35
+Fractional coordinates: 0.1111111  0.2222222  0.3130356
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Be1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.128
+          Coordination: {'O': [1.64, 1.64, 1.64, 1.66]}
+      Equivalent atoms: 36..107 144..179
+Fractional coordinates: 0.0552000  0.1103999  0.1566790
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: Be2
+        Wyckoff letter: a
+         Site symmetry: 3m.
+         Cutoff radius: 2.124
+          Coordination: {'O': [1.63, 1.63, 1.63, 1.65]}
+      Equivalent atoms: 108..143
+Fractional coordinates: 0.0000000  0.0000000  0.2803384
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: Sb1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 2.581
+          Coordination: {'O': [1.99, 1.99, 1.99, 1.99, 1.99, 1.99]}
+      Equivalent atoms: 180..215
+Fractional coordinates: 0.1111111  0.2222222  0.0002179
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.124
+          Coordination: {'Be': [1.63, 1.64], 'Sb': [1.99]}
+      Equivalent atoms: 216..233 270..323 432..467
+Fractional coordinates: 0.2260921  0.2797127  0.0644186
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: 3m.
+         Cutoff radius: 2.141
+          Coordination: {'Be': [1.65, 1.66, 1.66, 1.66]}
+      Equivalent atoms: 234..269
+Fractional coordinates: 0.0000000  0.0000000  0.4375919
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.128
+          Coordination: {'Be': [1.64, 1.64], 'Sb': [1.99]}
+      Equivalent atoms: 324..431
+Fractional coordinates: 0.1683091  0.0032849  0.4355084
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

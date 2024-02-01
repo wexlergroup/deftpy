@@ -1,0 +1,35 @@
+Space group: I4_122
+Transformation matrix: [2, -2, 0]  [-2, -2, -4]  [1, 1, 0]
+Cell multiplicity: 16
+
+   Irreducible element: Li1
+        Wyckoff letter: a
+         Site symmetry: 2.22
+         Cutoff radius: 2.578
+          Coordination: {'O': [1.98, 1.98, 1.98, 1.98]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.8750000  0.6250000  0.2500000
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Au1
+        Wyckoff letter: b
+         Site symmetry: 2.22
+         Cutoff radius: 2.598
+          Coordination: {'O': [2.0, 2.0, 2.0, 2.0]}
+      Equivalent atoms: 32..63
+Fractional coordinates: 0.7500000  0.7500000  0.5000000
+     Electronegativity: 2.54
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: .2.
+         Cutoff radius: 2.578
+          Coordination: {'Li': [1.98, 1.98], 'Au': [2.0, 2.0]}
+      Equivalent atoms: 64..127
+Fractional coordinates: 0.6241400  0.5008600  -0.1250000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,135 +1,19 @@
-INFO:root:Processing for defect 7.69421869999986 succeeded.
-INFO:root:Processing for defect 3.803732819999718 timed out.
-INFO:root:Processing for defect 3.756670709999876 timed out.
-INFO:root:Processing for defect 3.7697533399999754 timed out.
-INFO:root:Processing for defect 6.752125390000012 succeeded.
-INFO:root:Processing for defect 6.372273070000015 succeeded.
-INFO:root:Processing for defect 6.615020370000034 timed out.
-INFO:root:Processing for defect 8.244733159999564 timed out.
-INFO:root:Processing for defect 3.919661759999949 timed out.
-INFO:root:Processing for defect 4.028562429999861 timed out.
-INFO:root:Processing for defect 4.10182348999991 timed out.
-INFO:root:Processing for defect 1.5690956500000173 timed out.
-INFO:root:Processing for defect 2.0486686300000745 timed out.
-INFO:root:Processing for defect 7.691605040000022 timed out.
-INFO:root:Processing for defect 4.668474750000096 timed out.
-INFO:root:Processing for defect 5.298623480000069 timed out.
-INFO:root:Processing for defect 5.068348539999997 timed out.
-INFO:root:Processing for defect 3.65275514999997 timed out.
-INFO:root:Processing for defect 4.534054169999999 timed out.
-INFO:root:Processing for defect 7.427469659999994 timed out.
-INFO:root:Processing for defect 7.610649820000001 timed out.
-INFO:root:Processing for defect 2.951714230000002 timed out.
-INFO:root:Processing for defect 3.009804059999974 timed out.
-INFO:root:Processing for defect 4.461725070000009 timed out.
-INFO:root:Processing for defect 4.168888170000011 timed out.
-INFO:root:Processing for defect 4.23347437999997 timed out.
-INFO:root:Processing for defect 4.408735470000019 timed out.
-INFO:root:Processing for defect 4.01743338999996 timed out.
-INFO:root:Processing for defect 4.160002620000009 timed out.
-INFO:root:Processing for defect 3.761671020000003 timed out.
-INFO:root:Processing for defect 5.84099236999999 timed out.
-INFO:root:Processing for defect 4.767490980000057 timed out.
-INFO:root:Processing for defect 4.971552149999988 timed out.
-INFO:root:Processing for defect 4.45229775000008 timed out.
-INFO:root:Processing for defect 4.78985756999999 timed out.
-INFO:root:Processing for defect 7.179422349999991 timed out.
-INFO:root:Processing for defect 4.564112179466871 timed out.
-INFO:root:Processing for defect 1.31408610750172 timed out.
-INFO:root:Processing for defect 1.4107231307089465 timed out.
-INFO:root:Processing for defect 4.5550444187799 timed out.
-INFO:root:Processing for defect 4.485200703805055 timed out.
-INFO:root:Processing for defect 4.308322994983372 timed out.
-INFO:root:Processing for defect 5.194772300257529 timed out.
-INFO:root:Processing for defect 1.5949257844881852 timed out.
-INFO:root:Processing for defect 1.608076709936071 timed out.
-INFO:root:Processing for defect 1.415810018089293 timed out.
-INFO:root:Processing for defect 0.3245576155237415 timed out.
-INFO:root:Processing for defect 5.058042836377056 timed out.
-INFO:root:Processing for defect 2.8563129462292114 timed out.
-INFO:root:Processing for defect 2.642667951489239 timed out.
-INFO:root:Processing for defect 2.90488314721856 timed out.
-INFO:root:Processing for defect 2.8861973534256427 timed out.
-INFO:root:Processing for defect 4.193671011566598 timed out.
-INFO:root:Processing for defect 5.394661848935825 timed out.
-INFO:root:Processing for defect 5.095554197893554 timed out.
-INFO:root:Processing for defect 1.2109253280270915 timed out.
-INFO:root:Processing for defect 3.8917412269279295 timed out.
-INFO:root:Processing for defect 1.3615332420943422 timed out.
-INFO:root:Processing for defect 1.342556606925415 timed out.
-INFO:root:Processing for defect 1.5690984838048976 timed out.
-INFO:root:Processing for defect 1.8859998663330184 timed out.
-INFO:root:Processing for defect 1.6467280350274212 timed out.
-INFO:root:Processing for defect 1.8431643181526496 timed out.
-INFO:root:Processing for defect 4.9929877338973965 timed out.
-INFO:root:Processing for defect 2.204304264030954 timed out.
-INFO:root:Processing for defect 2.4316430334970587 timed out.
-INFO:root:Processing for defect 1.806180667825936 timed out.
-INFO:root:Processing for defect 2.6054480568309515 timed out.
-INFO:root:Processing for defect 4.766171724526229 timed out.
-INFO:root:Processing for defect 1.871706257271368 timed out.
-INFO:root:Processing for defect -0.9883017507957212 timed out.
-INFO:root:Processing for defect -1.941279604335885 timed out.
-INFO:root:Processing for defect -1.1966327609093488 timed out.
-INFO:root:Processing for defect 2.92526243580336 timed out.
-INFO:root:Processing for defect 2.148476243436656 timed out.
-INFO:root:Processing for defect -1.071147094963401 timed out.
-INFO:root:Processing for defect -1.038908422779985 timed out.
-INFO:root:Processing for defect -1.3372063484430965 timed out.
-INFO:root:Processing for defect -1.6619533119570495 timed out.
-INFO:root:Processing for defect -1.5645385041017517 timed out.
-INFO:root:Processing for defect 3.9617531909655592 timed out.
-INFO:root:Processing for defect 0.3538878002447934 timed out.
-INFO:root:Processing for defect -0.6841803673725178 timed out.
-INFO:root:Processing for defect 0.2207117570890133 timed out.
-INFO:root:Processing for defect 4.953010645148932 timed out.
-INFO:root:Processing for defect 4.776629150980302 timed out.
-INFO:root:Processing for defect 3.647223827401248 timed out.
-INFO:root:Processing for defect -0.8056994570339224 timed out.
-INFO:root:Processing for defect -0.8620438613984365 timed out.
-INFO:root:Processing for defect 4.855493691590057 timed out.
-INFO:root:Processing for defect -2.4440124511067087 timed out.
-INFO:root:Processing for defect -0.2854032883053272 timed out.
-INFO:root:Processing for defect 0.0243211726687433 timed out.
-INFO:root:Processing for defect -1.3041811156040253 timed out.
-INFO:root:Processing for defect -1.5854775383998754 timed out.
-INFO:root:Processing for defect -0.5405506009135466 timed out.
-INFO:root:Processing for defect -1.2408159087226296 timed out.
-INFO:root:Processing for defect -0.3207614811177692 timed out.
-INFO:root:Processing for defect 3.704156758469766 timed out.
-INFO:root:Processing for defect -0.483837310490371 timed out.
-INFO:root:Processing for defect -0.4281192288775002 timed out.
-INFO:root:Processing for defect -0.6296880294563132 timed out.
-INFO:root:Processing for defect 0.4874946412465335 timed out.
-INFO:root:Processing for defect 3.82069807799404 timed out.
-INFO:root:Processing for defect -1.3306771732245497 timed out.
-INFO:root:Total defects processed: 105
-INFO:root:Successful defects: [7.69421869999986, 6.752125390000012, 6.372273070000015]
-INFO:root:Failed defects: []
-INFO:root:Timed out defects: [3.803732819999718, 3.756670709999876, 3.7697533399999754, 6.615020370000034, 8.244733159999564, 3.919661759999949, 4.028562429999861, 4.10182348999991, 1.5690956500000173, 2.0486686300000745, 7.691605040000022, 4.668474750000096, 5.298623480000069, 5.068348539999997, 3.65275514999997, 4.534054169999999, 7.427469659999994, 7.610649820000001, 2.951714230000002, 3.009804059999974, 4.461725070000009, 4.168888170000011, 4.23347437999997, 4.408735470000019, 4.01743338999996, 4.160002620000009, 3.761671020000003, 5.84099236999999, 4.767490980000057, 4.971552149999988, 4.45229775000008, 4.78985756999999, 7.179422349999991, 4.564112179466871, 1.31408610750172, 1.4107231307089465, 4.5550444187799, 4.485200703805055, 4.308322994983372, 5.194772300257529, 1.5949257844881852, 1.608076709936071, 1.415810018089293, 0.3245576155237415, 5.058042836377056, 2.8563129462292114, 2.642667951489239, 2.90488314721856, 2.8861973534256427, 4.193671011566598, 5.394661848935825, 5.095554197893554, 1.2109253280270915, 3.8917412269279295, 1.3615332420943422, 1.342556606925415, 1.5690984838048976, 1.8859998663330184, 1.6467280350274212, 1.8431643181526496, 4.9929877338973965, 2.204304264030954, 2.4316430334970587, 1.806180667825936, 2.6054480568309515, 4.766171724526229, 1.871706257271368, -0.9883017507957212, -1.941279604335885, -1.1966327609093488, 2.92526243580336, 2.148476243436656, -1.071147094963401, -1.038908422779985, -1.3372063484430965, -1.6619533119570495, -1.5645385041017517, 3.9617531909655592, 0.3538878002447934, -0.6841803673725178, 0.2207117570890133, 4.953010645148932, 4.776629150980302, 3.647223827401248, -0.8056994570339224, -0.8620438613984365, 4.855493691590057, -2.4440124511067087, -0.2854032883053272, 0.0243211726687433, -1.3041811156040253, -1.5854775383998754, -0.5405506009135466, -1.2408159087226296, -0.3207614811177692, 3.704156758469766, -0.483837310490371, -0.4281192288775002, -0.6296880294563132, 0.4874946412465335, 3.82069807799404, -1.3306771732245497]
-INFO:root:Processing for defect 7.69421869999986 succeeded.
-INFO:root:Processing for defect 2.90488314721856 succeeded.
-INFO:root:Processing for defect 2.8861973534256427 succeeded.
-INFO:root:Processing for defect 4.193671011566598 succeeded.
-INFO:root:Processing for defect 5.394661848935825 succeeded.
-INFO:root:Processing for defect 5.095554197893554 succeeded.
-INFO:root:Total defects processed: 105
-INFO:root:Successful defects: [2.90488314721856, 2.8861973534256427, 4.193671011566598, 5.394661848935825, 5.095554197893554]
-INFO:root:Failed defects: []
-INFO:root:Timed out defects: []
-INFO:root:Processing for defect 1.415810018089293 timed out.
-INFO:root:Total defects processed: 105
-INFO:root:Successful defects: []
-INFO:root:Failed defects: []
-INFO:root:Timed out defects: [1.415810018089293]
-INFO:root:Processing for defect 7.69421869999986 succeeded.
-INFO:root:Processing for defect 3.803732819999718 timed out.
-INFO:root:Processing for defect 3.756670709999876 timed out.
-INFO:root:Processing for defect 3.7697533399999754 timed out.
-INFO:root:Processing for defect 6.752125390000012 succeeded.
-INFO:root:Processing for defect 6.372273070000015 succeeded.
-INFO:root:Processing for defect 6.615020370000034 succeeded.
-INFO:root:Processing for defect 8.244733159999564 timed out.
-INFO:root:Processing for defect 3.919661759999949 timed out.
-INFO:root:Processing for defect 4.028562429999861 timed out.
-INFO:root:Processing for defect 4.10182348999991 timed out.
+INFO:root:Processing for defect 7.69421869999986 failed.
+INFO:root:Processing for defect 3.803732819999718 failed.
+INFO:root:Processing for defect 3.756670709999876 failed.
+INFO:root:Processing for defect 3.7697533399999754 failed.
+INFO:root:Processing for defect 6.752125390000012 failed.
+INFO:root:Processing for defect 6.372273070000015 failed.
+INFO:root:Processing for defect 6.615020370000034 failed.
+INFO:root:Processing for defect 8.244733159999564 failed.
+INFO:root:Processing for defect 3.919661759999949 failed.
+INFO:root:Processing for defect 4.028562429999861 failed.
+INFO:root:Processing for defect 4.10182348999991 failed.
+INFO:root:Processing for defect 1.5690956500000173 failed.
+INFO:root:Processing for defect 2.0486686300000745 failed.
+INFO:root:Processing for defect 7.691605040000022 failed.
+INFO:root:Processing for defect 4.668474750000096 failed.
+INFO:root:Processing for defect 5.298623480000069 failed.
+INFO:root:Processing for defect 5.068348539999997 failed.
+INFO:root:Processing for defect 3.65275514999997 failed.
+INFO:root:Processing for defect 4.534054169999999 failed.

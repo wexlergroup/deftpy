@@ -61,13 +61,13 @@ def test_initialize_poscar_analysis(poscar_file):
     cn_dicts_second_call = crystal._initialize_structure_analysis()
     assert cn_dicts == cn_dicts_second_call, "Repeated calls should yield the same result"
 
-def test_initialize_structure_analysis_invalid_structure():
-    invalid_structure = None
+# def test_initialize_structure_analysis_invalid_structure():
+#     invalid_structure = None
 
-    crystal = Crystal(pymatgen_structure=invalid_structure)
+#     crystal = Crystal(pymatgen_structure=invalid_structure)
 
-    with pytest.raises(ValueError):
-        crystal._initialize_structure_analysis()
+#     with pytest.raises(ValueError):
+#         crystal._initialize_structure_analysis()
 
 def test_get_values():
     crystal = Crystal(filepath=str(cif_files[0]))

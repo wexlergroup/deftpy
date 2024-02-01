@@ -1,0 +1,75 @@
+Space group: C222_1
+Transformation matrix: [2, 2, 0]  [-1, 1, 0]  [0, 0, 1]
+Cell multiplicity: 4
+
+   Irreducible element: K1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 3.518
+          Coordination: {'Zn': [3.37], 'Ge': [3.37, 3.38], 'O': [2.71, 2.81, 2.88, 2.93, 3.01, 3.14, 3.17, 3.2, 3.36]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.3050069  -0.1741334  0.9227901
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Zn1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 2.491
+          Coordination: {'O': [1.92, 1.92, 1.94, 1.94]}
+      Equivalent atoms: 16..23
+Fractional coordinates: 0.2500000  -0.2005644  0.2500000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Ge1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.286
+          Coordination: {'O': [1.76, 1.77, 1.8, 1.83]}
+      Equivalent atoms: 24..39
+Fractional coordinates: 0.4194759  0.0097108  0.3593516
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.286
+          Coordination: {'Zn': [1.94], 'Ge': [1.76]}
+      Equivalent atoms: 40..43 52..55 80..87
+Fractional coordinates: 0.3949133  0.1810471  0.3197537
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.299
+          Coordination: {'Zn': [1.92], 'Ge': [1.77]}
+      Equivalent atoms: 44..51 60..63 68..71
+Fractional coordinates: 0.3072365  0.0920631  0.6198292
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: a
+         Site symmetry: 2..
+         Cutoff radius: 2.381
+          Coordination: {'Ge': [1.83, 1.83]}
+      Equivalent atoms: 56..59 72..75
+Fractional coordinates: 0.4974019  0.0000000  0.5000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 2.342
+          Coordination: {'Ge': [1.8, 1.8]}
+      Equivalent atoms: 64..67 76..79
+Fractional coordinates: 0.2500000  0.4206927  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

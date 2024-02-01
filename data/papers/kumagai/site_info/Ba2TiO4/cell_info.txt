@@ -1,0 +1,75 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 1]
+Cell multiplicity: 4
+
+   Irreducible element: Ba1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.504
+          Coordination: {'Ti': [3.43], 'O': [2.7, 2.7, 2.72, 2.77, 2.81, 2.88, 2.9, 2.93]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.4882866  0.4997854  0.6979887
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ba2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.326
+          Coordination: {'O': [2.56, 2.67, 2.73, 2.83, 2.94, 3.07, 3.25]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.1524590  0.3284578  0.5737572
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ti1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.36
+          Coordination: {'O': [1.82, 1.84, 1.84, 1.85]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.1719009  0.1102568  0.5827602
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.4
+          Coordination: {'Ti': [1.85]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.1304651  0.1597396  0.4256734
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.398
+          Coordination: {'Ti': [1.84]}
+      Equivalent atoms: 64..79
+Fractional coordinates: 0.0697270  0.1641372  0.6368074
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.392
+          Coordination: {'Ti': [1.84]}
+      Equivalent atoms: 80..95
+Fractional coordinates: 0.3347703  0.1295832  0.6899969
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.36
+          Coordination: {'Ti': [1.82]}
+      Equivalent atoms: 96..111
+Fractional coordinates: 0.3626859  0.0053179  0.4345849
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

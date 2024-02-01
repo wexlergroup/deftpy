@@ -1,0 +1,55 @@
+Space group: P4/mmm
+Transformation matrix: [-4, 0, 0]  [0, -4, 0]  [0, 0, 2]
+Cell multiplicity: 32
+
+   Irreducible element: Ba1
+        Wyckoff letter: h
+         Site symmetry: 4mm
+         Cutoff radius: 3.588
+          Coordination: {'Sc': [3.44, 3.44, 3.44, 3.44], 'O': [2.76, 2.76, 2.76, 2.76, 2.93, 2.93, 2.93, 2.93]}
+      Equivalent atoms: 0..63
+Fractional coordinates: 0.6250000  0.6250000  0.3835037
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Sc1
+        Wyckoff letter: a
+         Site symmetry: 4/mmm
+         Cutoff radius: 2.672
+          Coordination: {'O': [2.06, 2.06, 2.06, 2.06, 2.18, 2.18]}
+      Equivalent atoms: 64..95
+Fractional coordinates: 0.7500000  0.7500000  0.0000000
+     Electronegativity: 1.36
+       Oxidation state: 3
+
+   Irreducible element: Cu1
+        Wyckoff letter: b
+         Site symmetry: 4/mmm
+         Cutoff radius: 2.308
+          Coordination: {'O': [1.78, 1.78]}
+      Equivalent atoms: 96..127
+Fractional coordinates: 0.7500000  0.7500000  0.2500000
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: mmm.
+         Cutoff radius: 2.672
+          Coordination: {'Sc': [2.06, 2.06]}
+      Equivalent atoms: 128..191
+Fractional coordinates: 0.7500000  0.6250000  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: g
+         Site symmetry: 4mm
+         Cutoff radius: 2.308
+          Coordination: {'Sc': [2.18], 'Cu': [1.78]}
+      Equivalent atoms: 192..255
+Fractional coordinates: 0.7500000  0.7500000  0.3622994
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

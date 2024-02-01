@@ -1,0 +1,85 @@
+Space group: C2/c
+Transformation matrix: [2, 2, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Cs1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 3.731
+          Coordination: {'Al': [3.57], 'Ge': [3.55], 'O': [2.87, 3.14, 3.2, 3.27, 3.28, 3.29, 3.44, 3.49, 3.51]}
+      Equivalent atoms: 0..7 16..23 32..47
+Fractional coordinates: 0.1070136  -0.1957448  0.1178351
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Cs2
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 4.101
+          Coordination: {'Cs': [3.86, 3.86], 'Al': [4.06, 4.06], 'Ge': [3.53, 3.53, 3.78, 3.78], 'O': [3.15, 3.15, 3.16, 3.16, 3.3, 3.3, 3.36, 3.36, 3.62, 3.62]}
+      Equivalent atoms: 8..15 24..31
+Fractional coordinates: 0.2500000  -0.4883468  0.1250000
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Al1
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.292
+          Coordination: {'O': [1.76, 1.76, 1.77, 1.77]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.2500000  -0.0598034  0.1250000
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: Ge1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.261
+          Coordination: {'O': [1.74, 1.79, 1.8, 1.83]}
+      Equivalent atoms: 64..95
+Fractional coordinates: 0.1676470  0.0996634  0.1297881
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.292
+          Coordination: {'Al': [1.76], 'Ge': [1.79]}
+      Equivalent atoms: 96..111 120..127 168..175
+Fractional coordinates: 0.1699526  -0.0039417  0.1174808
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.301
+          Coordination: {'Al': [1.77], 'Ge': [1.8]}
+      Equivalent atoms: 112..119 136..143 152..159 200..207
+Fractional coordinates: 0.3017299  0.1239152  0.4876665
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.261
+          Coordination: {'Ge': [1.74]}
+      Equivalent atoms: 128..135 144..151 176..183 192..199
+Fractional coordinates: 0.1837577  0.3635177  0.4737641
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.378
+          Coordination: {'Ge': [1.83, 1.83]}
+      Equivalent atoms: 160..167 184..191
+Fractional coordinates: 0.2500000  -0.1474090  0.3750000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

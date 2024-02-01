@@ -1,0 +1,65 @@
+Space group: C2/c
+Transformation matrix: [1, 1, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 4
+
+   Irreducible element: Na1
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 3.116
+          Coordination: {'Si': [3.03, 3.03], 'O': [2.4, 2.4, 2.43, 2.43, 2.44, 2.44, 2.97, 2.97]}
+      Equivalent atoms: 0..7
+Fractional coordinates: 0.5000000  -0.2013434  0.1250000
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Sc1
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.604
+          Coordination: {'O': [2.0, 2.0, 2.1, 2.1, 2.17, 2.17]}
+      Equivalent atoms: 8..15
+Fractional coordinates: 0.5000000  0.3976986  0.1250000
+     Electronegativity: 1.36
+       Oxidation state: 3
+
+   Irreducible element: Si1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.092
+          Coordination: {'O': [1.61, 1.64, 1.66, 1.66]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.7089154  0.0878611  0.1266639
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.152
+          Coordination: {'Si': [1.66, 1.66]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.6483071  0.0045579  0.2365966
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.092
+          Coordination: {'Sc': [2.0], 'Si': [1.61]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.6401900  0.2510059  0.0961688
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.128
+          Coordination: {'Sc': [2.1], 'Si': [1.64]}
+      Equivalent atoms: 64..79
+Fractional coordinates: 0.8830004  -0.0799479  0.4268583
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

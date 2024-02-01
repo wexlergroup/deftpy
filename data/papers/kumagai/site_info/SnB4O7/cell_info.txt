@@ -1,0 +1,75 @@
+Space group: Pmn2_1
+Transformation matrix: [1, 0, 0]  [0, 3, 0]  [0, 0, 3]
+Cell multiplicity: 9
+
+   Irreducible element: Sn1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.993
+          Coordination: {'O': [2.3, 2.38, 2.38, 2.6, 2.6, 2.98, 2.98]}
+      Equivalent atoms: 0..17
+Fractional coordinates: 0.5000000  0.2773557  0.1992410
+     Electronegativity: 1.96
+       Oxidation state: 4
+
+   Irreducible element: B1
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 1.871
+          Coordination: {'O': [1.44, 1.45, 1.47, 1.56]}
+      Equivalent atoms: 18..26 45..71
+Fractional coordinates: 0.8777563  0.2241761  0.1851862
+     Electronegativity: 2.04
+       Oxidation state: 3
+
+   Irreducible element: B2
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 1.845
+          Coordination: {'O': [1.42, 1.44, 1.53, 1.55]}
+      Equivalent atoms: 27..44 72..89
+Fractional coordinates: 0.2489677  0.2747322  0.0094211
+     Electronegativity: 2.04
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 1.912
+          Coordination: {'B': [1.47, 1.47]}
+      Equivalent atoms: 90..107
+Fractional coordinates: 0.5000000  0.0768696  0.3152199
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 1.99
+          Coordination: {'B': [1.53, 1.55, 1.56]}
+      Equivalent atoms: 108..143
+Fractional coordinates: 0.7805612  0.2900425  0.1275212
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 1.878
+          Coordination: {'B': [1.44, 1.45]}
+      Equivalent atoms: 144..179
+Fractional coordinates: 0.8573500  0.1193709  0.1589566
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 1.845
+          Coordination: {'B': [1.42, 1.44]}
+      Equivalent atoms: 180..215
+Fractional coordinates: 0.8633029  0.2430740  0.2961444
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

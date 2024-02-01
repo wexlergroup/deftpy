@@ -1,0 +1,35 @@
+Space group: Fd-3m
+Transformation matrix: [-2, 2, 2]  [2, -2, 2]  [2, 2, -2]
+Cell multiplicity: 32
+
+   Irreducible element: Zn1
+        Wyckoff letter: a
+         Site symmetry: -43m
+         Cutoff radius: 2.526
+          Coordination: {'O': [1.94, 1.94, 1.94, 1.94]}
+      Equivalent atoms: 0..63
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Ga1
+        Wyckoff letter: d
+         Site symmetry: .-3m
+         Cutoff radius: 2.594
+          Coordination: {'O': [2.0, 2.0, 2.0, 2.0, 2.0, 2.0]}
+      Equivalent atoms: 64..191
+Fractional coordinates: 0.1875000  0.1875000  0.3125000
+     Electronegativity: 1.81
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: .3m
+         Cutoff radius: 2.526
+          Coordination: {'Zn': [1.94], 'Ga': [2.0, 2.0, 2.0]}
+      Equivalent atoms: 192..447
+Fractional coordinates: 0.3074387  0.1925613  0.3074387
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

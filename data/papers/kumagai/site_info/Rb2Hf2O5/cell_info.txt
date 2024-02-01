@@ -1,0 +1,55 @@
+Space group: P4/mmm
+Transformation matrix: [3, 3, 0]  [-3, 3, 0]  [0, 0, 2]
+Cell multiplicity: 36
+
+   Irreducible element: Rb1
+        Wyckoff letter: a
+         Site symmetry: 4/mmm
+         Cutoff radius: 3.778
+          Coordination: {'O': [2.91, 2.91, 2.91, 2.91, 2.91, 2.91, 2.91, 2.91]}
+      Equivalent atoms: 0..35
+Fractional coordinates: -0.0000000  0.6666667  0.0000000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Rb2
+        Wyckoff letter: b
+         Site symmetry: 4/mmm
+         Cutoff radius: 3.702
+          Coordination: {'Hf': [3.47, 3.47, 3.47, 3.47, 3.47, 3.47, 3.47, 3.47], 'O': [2.85, 2.85, 2.85, 2.85, 3.12, 3.12, 3.12, 3.12, 3.12, 3.12, 3.12, 3.12]}
+      Equivalent atoms: 36..71
+Fractional coordinates: -0.0000000  0.6666667  0.2500000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Hf1
+        Wyckoff letter: h
+         Site symmetry: 4mm
+         Cutoff radius: 2.582
+          Coordination: {'O': [1.99, 2.05, 2.05, 2.05, 2.05]}
+      Equivalent atoms: 72..143
+Fractional coordinates: 0.1666667  0.6666667  0.1392735
+     Electronegativity: 1.3
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: 2mm.
+         Cutoff radius: 2.669
+          Coordination: {'Hf': [2.05, 2.05]}
+      Equivalent atoms: 144..215 252..323
+Fractional coordinates: 0.0833333  0.5833333  0.1168428
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: d
+         Site symmetry: 4/mmm
+         Cutoff radius: 2.582
+          Coordination: {'Hf': [1.99, 1.99]}
+      Equivalent atoms: 216..251
+Fractional coordinates: 0.1666667  0.6666667  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

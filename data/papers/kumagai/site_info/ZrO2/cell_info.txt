@@ -1,0 +1,35 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Zr1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.667
+          Coordination: {'O': [2.05, 2.06, 2.15, 2.15, 2.17, 2.24, 2.25]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.3613831  0.0214926  0.3953032
+     Electronegativity: 1.33
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.667
+          Coordination: {'Zr': [2.05, 2.06, 2.15], 'O': [2.54, 2.58]}
+      Equivalent atoms: 32..47 80..95
+Fractional coordinates: 0.0352591  0.4186597  0.4203222
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.794
+          Coordination: {'Zr': [2.15, 2.17, 2.24, 2.25], 'O': [2.54, 2.58, 2.65, 2.65, 2.74]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.2757467  0.3711042  0.0100287
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

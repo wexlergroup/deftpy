@@ -1,0 +1,35 @@
+Space group: P3_121
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 3]
+Cell multiplicity: 27
+
+   Irreducible element: Ba1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 3.474
+          Coordination: {'Zn': [3.14, 3.14, 3.36, 3.36], 'O': [2.67, 2.67, 2.69, 2.69, 2.9, 2.9, 3.21, 3.21]}
+      Equivalent atoms: 0..80
+Fractional coordinates: 0.2176055  0.0000000  0.2777778
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Zn1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.46
+          Coordination: {'O': [1.89, 1.89, 1.99, 1.99]}
+      Equivalent atoms: 81..161
+Fractional coordinates: 0.1409081  0.1409081  0.0000000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.46
+          Coordination: {'Zn': [1.89, 1.99]}
+      Equivalent atoms: 162..323
+Fractional coordinates: 0.0448867  0.1419703  0.2905610
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

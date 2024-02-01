@@ -1,0 +1,75 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-3, 3, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Li1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.528
+          Coordination: {'O': [1.94, 1.96, 2.07, 2.07, 2.35]}
+      Equivalent atoms: 0..11 48..59
+Fractional coordinates: 0.7114311  -0.0000000  0.1714179
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Li2
+        Wyckoff letter: c
+         Site symmetry: 2/m
+         Cutoff radius: 2.545
+          Coordination: {'O': [1.96, 1.96, 2.12, 2.12]}
+      Equivalent atoms: 12..23
+Fractional coordinates: -0.0000000  -0.0000000  0.2500000
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Li3
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.61
+          Coordination: {'O': [2.01, 2.06, 2.06, 2.07, 2.23]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.3115474  0.0000000  0.0701018
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Sb1
+        Wyckoff letter: a
+         Site symmetry: 2/m
+         Cutoff radius: 2.575
+          Coordination: {'O': [1.98, 1.98, 1.98, 1.98, 2.02, 2.02]}
+      Equivalent atoms: 60..71
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.528
+          Coordination: {'Li': [1.94, 1.96, 2.01, 2.06, 2.06], 'Sb': [1.98]}
+      Equivalent atoms: 72..83 120..131
+Fractional coordinates: 0.8549927  0.0000000  0.0871091
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: b
+         Site symmetry: 2/m
+         Cutoff radius: 2.62
+          Coordination: {'Li': [2.23, 2.23, 2.35, 2.35], 'Sb': [2.02, 2.02]}
+      Equivalent atoms: 84..95
+Fractional coordinates: 0.5000000  0.0000000  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.554
+          Coordination: {'Li': [1.96, 2.07, 2.07, 2.07, 2.12], 'Sb': [1.98]}
+      Equivalent atoms: 96..119
+Fractional coordinates: 0.1578039  -0.0000000  0.1592756
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

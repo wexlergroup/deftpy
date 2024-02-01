@@ -1,0 +1,65 @@
+Space group: Pnma
+Transformation matrix: [2, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Rb1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 3.66
+          Coordination: {'Rb': [3.37, 3.63], 'Be': [2.96, 3.13, 3.24, 3.49, 3.49], 'O': [2.82, 2.82, 2.9, 2.9, 3.15, 3.4, 3.4]}
+      Equivalent atoms: 0..11 36..59 84..95
+Fractional coordinates: 0.0431979  0.0833333  0.4365644
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Rb2
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 3.61
+          Coordination: {'Rb': [3.37, 3.59, 3.59], 'Be': [3.15, 3.24, 3.25, 3.25, 3.33, 3.37, 3.37], 'O': [2.78, 2.78, 2.9, 2.9, 3.09, 3.11, 3.11]}
+      Equivalent atoms: 12..35 60..83
+Fractional coordinates: 0.0561991  0.2500000  0.2559569
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Be1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.018
+          Coordination: {'O': [1.55, 1.55, 1.56]}
+      Equivalent atoms: 96..107 132..155 180..191
+Fractional coordinates: 0.0817744  0.0833333  0.1409462
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: Be2
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.013
+          Coordination: {'O': [1.55, 1.55, 1.55]}
+      Equivalent atoms: 108..131 156..179
+Fractional coordinates: 0.1041177  0.2500000  0.0556759
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.013
+          Coordination: {'Be': [1.55, 1.56]}
+      Equivalent atoms: 192..203 252..275 324..335
+Fractional coordinates: 0.0895067  0.0833333  0.2416501
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: d
+         Site symmetry: 1
+         Cutoff radius: 2.017
+          Coordination: {'Be': [1.55, 1.55]}
+      Equivalent atoms: 204..251 276..323
+Fractional coordinates: 0.0766876  0.3330015  0.0908578
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

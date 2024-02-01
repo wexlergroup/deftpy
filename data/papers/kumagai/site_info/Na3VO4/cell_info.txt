@@ -1,0 +1,65 @@
+Space group: Pmn2_1
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Na1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.905
+          Coordination: {'O': [2.23, 2.3, 2.32, 2.32]}
+      Equivalent atoms: 0..7 24..31
+Fractional coordinates: 0.0000000  0.3267995  0.2441449
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Na2
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.874
+          Coordination: {'O': [2.21, 2.26, 2.27, 2.28]}
+      Equivalent atoms: 8..23 32..47
+Fractional coordinates: 0.3775173  0.4128246  0.4951129
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: V1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.233
+          Coordination: {'O': [1.72, 1.73, 1.73, 1.73]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.0000000  0.1617677  0.0001020
+     Electronegativity: 1.63
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.248
+          Coordination: {'V': [1.73]}
+      Equivalent atoms: 64..71 104..111
+Fractional coordinates: 0.0000000  0.2978053  0.4510954
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.233
+          Coordination: {'Na': [2.21, 2.21], 'V': [1.72]}
+      Equivalent atoms: 72..79 96..103
+Fractional coordinates: 0.0000000  0.1598417  0.1564781
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.253
+          Coordination: {'V': [1.73]}
+      Equivalent atoms: 80..95 112..127
+Fractional coordinates: 0.3976822  0.0943725  0.4501600
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

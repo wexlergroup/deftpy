@@ -1,0 +1,45 @@
+Space group: P4_2/mbc
+Transformation matrix: [1, 1, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 4
+
+   Irreducible element: Pb1
+        Wyckoff letter: d
+         Site symmetry: 2.22
+         Cutoff radius: 2.809
+          Coordination: {'O': [2.16, 2.16, 2.23, 2.23, 2.23, 2.23]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.2500000  -0.2500000  0.1250000
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: Pb2
+        Wyckoff letter: h
+         Site symmetry: m..
+         Cutoff radius: 2.897
+          Coordination: {'O': [2.23, 2.23, 2.35, 2.7]}
+      Equivalent atoms: 16..47
+Fractional coordinates: 0.1523464  0.0100875  0.0000000
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: ..2
+         Cutoff radius: 2.809
+          Coordination: {'Pb': [2.16, 2.23, 2.23]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.4235489  -0.2500000  0.1250000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: h
+         Site symmetry: m..
+         Cutoff radius: 2.897
+          Coordination: {'Pb': [2.23, 2.23, 2.35, 2.7], 'O': [2.89, 2.89]}
+      Equivalent atoms: 80..111
+Fractional coordinates: 0.2738235  -0.1343067  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

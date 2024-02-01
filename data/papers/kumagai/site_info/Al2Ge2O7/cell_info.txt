@@ -1,0 +1,65 @@
+Space group: C2/c
+Transformation matrix: [2, 2, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 16
+
+   Irreducible element: Al1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.27
+          Coordination: {'O': [1.75, 1.83, 1.83, 1.91, 1.92]}
+      Equivalent atoms: 0..63
+Fractional coordinates: 0.3350761  0.0384826  0.4893819
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: Ge1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.254
+          Coordination: {'O': [1.73, 1.78, 1.8, 1.8]}
+      Equivalent atoms: 64..127
+Fractional coordinates: 0.1298015  -0.1258577  0.3530279
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.342
+          Coordination: {'Al': [1.83, 1.92], 'Ge': [1.8]}
+      Equivalent atoms: 128..191
+Fractional coordinates: 0.3544285  0.1363438  0.4362905
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.339
+          Coordination: {'Al': [1.83, 1.91], 'Ge': [1.8]}
+      Equivalent atoms: 192..255
+Fractional coordinates: 0.3000238  0.0405317  0.3010361
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.308
+          Coordination: {'Ge': [1.78, 1.78]}
+      Equivalent atoms: 256..287
+Fractional coordinates: 0.2500000  0.1701492  0.1250000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.254
+          Coordination: {'Al': [1.75], 'Ge': [1.73]}
+      Equivalent atoms: 288..351
+Fractional coordinates: 0.1057931  0.0330564  0.0506816
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

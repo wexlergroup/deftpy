@@ -1,0 +1,25 @@
+Space group: P6_3mc
+Transformation matrix: [5, 0, 0]  [0, 5, 0]  [0, 0, 3]
+Cell multiplicity: 75
+
+   Irreducible element: Be1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 2.14
+          Coordination: {'O': [1.65, 1.65, 1.65, 1.65]}
+      Equivalent atoms: 0..149
+Fractional coordinates: 0.1333333  0.0666667  0.0000067
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 2.14
+          Coordination: {'Be': [1.65, 1.65, 1.65, 1.65]}
+      Equivalent atoms: 150..299
+Fractional coordinates: 0.1333333  0.0666667  0.2074266
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

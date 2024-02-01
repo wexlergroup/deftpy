@@ -1,0 +1,65 @@
+Space group: P-42_1m
+Transformation matrix: [0, 2, 0]  [-2, 0, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: Sr1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 3.297
+          Coordination: {'Si': [3.16], 'O': [2.54, 2.54, 2.54, 2.57, 2.7, 2.7, 2.79, 2.79]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.4174192  0.3325808  0.1691487
+     Electronegativity: 0.95
+       Oxidation state: 2
+
+   Irreducible element: Zn1
+        Wyckoff letter: a
+         Site symmetry: -4..
+         Cutoff radius: 2.483
+          Coordination: {'O': [1.91, 1.91, 1.91, 1.91]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.2500000  0.2500000  0.0000000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Si1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.096
+          Coordination: {'O': [1.61, 1.64, 1.64, 1.68]}
+      Equivalent atoms: 72..119
+Fractional coordinates: 0.3199671  0.4300329  0.3165708
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 2.mm
+         Cutoff radius: 2.178
+          Coordination: {'Si': [1.68, 1.68]}
+      Equivalent atoms: 120..143
+Fractional coordinates: 0.0000000  0.2500000  0.0540257
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.096
+          Coordination: {'Si': [1.61]}
+      Equivalent atoms: 144..191
+Fractional coordinates: 0.3196421  0.4303579  0.0874138
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.134
+          Coordination: {'Zn': [1.91], 'Si': [1.64]}
+      Equivalent atoms: 192..287
+Fractional coordinates: 0.2902350  0.3433812  0.2676015
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

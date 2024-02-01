@@ -1,0 +1,35 @@
+Space group: R-3m
+Transformation matrix: [6, -6, 0]  [0, 6, -6]  [1, 1, 1]
+Cell multiplicity: 108
+
+   Irreducible element: Al1
+        Wyckoff letter: b
+         Site symmetry: -3m
+         Cutoff radius: 2.483
+          Coordination: {'O': [1.91, 1.91, 1.91, 1.91, 1.91, 1.91]}
+      Equivalent atoms: 0..107
+Fractional coordinates: -0.0000000  -0.0000000  0.5000000
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: Cu1
+        Wyckoff letter: a
+         Site symmetry: -3m
+         Cutoff radius: 2.39
+          Coordination: {'O': [1.84, 1.84]}
+      Equivalent atoms: 108..215
+Fractional coordinates: -0.0000000  -0.0000000  -0.0000000
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 3m
+         Cutoff radius: 2.39
+          Coordination: {'Al': [1.91, 1.91, 1.91], 'Cu': [1.84]}
+      Equivalent atoms: 216..431
+Fractional coordinates: -0.0000000  -0.0000000  0.1092347
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

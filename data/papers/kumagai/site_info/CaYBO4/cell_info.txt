@@ -1,0 +1,75 @@
+Space group: Pnma
+Transformation matrix: [1, 0, 0]  [0, 3, 0]  [0, 0, 1]
+Cell multiplicity: 3
+
+   Irreducible element: Ca1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.869
+          Coordination: {'O': [2.21, 2.37, 2.37, 2.38, 2.41, 2.41]}
+      Equivalent atoms: 0..11
+Fractional coordinates: 0.0834321  0.0833333  0.6711730
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: Y1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.839
+          Coordination: {'B': [2.83], 'O': [2.18, 2.18, 2.22, 2.31, 2.42, 2.42, 2.55]}
+      Equivalent atoms: 12..23
+Fractional coordinates: 0.1125296  0.0833333  0.0878904
+     Electronegativity: 1.22
+       Oxidation state: 3
+
+   Irreducible element: B1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 1.798
+          Coordination: {'O': [1.38, 1.39, 1.4]}
+      Equivalent atoms: 24..35
+Fractional coordinates: 0.1999964  0.0833333  0.3680339
+     Electronegativity: 2.04
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 1.798
+          Coordination: {'B': [1.38]}
+      Equivalent atoms: 36..47
+Fractional coordinates: 0.2509423  0.0833333  0.5014882
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 1.811
+          Coordination: {'B': [1.39]}
+      Equivalent atoms: 48..59
+Fractional coordinates: 0.2774826  0.0833333  0.2493213
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 1.815
+          Coordination: {'B': [1.4]}
+      Equivalent atoms: 60..71
+Fractional coordinates: 0.0667363  0.0833333  0.3489707
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.839
+          Coordination: {'Ca': [2.21], 'Y': [2.18, 2.18, 2.22], 'O': [2.82, 2.82]}
+      Equivalent atoms: 72..83
+Fractional coordinates: 0.5070478  0.0833333  0.6137713
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

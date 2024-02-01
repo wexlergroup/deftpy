@@ -1,0 +1,35 @@
+Space group: Immm
+Transformation matrix: [0, 3, 3]  [2, 0, 2]  [1, 1, 0]
+Cell multiplicity: 12
+
+   Irreducible element: Na1
+        Wyckoff letter: i
+         Site symmetry: mm2
+         Cutoff radius: 2.981
+          Coordination: {'O': [2.29, 2.29, 2.32, 2.32]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.0000000  0.0000000  0.6762285
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Pt1
+        Wyckoff letter: a
+         Site symmetry: mmm
+         Cutoff radius: 2.656
+          Coordination: {'O': [2.04, 2.04, 2.04, 2.04]}
+      Equivalent atoms: 24..35
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 2.28
+       Oxidation state: 0
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: mm2
+         Cutoff radius: 2.656
+          Coordination: {'Na': [2.29, 2.29, 2.32, 2.32], 'Pt': [2.04, 2.04], 'O': [2.62]}
+      Equivalent atoms: 36..59
+Fractional coordinates: 0.0000000  0.2500000  0.3596758
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

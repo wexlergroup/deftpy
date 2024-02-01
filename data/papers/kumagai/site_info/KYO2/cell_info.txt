@@ -1,0 +1,35 @@
+Space group: R-3m
+Transformation matrix: [5, -5, 0]  [0, 5, -5]  [1, 1, 1]
+Cell multiplicity: 75
+
+   Irreducible element: K1
+        Wyckoff letter: a
+         Site symmetry: -3m
+         Cutoff radius: 3.625
+          Coordination: {'K': [3.44, 3.44, 3.44, 3.44, 3.44, 3.44], 'O': [2.79, 2.79, 2.79, 2.79, 2.79, 2.79]}
+      Equivalent atoms: 0..74
+Fractional coordinates: -0.0000000  -0.0000000  -0.0000000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Y1
+        Wyckoff letter: b
+         Site symmetry: -3m
+         Cutoff radius: 2.981
+          Coordination: {'O': [2.29, 2.29, 2.29, 2.29, 2.29, 2.29]}
+      Equivalent atoms: 75..149
+Fractional coordinates: -0.0000000  -0.0000000  0.5000000
+     Electronegativity: 1.22
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 3m
+         Cutoff radius: 2.981
+          Coordination: {'K': [2.79, 2.79, 2.79], 'Y': [2.29, 2.29, 2.29]}
+      Equivalent atoms: 150..299
+Fractional coordinates: 0.0000000  -0.0000000  0.2281516
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

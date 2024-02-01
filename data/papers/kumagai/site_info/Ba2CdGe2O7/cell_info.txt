@@ -1,0 +1,65 @@
+Space group: P-42_1m
+Transformation matrix: [0, 2, 0]  [-2, 0, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: Ba1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 3.552
+          Coordination: {'Ge': [3.44], 'O': [2.73, 2.73, 2.74, 2.75, 2.93, 2.93, 2.94, 2.94]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.1674296  0.4174296  0.1687794
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Cd1
+        Wyckoff letter: a
+         Site symmetry: -4..
+         Cutoff radius: 2.814
+          Coordination: {'O': [2.16, 2.16, 2.16, 2.16]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.0000000  0.5000000  0.0000000
+     Electronegativity: 1.69
+       Oxidation state: 2
+
+   Irreducible element: Ge1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.281
+          Coordination: {'O': [1.75, 1.79, 1.79, 1.82]}
+      Equivalent atoms: 72..119
+Fractional coordinates: 0.4308516  0.1808516  0.3160063
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 2.mm
+         Cutoff radius: 2.372
+          Coordination: {'Ge': [1.82, 1.82]}
+      Equivalent atoms: 120..143
+Fractional coordinates: 0.2500000  0.5000000  0.0576793
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.281
+          Coordination: {'Ge': [1.75]}
+      Equivalent atoms: 144..191
+Fractional coordinates: 0.4304295  0.1804295  0.0879569
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.33
+          Coordination: {'Cd': [2.16], 'Ge': [1.79]}
+      Equivalent atoms: 192..287
+Fractional coordinates: 0.4031261  0.4613278  0.0713094
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

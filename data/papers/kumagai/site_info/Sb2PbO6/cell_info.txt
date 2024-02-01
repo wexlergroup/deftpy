@@ -1,0 +1,35 @@
+Space group: P-31m
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Sb1
+        Wyckoff letter: d
+         Site symmetry: 3.2
+         Cutoff radius: 2.612
+          Coordination: {'O': [2.01, 2.01, 2.01, 2.01, 2.01, 2.01]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.3333333  0.1666667  0.2500000
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: Pb1
+        Wyckoff letter: a
+         Site symmetry: -3.m
+         Cutoff radius: 3.304
+          Coordination: {'O': [2.54, 2.54, 2.54, 2.54, 2.54, 2.54]}
+      Equivalent atoms: 16..23
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: k
+         Site symmetry: ..m
+         Cutoff radius: 2.612
+          Coordination: {'Sb': [2.01, 2.01], 'Pb': [2.54], 'O': [2.58]}
+      Equivalent atoms: 24..71
+Fractional coordinates: 0.1888060  0.1888060  0.3545565
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,35 @@
+Space group: P6_3/mmc
+Transformation matrix: [4, 0, 0]  [0, 4, 0]  [0, 0, 1]
+Cell multiplicity: 16
+
+   Irreducible element: Rb1
+        Wyckoff letter: c
+         Site symmetry: -6m2
+         Cutoff radius: 3.645
+          Coordination: {'Rb': [3.22, 3.22, 3.22, 3.22, 3.22, 3.22], 'O': [2.8, 2.8, 2.8, 2.8, 2.8, 2.8]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.1666667  0.0833333  0.2500000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Sc1
+        Wyckoff letter: a
+         Site symmetry: -3m.
+         Cutoff radius: 2.789
+          Coordination: {'O': [2.15, 2.15, 2.15, 2.15, 2.15, 2.15]}
+      Equivalent atoms: 32..63
+Fractional coordinates: 0.0000000  0.0000000  0.5000000
+     Electronegativity: 1.36
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 3m.
+         Cutoff radius: 2.789
+          Coordination: {'Sc': [2.15, 2.15, 2.15]}
+      Equivalent atoms: 64..127
+Fractional coordinates: 0.1666667  0.0833333  0.9156690
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

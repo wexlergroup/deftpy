@@ -1,0 +1,65 @@
+Space group: P2_1/c
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 18
+
+   Irreducible element: Na1
+        Wyckoff letter: a
+         Site symmetry: -1
+         Cutoff radius: 2.985
+          Coordination: {'O': [2.3, 2.3, 2.32, 2.32, 2.34, 2.34]}
+      Equivalent atoms: 0..35
+Fractional coordinates: 0.0000000  0.1666667  0.2500000
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: La1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.057
+          Coordination: {'O': [2.35, 2.39, 2.39, 2.43, 2.61, 2.72, 2.8, 3.02]}
+      Equivalent atoms: 36..107
+Fractional coordinates: 0.2575036  0.0200787  0.1274614
+     Electronegativity: 1.1
+       Oxidation state: 3
+
+   Irreducible element: Ta1
+        Wyckoff letter: d
+         Site symmetry: -1
+         Cutoff radius: 2.581
+          Coordination: {'O': [1.99, 1.99, 1.99, 1.99, 2.0, 2.0]}
+      Equivalent atoms: 108..143
+Fractional coordinates: 0.1666667  0.1666667  0.0000000
+     Electronegativity: 1.5
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.606
+          Coordination: {'Na': [2.34], 'La': [2.39], 'Ta': [2.0]}
+      Equivalent atoms: 144..215
+Fractional coordinates: 0.2475375  0.2405582  0.2856328
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.592
+          Coordination: {'Na': [2.32], 'La': [2.35, 2.43], 'Ta': [1.99]}
+      Equivalent atoms: 216..287
+Fractional coordinates: 0.2036094  0.0177302  0.3648954
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.581
+          Coordination: {'Na': [2.3], 'La': [2.39], 'Ta': [1.99]}
+      Equivalent atoms: 288..359
+Fractional coordinates: 0.2797037  0.1075532  0.0258744
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

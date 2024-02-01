@@ -1,0 +1,25 @@
+Space group: Fm-3m
+Transformation matrix: [-2, 2, 2]  [2, -2, 2]  [2, 2, -2]
+Cell multiplicity: 32
+
+   Irreducible element: Ca1
+        Wyckoff letter: a
+         Site symmetry: m-3m
+         Cutoff radius: 3.098
+          Coordination: {'O': [2.38, 2.38, 2.38, 2.38, 2.38, 2.38]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: m-3m
+         Cutoff radius: 3.098
+          Coordination: {'Ca': [2.38, 2.38, 2.38, 2.38, 2.38, 2.38]}
+      Equivalent atoms: 32..63
+Fractional coordinates: 0.2500000  0.2500000  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

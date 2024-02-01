@@ -1,0 +1,55 @@
+Space group: P3_121
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 1]
+Cell multiplicity: 9
+
+   Irreducible element: Sr1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 3.316
+          Coordination: {'Li': [2.8, 2.8, 3.07, 3.07, 3.08, 3.08], 'Si': [3.26, 3.26], 'O': [2.55, 2.55, 2.64, 2.64, 2.64, 2.64, 2.65, 2.65]}
+      Equivalent atoms: 0..26
+Fractional coordinates: 0.1397833  0.0000000  0.8333333
+     Electronegativity: 0.95
+       Oxidation state: 2
+
+   Irreducible element: Li1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.511
+          Coordination: {'O': [1.93, 1.95, 1.98, 2.01]}
+      Equivalent atoms: 27..80
+Fractional coordinates: 0.2214729  0.1970973  0.7456158
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Si1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.143
+          Coordination: {'O': [1.65, 1.65, 1.66, 1.66]}
+      Equivalent atoms: 81..107
+Fractional coordinates: 0.0926630  0.0000000  0.3333333
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.143
+          Coordination: {'Li': [1.95, 1.98], 'Si': [1.65]}
+      Equivalent atoms: 108..161
+Fractional coordinates: 0.1827480  0.1709741  0.1071487
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.152
+          Coordination: {'Li': [1.93, 2.01], 'Si': [1.66]}
+      Equivalent atoms: 162..215
+Fractional coordinates: 0.0233004  0.2537500  0.9962692
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

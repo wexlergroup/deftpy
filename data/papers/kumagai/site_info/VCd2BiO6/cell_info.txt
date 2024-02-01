@@ -1,0 +1,75 @@
+Space group: Cmc2_1
+Transformation matrix: [1, 1, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 4
+
+   Irreducible element: V1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.21
+          Coordination: {'O': [1.7, 1.73, 1.73, 1.75]}
+      Equivalent atoms: 0..7
+Fractional coordinates: 0.5000000  0.3295344  0.2566084
+     Electronegativity: 1.63
+       Oxidation state: 5
+
+   Irreducible element: Cd1
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.931
+          Coordination: {'O': [2.25, 2.27, 2.34, 2.35, 2.36, 2.38]}
+      Equivalent atoms: 8..23
+Fractional coordinates: 0.2029257  -0.1118819  0.0111455
+     Electronegativity: 1.69
+       Oxidation state: 2
+
+   Irreducible element: Bi1
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.922
+          Coordination: {'O': [2.25, 2.25, 2.25, 2.25, 2.58]}
+      Equivalent atoms: 24..31
+Fractional coordinates: 0.5000000  0.0976488  0.0206818
+     Electronegativity: 2.02
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.255
+          Coordination: {'V': [1.73]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.6591094  0.2721910  0.1842508
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: b
+         Site symmetry: 1
+         Cutoff radius: 2.922
+          Coordination: {'Cd': [2.25, 2.27], 'Bi': [2.25, 2.25], 'O': [2.72, 2.81, 2.81]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.3441032  -0.0063047  0.1408908
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.272
+          Coordination: {'V': [1.75]}
+      Equivalent atoms: 64..71
+Fractional coordinates: 0.5000000  0.2952278  0.4084367
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: a
+         Site symmetry: m..
+         Cutoff radius: 2.21
+          Coordination: {'V': [1.7]}
+      Equivalent atoms: 72..79
+Fractional coordinates: 0.5000000  0.4781792  0.2467000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

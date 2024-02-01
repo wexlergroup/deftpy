@@ -1,0 +1,65 @@
+Space group: C2/m
+Transformation matrix: [2, 2, 0]  [-1, 1, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: K1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.32
+          Coordination: {'K': [2.91], 'Ga': [3.25, 3.28], 'O': [2.55, 2.78, 2.78, 2.87, 2.87]}
+      Equivalent atoms: 0..7 32..39
+Fractional coordinates: 0.1868800  -0.0000000  0.3244611
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K2
+        Wyckoff letter: g
+         Site symmetry: 2
+         Cutoff radius: 3.595
+          Coordination: {'K': [3.33, 3.33, 3.52, 3.52, 3.58, 3.58], 'Ga': [3.19, 3.19], 'O': [2.77, 2.77, 2.77, 2.77, 3.18, 3.18]}
+      Equivalent atoms: 8..15 24..31
+Fractional coordinates: 0.2500000  0.2416834  0.0000000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K3
+        Wyckoff letter: h
+         Site symmetry: 2
+         Cutoff radius: 3.489
+          Coordination: {'K': [3.33, 3.33, 3.4, 3.4], 'O': [2.68, 2.68, 2.89, 2.89, 3.07, 3.07]}
+      Equivalent atoms: 16..23 40..47
+Fractional coordinates: 0.2500000  0.3075544  0.2500000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Ga1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.389
+          Coordination: {'O': [1.84, 1.84, 1.93, 1.93]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.0852487  -0.0000000  0.0738027
+     Electronegativity: 1.81
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.389
+          Coordination: {'Ga': [1.84]}
+      Equivalent atoms: 64..71 88..111
+Fractional coordinates: 0.1461099  0.1364035  0.1331343
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.511
+          Coordination: {'Ga': [1.93, 1.93]}
+      Equivalent atoms: 72..87
+Fractional coordinates: 0.0491316  -0.0000000  0.4220247
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

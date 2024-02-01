@@ -1,0 +1,35 @@
+Space group: Pm-3m
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 3]
+Cell multiplicity: 27
+
+   Irreducible element: Ba1
+        Wyckoff letter: a
+         Site symmetry: m-3m
+         Cutoff radius: 3.852
+          Coordination: {'Zr': [3.63, 3.63, 3.63, 3.63, 3.63, 3.63, 3.63, 3.63], 'O': [2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96, 2.96]}
+      Equivalent atoms: 0..26
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Zr1
+        Wyckoff letter: b
+         Site symmetry: m-3m
+         Cutoff radius: 2.724
+          Coordination: {'O': [2.1, 2.1, 2.1, 2.1, 2.1, 2.1]}
+      Equivalent atoms: 27..53
+Fractional coordinates: 0.1666667  0.1666667  0.1666667
+     Electronegativity: 1.33
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 4/mm.m
+         Cutoff radius: 2.724
+          Coordination: {'Zr': [2.1, 2.1]}
+      Equivalent atoms: 54..134
+Fractional coordinates: 0.1666667  0.0000000  0.1666667
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

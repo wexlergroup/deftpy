@@ -1,0 +1,65 @@
+Space group: Fddd
+Transformation matrix: [-2, 2, 2]  [2, -2, 2]  [1, 1, -1]
+Cell multiplicity: 16
+
+   Irreducible element: Na1
+        Wyckoff letter: a
+         Site symmetry: 222
+         Cutoff radius: 3.044
+          Coordination: {'O': [2.34, 2.34, 2.34, 2.34, 2.69, 2.69]}
+      Equivalent atoms: 0..15 64..79
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Na2
+        Wyckoff letter: g
+         Site symmetry: ..2
+         Cutoff radius: 3.076
+          Coordination: {'O': [2.37, 2.37, 2.41, 2.41, 2.54, 2.54]}
+      Equivalent atoms: 16..63 80..95
+Fractional coordinates: 0.1250000  0.1250000  0.0862167
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Ca1
+        Wyckoff letter: g
+         Site symmetry: ..2
+         Cutoff radius: 2.979
+          Coordination: {'O': [2.29, 2.29, 2.33, 2.33, 2.34, 2.34]}
+      Equivalent atoms: 96..159
+Fractional coordinates: 0.3750000  0.3750000  0.5806973
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: Ta1
+        Wyckoff letter: b
+         Site symmetry: 222
+         Cutoff radius: 2.616
+          Coordination: {'O': [2.01, 2.01, 2.02, 2.02, 2.02, 2.02]}
+      Equivalent atoms: 160..191
+Fractional coordinates: 0.3750000  0.3750000  0.7500000
+     Electronegativity: 1.5
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: .2.
+         Cutoff radius: 2.616
+          Coordination: {'Na': [2.37, 2.37], 'Ca': [2.29, 2.29], 'Ta': [2.01]}
+      Equivalent atoms: 192..255
+Fractional coordinates: 0.2500000  0.1429566  0.5000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: h
+         Site symmetry: 1
+         Cutoff radius: 2.632
+          Coordination: {'Na': [2.34, 2.41, 2.54], 'Ca': [2.33, 2.34], 'Ta': [2.02]}
+      Equivalent atoms: 256..383
+Fractional coordinates: 0.3587636  0.2481766  0.4259902
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,35 @@
+Space group: Ibam
+Transformation matrix: [0, 2, 2]  [1, 0, 1]  [2, 2, 0]
+Cell multiplicity: 8
+
+   Irreducible element: Rb1
+        Wyckoff letter: j
+         Site symmetry: ..m
+         Cutoff radius: 3.599
+          Coordination: {'Rb': [3.25, 3.25], 'Mg': [3.14, 3.14], 'O': [2.77, 2.93, 2.99, 3.08, 3.08, 3.41]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.1812681  0.1547893  0.2500000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Mg1
+        Wyckoff letter: a
+         Site symmetry: 222
+         Cutoff radius: 2.613
+          Coordination: {'O': [2.01, 2.01, 2.01, 2.01]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.0000000  0.0000000  0.3750000
+     Electronegativity: 1.31
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: ..m
+         Cutoff radius: 2.613
+          Coordination: {'Mg': [2.01, 2.01]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.0859823  0.0913636  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

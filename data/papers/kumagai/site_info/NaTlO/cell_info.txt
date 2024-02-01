@@ -1,0 +1,35 @@
+Space group: P6_3mc
+Transformation matrix: [6, 0, 0]  [0, 6, 0]  [0, 0, 2]
+Cell multiplicity: 72
+
+   Irreducible element: Na1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 2.952
+          Coordination: {'O': [2.27, 2.27, 2.27]}
+      Equivalent atoms: 0..143
+Fractional coordinates: 0.1111111  0.0555556  0.4471417
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Tl1
+        Wyckoff letter: b
+         Site symmetry: 3m.
+         Cutoff radius: 3.19
+          Coordination: {'Na': [3.16], 'O': [2.45, 2.45, 2.45]}
+      Equivalent atoms: 144..287
+Fractional coordinates: 0.0555556  0.1111111  0.0579242
+     Electronegativity: 1.62
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: 3m.
+         Cutoff radius: 2.952
+          Coordination: {'Na': [2.27, 2.27, 2.27], 'Tl': [2.45, 2.45, 2.45]}
+      Equivalent atoms: 288..431
+Fractional coordinates: 0.0000000  0.0000000  0.4949342
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

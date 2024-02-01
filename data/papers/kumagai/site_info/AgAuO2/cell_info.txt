@@ -1,0 +1,35 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Ag1
+        Wyckoff letter: d
+         Site symmetry: -1
+         Cutoff radius: 2.746
+          Coordination: {'O': [2.11, 2.11, 2.67, 2.67]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.2500000  0.1666667  0.0000000
+     Electronegativity: 1.93
+       Oxidation state: 1
+
+   Irreducible element: Au1
+        Wyckoff letter: a
+         Site symmetry: -1
+         Cutoff radius: 2.605
+          Coordination: {'O': [2.0, 2.0, 2.01, 2.01]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.0000000  0.1666667  0.2500000
+     Electronegativity: 2.54
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.605
+          Coordination: {'Ag': [2.11], 'Au': [2.0, 2.01]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.3992985  0.0675233  0.1094136
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

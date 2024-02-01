@@ -1,0 +1,25 @@
+Space group: I-42d
+Transformation matrix: [0, 3, 3]  [3, 0, 3]  [2, 2, 0]
+Cell multiplicity: 36
+
+   Irreducible element: Si1
+        Wyckoff letter: a
+         Site symmetry: -4..
+         Cutoff radius: 2.107
+          Coordination: {'O': [1.62, 1.62, 1.62, 1.62]}
+      Equivalent atoms: 0..71
+Fractional coordinates: 0.0000000  0.1666667  0.1250000
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: d
+         Site symmetry: .2.
+         Cutoff radius: 2.107
+          Coordination: {'Si': [1.62, 1.62]}
+      Equivalent atoms: 72..215
+Fractional coordinates: 0.0833333  0.1355546  0.1875000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

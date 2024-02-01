@@ -1,0 +1,75 @@
+Space group: P-3
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Tl1
+        Wyckoff letter: g
+         Site symmetry: 1
+         Cutoff radius: 3.144
+          Coordination: {'O': [2.42, 2.64, 2.71, 2.96]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.0177221  0.1747554  0.1840202
+     Electronegativity: 1.62
+       Oxidation state: 1
+
+   Irreducible element: Tl2
+        Wyckoff letter: g
+         Site symmetry: 1
+         Cutoff radius: 3.188
+          Coordination: {'O': [2.45, 2.47, 2.48]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.0247398  0.1770083  0.4399732
+     Electronegativity: 1.62
+       Oxidation state: 1
+
+   Irreducible element: Si1
+        Wyckoff letter: d
+         Site symmetry: 3..
+         Cutoff radius: 2.127
+          Coordination: {'O': [1.64, 1.64, 1.64, 1.66]}
+      Equivalent atoms: 96..103 120..127
+Fractional coordinates: 0.1666667  0.3333333  0.0830180
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: Si2
+        Wyckoff letter: d
+         Site symmetry: 3..
+         Cutoff radius: 2.129
+          Coordination: {'O': [1.64, 1.64, 1.64, 1.66]}
+      Equivalent atoms: 104..119
+Fractional coordinates: 0.3333333  0.1666667  0.2075948
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: 1
+         Cutoff radius: 2.127
+          Coordination: {'Si': [1.64]}
+      Equivalent atoms: 128..159 224..239
+Fractional coordinates: 0.4271274  0.2249954  0.4446606
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: d
+         Site symmetry: 3..
+         Cutoff radius: 2.159
+          Coordination: {'Si': [1.66, 1.66]}
+      Equivalent atoms: 160..175
+Fractional coordinates: 0.3333333  0.1666667  0.3122212
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: g
+         Site symmetry: 1
+         Cutoff radius: 2.129
+          Coordination: {'Si': [1.64]}
+      Equivalent atoms: 176..223
+Fractional coordinates: 0.3005736  0.0733091  0.1796534
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,45 @@
+Space group: Fm-3m
+Transformation matrix: [-2, 2, 2]  [2, -2, 2]  [2, 2, -2]
+Cell multiplicity: 32
+
+   Irreducible element: Ba1
+        Wyckoff letter: c
+         Site symmetry: -43m
+         Cutoff radius: 3.708
+          Coordination: {'Zn': [3.49, 3.49, 3.49, 3.49], 'Mo': [3.49, 3.49, 3.49, 3.49], 'O': [2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85, 2.85]}
+      Equivalent atoms: 0..63
+Fractional coordinates: 0.1250000  0.1250000  0.1250000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Zn1
+        Wyckoff letter: b
+         Site symmetry: m-3m
+         Cutoff radius: 2.719
+          Coordination: {'O': [2.09, 2.09, 2.09, 2.09, 2.09, 2.09]}
+      Equivalent atoms: 64..95
+Fractional coordinates: 0.2500000  0.2500000  0.2500000
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: Mo1
+        Wyckoff letter: a
+         Site symmetry: m-3m
+         Cutoff radius: 2.523
+          Coordination: {'O': [1.94, 1.94, 1.94, 1.94, 1.94, 1.94]}
+      Equivalent atoms: 96..127
+Fractional coordinates: -0.0000000  -0.0000000  -0.0000000
+     Electronegativity: 2.16
+       Oxidation state: 6
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 4m.m
+         Cutoff radius: 2.523
+          Coordination: {'Zn': [2.09], 'Mo': [1.94]}
+      Equivalent atoms: 128..319
+Fractional coordinates: 0.1203236  0.2500000  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,35 @@
+Space group: Fddd
+Transformation matrix: [-2, 2, 2]  [1, -1, 1]  [1, 1, -1]
+Cell multiplicity: 8
+
+   Irreducible element: Hg1
+        Wyckoff letter: f
+         Site symmetry: .2.
+         Cutoff radius: 2.721
+          Coordination: {'O': [2.09, 2.09, 2.64, 2.64, 2.66, 2.66]}
+      Equivalent atoms: 0..31
+Fractional coordinates: 0.2500000  0.6788514  0.5000000
+     Electronegativity: 2.0
+       Oxidation state: 2
+
+   Irreducible element: Ge1
+        Wyckoff letter: a
+         Site symmetry: 222
+         Cutoff radius: 2.332
+          Coordination: {'O': [1.79, 1.79, 1.79, 1.79]}
+      Equivalent atoms: 32..47
+Fractional coordinates: -0.0000000  0.0000000  0.0000000
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: h
+         Site symmetry: 1
+         Cutoff radius: 2.332
+          Coordination: {'Hg': [2.09], 'Ge': [1.79]}
+      Equivalent atoms: 48..111
+Fractional coordinates: 0.4265436  0.8922213  0.9164837
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,35 @@
+Space group: I2_13
+Transformation matrix: [0, 2, 2]  [2, 0, 2]  [2, 2, 0]
+Cell multiplicity: 16
+
+   Irreducible element: K1
+        Wyckoff letter: a
+         Site symmetry: .3.
+         Cutoff radius: 3.698
+          Coordination: {'Sn': [3.43, 3.56, 3.56, 3.56, 3.69, 3.69, 3.69], 'O': [2.84, 2.84, 2.84, 2.98, 2.98, 2.98]}
+      Equivalent atoms: 0..63
+Fractional coordinates: -0.0045648  0.2454352  0.0045648
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Sn1
+        Wyckoff letter: a
+         Site symmetry: .3.
+         Cutoff radius: 2.691
+          Coordination: {'O': [2.07, 2.07, 2.07]}
+      Equivalent atoms: 64..127
+Fractional coordinates: 0.1270108  0.1229892  -0.1229892
+     Electronegativity: 1.96
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: 2..
+         Cutoff radius: 2.691
+          Coordination: {'Sn': [2.07, 2.07]}
+      Equivalent atoms: 128..223
+Fractional coordinates: -0.0000000  0.3750000  0.1143898
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

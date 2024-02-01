@@ -1,0 +1,65 @@
+Space group: P-3m1
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 18
+
+   Irreducible element: Ba1
+        Wyckoff letter: a
+         Site symmetry: -3m.
+         Cutoff radius: 3.749
+          Coordination: {'Mg': [3.55, 3.55], 'Nb': [3.58, 3.58, 3.58, 3.58, 3.58, 3.58], 'O': [2.88, 2.88, 2.88, 2.88, 2.88, 2.88, 2.89, 2.89, 2.89, 2.89, 2.89, 2.89]}
+      Equivalent atoms: 0..17
+Fractional coordinates: 0.0000000  0.0000000  0.0000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ba2
+        Wyckoff letter: d
+         Site symmetry: 3m.
+         Cutoff radius: 3.764
+          Coordination: {'Mg': [3.55, 3.55, 3.55], 'Nb': [3.46, 3.52, 3.52, 3.52, 3.64], 'O': [2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.9, 2.91, 2.91, 2.91]}
+      Equivalent atoms: 18..53
+Fractional coordinates: 0.1111111  0.2222222  0.3333112
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Mg1
+        Wyckoff letter: b
+         Site symmetry: -3m.
+         Cutoff radius: 2.736
+          Coordination: {'O': [2.1, 2.1, 2.1, 2.1, 2.1, 2.1]}
+      Equivalent atoms: 54..71
+Fractional coordinates: 0.0000000  0.0000000  0.2500000
+     Electronegativity: 1.31
+       Oxidation state: 2
+
+   Irreducible element: Nb1
+        Wyckoff letter: d
+         Site symmetry: 3m.
+         Cutoff radius: 2.526
+          Coordination: {'O': [1.94, 1.94, 1.94, 2.1, 2.1, 2.1]}
+      Equivalent atoms: 72..107
+Fractional coordinates: 0.1111111  0.2222222  0.0895098
+     Electronegativity: 1.6
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: .m.
+         Cutoff radius: 2.526
+          Coordination: {'Mg': [2.1], 'Nb': [1.94]}
+      Equivalent atoms: 108..215
+Fractional coordinates: 0.2765385  0.0567948  0.3364924
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: .2/m.
+         Cutoff radius: 2.73
+          Coordination: {'Nb': [2.1, 2.1]}
+      Equivalent atoms: 216..269
+Fractional coordinates: 0.1666667  0.0000000  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

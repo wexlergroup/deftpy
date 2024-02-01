@@ -1,0 +1,35 @@
+Space group: I4/mmm
+Transformation matrix: [1, 1, 2]  [1, -1, 0]  [3, 3, 0]
+Cell multiplicity: 12
+
+   Irreducible element: Li1
+        Wyckoff letter: i
+         Site symmetry: m2m.
+         Cutoff radius: 2.535
+          Coordination: {'Li': [2.5], 'O': [1.95, 1.95, 2.03, 2.03]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.3246958  -0.3246958  0.0000000
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Cu1
+        Wyckoff letter: h
+         Site symmetry: m.2m
+         Cutoff radius: 2.369
+          Coordination: {'O': [1.82, 1.82]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.3426767  -0.0000000  0.0000000
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: m2m.
+         Cutoff radius: 2.369
+          Coordination: {'Li': [1.95, 1.95, 2.03, 2.03], 'Cu': [1.82, 1.82]}
+      Equivalent atoms: 96..143
+Fractional coordinates: 0.1542501  -0.1542501  0.1666667
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,75 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-3, 3, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Mo1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.323
+          Coordination: {'O': [1.79, 1.79, 1.79, 1.81]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.8305283  0.0000000  0.1697020
+     Electronegativity: 2.16
+       Oxidation state: 6
+
+   Irreducible element: Pb1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.995
+          Coordination: {'O': [2.3, 2.3, 2.53, 2.58, 2.58]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.5107363  -0.0000000  0.1279860
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: Pb2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.996
+          Coordination: {'O': [2.3, 2.3, 2.45, 2.81, 2.81]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.1369922  -0.0000000  0.0554645
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: 2
+         Cutoff radius: 2.995
+          Coordination: {'Pb': [2.3, 2.3, 2.3, 2.3], 'O': [2.85, 2.92]}
+      Equivalent atoms: 72..95
+Fractional coordinates: 0.5000000  -0.0822578  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.324
+          Coordination: {'Mo': [1.79]}
+      Equivalent atoms: 96..119
+Fractional coordinates: 0.6984673  -0.0000000  0.1538875
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.323
+          Coordination: {'Mo': [1.79]}
+      Equivalent atoms: 120..143 168..191
+Fractional coordinates: 0.6466472  -0.0845237  0.3931188
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.349
+          Coordination: {'Mo': [1.81]}
+      Equivalent atoms: 144..167
+Fractional coordinates: 0.9122287  -0.0000000  0.3007325
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

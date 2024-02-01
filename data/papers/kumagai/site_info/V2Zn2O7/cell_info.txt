@@ -1,0 +1,65 @@
+Space group: C2/c
+Transformation matrix: [2, 2, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 16
+
+   Irreducible element: V1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.174
+          Coordination: {'O': [1.67, 1.72, 1.73, 1.78]}
+      Equivalent atoms: 0..63
+Fractional coordinates: 0.1299205  -0.1285720  0.3537180
+     Electronegativity: 1.63
+       Oxidation state: 5
+
+   Irreducible element: Zn1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.479
+          Coordination: {'O': [1.91, 1.95, 1.96, 2.05, 2.05]}
+      Equivalent atoms: 64..127
+Fractional coordinates: 0.1649667  -0.0387592  0.0111550
+     Electronegativity: 1.65
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.174
+          Coordination: {'V': [1.67], 'Zn': [1.91]}
+      Equivalent atoms: 128..191
+Fractional coordinates: 0.1146912  -0.0402166  0.3084949
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.239
+          Coordination: {'V': [1.72], 'Zn': [1.96, 2.05]}
+      Equivalent atoms: 192..255
+Fractional coordinates: 0.3044247  0.0479656  0.3013886
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.308
+          Coordination: {'V': [1.78, 1.78]}
+      Equivalent atoms: 256..287
+Fractional coordinates: 0.2500000  0.1605899  0.1250000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.25
+          Coordination: {'V': [1.73], 'Zn': [1.95, 2.05]}
+      Equivalent atoms: 288..351
+Fractional coordinates: 0.3583473  -0.1357470  0.1820967
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

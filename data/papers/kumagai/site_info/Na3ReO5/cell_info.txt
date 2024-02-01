@@ -1,0 +1,65 @@
+Space group: P3_121
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 1]
+Cell multiplicity: 9
+
+   Irreducible element: Na1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.959
+          Coordination: {'O': [2.28, 2.32, 2.34, 2.4, 2.47, 2.84]}
+      Equivalent atoms: 0..53
+Fractional coordinates: 0.2074071  0.3088969  0.5827284
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Na2
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 2.966
+          Coordination: {'O': [2.28, 2.28, 2.29, 2.29, 2.75, 2.75]}
+      Equivalent atoms: 54..80
+Fractional coordinates: 0.0000000  0.2409148  0.1666667
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Re1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.325
+          Coordination: {'O': [1.79, 1.82, 1.82, 1.85, 1.85]}
+      Equivalent atoms: 81..107
+Fractional coordinates: 0.0000000  0.2080868  0.6666667
+     Electronegativity: 1.9
+       Oxidation state: 0
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.406
+          Coordination: {'Na': [2.29, 2.4], 'Re': [1.85]}
+      Equivalent atoms: 108..134 162..188
+Fractional coordinates: 0.0532731  0.1678965  0.0626935
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.325
+          Coordination: {'Re': [1.79]}
+      Equivalent atoms: 135..161
+Fractional coordinates: -0.0000000  0.0989553  0.6666667
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.372
+          Coordination: {'Na': [2.28, 2.28, 2.32], 'Re': [1.82]}
+      Equivalent atoms: 189..242
+Fractional coordinates: 0.1080021  0.0530578  0.1090501
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,65 @@
+Space group: Pbam
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 5]
+Cell multiplicity: 20
+
+   Irreducible element: Ba1
+        Wyckoff letter: h
+         Site symmetry: ..m
+         Cutoff radius: 3.413
+          Coordination: {'O': [2.63, 2.63]}
+      Equivalent atoms: 0..79
+Fractional coordinates: 0.1221503  0.3812336  0.1000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ba2
+        Wyckoff letter: g
+         Site symmetry: ..m
+         Cutoff radius: 3.289
+          Coordination: {'O': [2.53]}
+      Equivalent atoms: 80..159
+Fractional coordinates: 0.0902985  0.4934513  0.0000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ba3
+        Wyckoff letter: g
+         Site symmetry: ..m
+         Cutoff radius: 3.286
+          Coordination: {'O': [2.53]}
+      Equivalent atoms: 160..239
+Fractional coordinates: 0.2368978  0.4136878  0.0000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Sb1
+        Wyckoff letter: h
+         Site symmetry: ..m
+         Cutoff radius: 3.725
+          Coordination: {'Ba': [3.54, 3.55, 3.64, 3.64, 3.71, 3.71, 3.72, 3.72], 'Sb': [2.87]}
+      Equivalent atoms: 240..319
+Fractional coordinates: 0.4933334  0.4436755  0.1000000
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: Sb2
+        Wyckoff letter: h
+         Site symmetry: ..m
+         Cutoff radius: 3.706
+          Coordination: {'Ba': [3.43, 3.6, 3.6, 3.63, 3.63], 'Sb': [2.85]}
+      Equivalent atoms: 320..399
+Fractional coordinates: 0.0564326  0.2616878  0.1000000
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: ..m
+         Cutoff radius: 3.286
+          Coordination: {'Ba': [2.53, 2.53, 2.63, 2.63]}
+      Equivalent atoms: 400..479
+Fractional coordinates: 0.1351264  0.4034299  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

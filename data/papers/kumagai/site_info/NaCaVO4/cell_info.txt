@@ -1,0 +1,55 @@
+Space group: Cmcm
+Transformation matrix: [3, 3, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 24
+
+   Irreducible element: Na1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 2.95
+          Coordination: {'O': [2.27, 2.27, 2.42, 2.42]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.1666667  0.1610793  0.3750000
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Ca1
+        Wyckoff letter: b
+         Site symmetry: 2/m..
+         Cutoff radius: 2.999
+          Coordination: {'O': [2.31, 2.31, 2.35, 2.35, 2.35, 2.35]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.1666667  0.0000000  0.2500000
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: V1
+        Wyckoff letter: c
+         Site symmetry: m2m
+         Cutoff radius: 2.208
+          Coordination: {'O': [1.7, 1.7, 1.75, 1.75]}
+      Equivalent atoms: 96..143
+Fractional coordinates: 0.1666667  -0.1765336  0.3750000
+     Electronegativity: 1.63
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: m..
+         Cutoff radius: 2.208
+          Coordination: {'V': [1.7]}
+      Equivalent atoms: 144..239
+Fractional coordinates: 0.1666667  0.1230441  0.0274196
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: g
+         Site symmetry: ..m
+         Cutoff radius: 2.274
+          Coordination: {'V': [1.75]}
+      Equivalent atoms: 240..335
+Fractional coordinates: 0.0803341  0.0176189  0.3750000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

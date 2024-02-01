@@ -1,0 +1,75 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 1]
+Cell multiplicity: 4
+
+   Irreducible element: Sr1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.191
+          Coordination: {'Cu': [3.18], 'O': [2.45, 2.47, 2.59, 2.62, 2.67, 2.71, 2.73, 2.73]}
+      Equivalent atoms: 0..3 8..11 16..19 28..31
+Fractional coordinates: 0.3560876  0.3833086  0.5604035
+     Electronegativity: 0.95
+       Oxidation state: 2
+
+   Irreducible element: Sr2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.207
+          Coordination: {'Cu': [3.14, 3.2, 3.2], 'O': [2.47, 2.49, 2.56, 2.64, 2.64, 2.7, 2.72, 2.74]}
+      Equivalent atoms: 4..7 12..15 20..27
+Fractional coordinates: 0.1439250  0.3619648  0.2053392
+     Electronegativity: 0.95
+       Oxidation state: 2
+
+   Irreducible element: Cu1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.314
+          Coordination: {'O': [1.78, 1.86, 1.89, 1.89, 2.16]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.0002699  0.3723611  0.3831841
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.456
+          Coordination: {'Cu': [1.89]}
+      Equivalent atoms: 48..51 80..83 88..91 96..99
+Fractional coordinates: 0.3458400  0.3637001  0.3109393
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.454
+          Coordination: {'Cu': [1.89]}
+      Equivalent atoms: 52..55 72..75 84..87 92..95
+Fractional coordinates: 0.1547069  0.3678705  0.4648652
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.314
+          Coordination: {'Cu': [1.78, 2.16]}
+      Equivalent atoms: 56..59 68..71 76..79 100..103
+Fractional coordinates: 0.0002518  0.2467816  0.2755912
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: c
+         Site symmetry: -1
+         Cutoff radius: 2.421
+          Coordination: {'Cu': [1.86, 1.86]}
+      Equivalent atoms: 60..67
+Fractional coordinates: -0.0000000  0.0000000  0.5000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

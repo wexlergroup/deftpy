@@ -1,0 +1,65 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: Ca1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.963
+          Coordination: {'O': [2.28, 2.28, 2.3, 2.35, 2.4, 2.4]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.7260208  -0.0000000  0.3306627
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: Ti1
+        Wyckoff letter: c
+         Site symmetry: 2/m
+         Cutoff radius: 2.555
+          Coordination: {'O': [1.97, 1.97, 1.97, 1.97, 1.97, 1.97]}
+      Equivalent atoms: 16..23
+Fractional coordinates: 0.0000000  0.0000000  0.2500000
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: Ti2
+        Wyckoff letter: g
+         Site symmetry: 2
+         Cutoff radius: 2.484
+          Coordination: {'O': [1.91, 1.91, 1.95, 1.95, 2.09, 2.09]}
+      Equivalent atoms: 24..39
+Fractional coordinates: 0.5000000  0.1176048  0.0000000
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.484
+          Coordination: {'Ca': [2.3], 'Ti': [1.91, 1.91]}
+      Equivalent atoms: 40..55
+Fractional coordinates: 0.3949114  -0.0000000  0.0247637
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.556
+          Coordination: {'Ca': [2.35], 'Ti': [1.97, 2.09, 2.09]}
+      Equivalent atoms: 56..71
+Fractional coordinates: 0.8998593  0.0000000  0.0464013
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.532
+          Coordination: {'Ca': [2.28, 2.4], 'Ti': [1.95, 1.97]}
+      Equivalent atoms: 72..103
+Fractional coordinates: 0.6053852  -0.1395705  0.1976790
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

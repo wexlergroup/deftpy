@@ -1,0 +1,45 @@
+Space group: P3_121
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 1]
+Cell multiplicity: 4
+
+   Irreducible element: Ga1
+        Wyckoff letter: a
+         Site symmetry: .2.
+         Cutoff radius: 2.386
+          Coordination: {'O': [1.84, 1.84, 1.84, 1.84]}
+      Equivalent atoms: 0..11
+Fractional coordinates: 0.2252869  0.0000000  0.3333333
+     Electronegativity: 1.81
+       Oxidation state: 3
+
+   Irreducible element: As1
+        Wyckoff letter: b
+         Site symmetry: .2.
+         Cutoff radius: 2.218
+          Coordination: {'O': [1.71, 1.71, 1.71, 1.71]}
+      Equivalent atoms: 12..23
+Fractional coordinates: 0.2243610  0.0000000  0.8333333
+     Electronegativity: 2.18
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.218
+          Coordination: {'Ga': [1.84], 'As': [1.71]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.1496615  0.1973929  0.1290093
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.222
+          Coordination: {'Ga': [1.84], 'As': [1.71]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.1973716  0.1592153  0.3812656
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

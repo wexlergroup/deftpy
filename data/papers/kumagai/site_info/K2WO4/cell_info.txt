@@ -1,0 +1,65 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: K1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.51
+          Coordination: {'K': [3.46], 'O': [2.7, 2.78, 2.78, 2.86, 2.92, 2.92, 3.24, 3.24]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.5095667  0.0000000  0.1173262
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.483
+          Coordination: {'O': [2.68, 2.77, 2.78, 2.78, 2.94, 2.94, 3.25, 3.25]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.1560085  -0.0000000  0.3741770
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: W1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.332
+          Coordination: {'O': [1.79, 1.79, 1.8, 1.8]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.1754546  0.0000000  0.1126066
+     Electronegativity: 2.36
+       Oxidation state: 6
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.332
+          Coordination: {'W': [1.79]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.6417394  -0.1307397  0.0369817
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.335
+          Coordination: {'W': [1.8]}
+      Equivalent atoms: 80..95
+Fractional coordinates: 0.9120615  0.0000000  0.3193905
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.336
+          Coordination: {'W': [1.8]}
+      Equivalent atoms: 96..111
+Fractional coordinates: 0.3333453  -0.0000000  0.1913919
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,65 @@
+Space group: I4/mmm
+Transformation matrix: [3, 3, 6]  [3, -3, 0]  [1, 1, 0]
+Cell multiplicity: 36
+
+   Irreducible element: Ba1
+        Wyckoff letter: e
+         Site symmetry: 4mm
+         Cutoff radius: 3.429
+          Coordination: {'O': [2.64, 2.84, 2.84, 2.84, 2.84, 2.94, 2.94, 2.94, 2.94]}
+      Equivalent atoms: 0..71
+Fractional coordinates: 0.0000000  0.6666667  0.1849814
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ba2
+        Wyckoff letter: a
+         Site symmetry: 4/mmm
+         Cutoff radius: 3.796
+          Coordination: {'Sn': [3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6], 'O': [2.92, 2.92, 2.92, 2.92, 2.92, 2.92, 2.92, 2.92, 2.94, 2.94, 2.94, 2.94]}
+      Equivalent atoms: 72..107
+Fractional coordinates: 0.0000000  0.6666667  0.0000000
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Sn1
+        Wyckoff letter: e
+         Site symmetry: 4mm
+         Cutoff radius: 2.687
+          Coordination: {'O': [2.07, 2.08, 2.08, 2.08, 2.08, 2.08]}
+      Equivalent atoms: 108..179
+Fractional coordinates: 0.0000000  0.6666667  0.5965140
+     Electronegativity: 1.96
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: 2mm.
+         Cutoff radius: 2.701
+          Coordination: {'Sn': [2.08, 2.08]}
+      Equivalent atoms: 180..251 324..395
+Fractional coordinates: 0.0833333  0.5833333  0.0953085
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 4mm
+         Cutoff radius: 2.687
+          Coordination: {'Ba': [2.64], 'Sn': [2.07]}
+      Equivalent atoms: 252..323
+Fractional coordinates: 0.0000000  0.6666667  0.6925058
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: b
+         Site symmetry: 4/mmm
+         Cutoff radius: 2.702
+          Coordination: {'Sn': [2.08, 2.08]}
+      Equivalent atoms: 396..431
+Fractional coordinates: 0.0000000  0.6666667  0.5000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

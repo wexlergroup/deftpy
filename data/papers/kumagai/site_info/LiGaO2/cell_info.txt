@@ -1,0 +1,45 @@
+Space group: Pna2_1
+Transformation matrix: [3, 0, 0]  [0, 2, 0]  [0, 0, 3]
+Cell multiplicity: 18
+
+   Irreducible element: Li1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.555
+          Coordination: {'O': [1.97, 1.98, 1.98, 1.98]}
+      Equivalent atoms: 0..71
+Fractional coordinates: 0.1939861  0.4378474  0.0000106
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Ga1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.406
+          Coordination: {'O': [1.85, 1.85, 1.86, 1.86]}
+      Equivalent atoms: 72..143
+Fractional coordinates: 0.1940633  0.1869350  0.0014094
+     Electronegativity: 1.81
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.409
+          Coordination: {'Li': [1.97, 1.98], 'Ga': [1.85, 1.86]}
+      Equivalent atoms: 144..215
+Fractional coordinates: 0.0233058  0.0568090  0.1248447
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.406
+          Coordination: {'Li': [1.98, 1.98], 'Ga': [1.85, 1.86]}
+      Equivalent atoms: 216..287
+Fractional coordinates: 0.1363072  0.0685503  0.2981353
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

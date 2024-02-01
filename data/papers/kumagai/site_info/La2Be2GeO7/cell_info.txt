@@ -1,0 +1,65 @@
+Space group: P-42_1m
+Transformation matrix: [0, 2, 0]  [-2, 0, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: La1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 3.117
+          Coordination: {'O': [2.4, 2.4, 2.49, 2.49, 2.56, 2.56, 2.66, 2.66]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.4198615  0.1698615  0.1672917
+     Electronegativity: 1.1
+       Oxidation state: 3
+
+   Irreducible element: Be1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.05
+          Coordination: {'O': [1.58, 1.59, 1.73, 1.73]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.4334509  0.3165491  0.0130333
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: Ge1
+        Wyckoff letter: a
+         Site symmetry: -4..
+         Cutoff radius: 2.317
+          Coordination: {'O': [1.78, 1.78, 1.78, 1.78]}
+      Equivalent atoms: 96..119
+Fractional coordinates: 0.2500000  0.2500000  0.0000000
+     Electronegativity: 2.01
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.248
+          Coordination: {'Be': [1.73], 'Ge': [1.78]}
+      Equivalent atoms: 120..191 264..287
+Fractional coordinates: 0.4121672  0.0387832  0.2655791
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 2.mm
+         Cutoff radius: 2.05
+          Coordination: {'Be': [1.58, 1.58]}
+      Equivalent atoms: 192..215
+Fractional coordinates: 0.2500000  0.5000000  0.2774934
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.065
+          Coordination: {'Be': [1.59]}
+      Equivalent atoms: 216..263
+Fractional coordinates: 0.1788221  0.4288221  0.0939877
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

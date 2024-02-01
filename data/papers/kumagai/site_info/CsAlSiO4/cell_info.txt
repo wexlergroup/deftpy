@@ -1,0 +1,75 @@
+Space group: Pna2_1
+Transformation matrix: [2, 0, 0]  [0, 2, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: Cs1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 3.968
+          Coordination: {'Al': [3.7, 3.81, 3.92, 3.94], 'Si': [3.72, 3.82, 3.87], 'O': [3.05, 3.07, 3.25, 3.28, 3.28, 3.39, 3.4, 3.4, 3.62, 3.64, 3.66, 3.82, 3.85]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.0005069  0.1484158  0.1622090
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Al1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.254
+          Coordination: {'O': [1.73, 1.74, 1.76, 1.76]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.4080883  0.0420054  0.3333021
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: Si1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.105
+          Coordination: {'O': [1.62, 1.63, 1.64, 1.64]}
+      Equivalent atoms: 96..143
+Fractional coordinates: 0.3451940  0.2076823  0.0000724
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.105
+          Coordination: {'Al': [1.73], 'Si': [1.62]}
+      Equivalent atoms: 144..191
+Fractional coordinates: 0.2548371  0.2057322  0.0001275
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.128
+          Coordination: {'Al': [1.76], 'Si': [1.64]}
+      Equivalent atoms: 192..239
+Fractional coordinates: 0.3764690  0.2359517  0.2445960
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.131
+          Coordination: {'Al': [1.76], 'Si': [1.64]}
+      Equivalent atoms: 240..287
+Fractional coordinates: 0.3763004  0.2610521  0.0720930
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: a
+         Site symmetry: 1
+         Cutoff radius: 2.113
+          Coordination: {'Al': [1.74], 'Si': [1.63]}
+      Equivalent atoms: 288..335
+Fractional coordinates: 0.3763742  0.1280799  0.0186000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

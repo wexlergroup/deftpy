@@ -1,0 +1,65 @@
+Space group: Pnma
+Transformation matrix: [1, 0, 0]  [0, 2, 0]  [0, 0, 3]
+Cell multiplicity: 6
+
+   Irreducible element: Ca1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.957
+          Coordination: {'O': [2.27, 2.36, 2.36, 2.42, 2.42, 2.43]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.2196788  0.3750000  0.1637197
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: Ca2
+        Wyckoff letter: a
+         Site symmetry: -1
+         Cutoff radius: 2.983
+          Coordination: {'Si': [2.94, 2.94], 'O': [2.29, 2.29, 2.34, 2.34, 2.38, 2.38]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.5000000  0.2500000  0.1666667
+     Electronegativity: 1.0
+       Oxidation state: 2
+
+   Irreducible element: Si1
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.127
+          Coordination: {'O': [1.64, 1.66, 1.66, 1.67]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.4039007  0.3750000  0.3091209
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: d
+         Site symmetry: 1
+         Cutoff radius: 2.152
+          Coordination: {'Si': [1.66]}
+      Equivalent atoms: 72..119
+Fractional coordinates: 0.6625756  0.2232476  0.0683293
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.166
+          Coordination: {'Si': [1.67]}
+      Equivalent atoms: 120..143
+Fractional coordinates: 0.5405069  0.3750000  0.2652139
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: .m.
+         Cutoff radius: 2.127
+          Coordination: {'Si': [1.64]}
+      Equivalent atoms: 144..167
+Fractional coordinates: 0.9073146  0.3750000  0.0832200
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,55 @@
+Space group: Ibam
+Transformation matrix: [0, 2, 2]  [1, 0, 1]  [1, 1, 0]
+Cell multiplicity: 4
+
+   Irreducible element: Rb1
+        Wyckoff letter: j
+         Site symmetry: ..m
+         Cutoff radius: 4.01
+          Coordination: {'Rb': [3.39, 3.39, 3.4, 3.63], 'Li': [3.23, 3.23, 3.3, 3.3, 3.36, 3.36], 'Ga': [3.36, 3.36], 'O': [3.08, 3.08, 3.1, 3.1, 3.11, 3.11, 3.11, 3.11, 3.75, 3.75]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.1165956  0.1292349  -0.0000000
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Li1
+        Wyckoff letter: g
+         Site symmetry: .2.
+         Cutoff radius: 2.571
+          Coordination: {'Li': [2.34, 2.46, 2.46], 'Ga': [2.53], 'O': [1.98, 1.98, 2.01, 2.01]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.0000000  0.2400779  0.2500000
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Li2
+        Wyckoff letter: a
+         Site symmetry: 222
+         Cutoff radius: 2.558
+          Coordination: {'Li': [2.34, 2.34], 'Ga': [2.45, 2.45], 'O': [1.97, 1.97, 1.97, 1.97]}
+      Equivalent atoms: 32..39
+Fractional coordinates: 0.0000000  -0.0000000  0.2500000
+     Electronegativity: 0.98
+       Oxidation state: 1
+
+   Irreducible element: Ga1
+        Wyckoff letter: b
+         Site symmetry: 222
+         Cutoff radius: 2.436
+          Coordination: {'O': [1.87, 1.87, 1.87, 1.87]}
+      Equivalent atoms: 40..47
+Fractional coordinates: 0.2500000  -0.0000000  0.2500000
+     Electronegativity: 1.81
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: k
+         Site symmetry: 1
+         Cutoff radius: 2.436
+          Coordination: {'Li': [1.97, 1.98, 2.01], 'Ga': [1.87]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.1325181  0.1191415  0.3311055
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,75 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 1, 0]  [0, 0, 2]
+Cell multiplicity: 4
+
+   Irreducible element: As1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.3
+          Coordination: {'O': [1.77, 1.82, 1.84]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.3626447  0.0812624  0.1453853
+     Electronegativity: 2.18
+       Oxidation state: -3
+
+   Irreducible element: As2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.295
+          Coordination: {'O': [1.77, 1.85, 1.86]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.1903178  0.1448737  0.2440315
+     Electronegativity: 2.18
+       Oxidation state: -3
+
+   Irreducible element: Pb1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.961
+          Coordination: {'O': [2.28, 2.33, 2.45, 2.47]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.4960076  0.3509374  0.2011968
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.364
+          Coordination: {'As': [1.82, 1.86]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.2280510  0.0831825  0.1239942
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.397
+          Coordination: {'As': [1.84, 1.85]}
+      Equivalent atoms: 64..79
+Fractional coordinates: 0.0998283  0.0285841  0.2374756
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.3
+          Coordination: {'As': [1.77]}
+      Equivalent atoms: 80..95
+Fractional coordinates: 0.4059549  0.1998693  0.2411215
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.295
+          Coordination: {'As': [1.77], 'Pb': [2.28]}
+      Equivalent atoms: 96..111
+Fractional coordinates: 0.0980781  0.2664207  0.3926939
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

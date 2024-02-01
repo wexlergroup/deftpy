@@ -1,16 +1,12 @@
-import logging
+""" Get crystal features for structures in Yu Kumagai's Physical Review Materials Paper """
 import os
-import tempfile
 import tarfile
 from glob import glob
 
-from concurrent.futures import ThreadPoolExecutor, TimeoutError
-
-
 import matplotlib.pyplot as plt
 import pandas as pd
+from pymatgen.io.cif import CifParser
 from pymatgen.io.vasp import Poscar
-from pathlib import Path
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 from crystal_analysis import Crystal
@@ -18,68 +14,10 @@ from pymatgen.core import Structure, Composition, Element
 import subprocess
 import numpy as np
 from tqdm import tqdm
-
-logging.basicConfig(filename='defect_processing.log', level=logging.INFO)
-
-structures = []
-Eb_sum = []
-successful_defects = []
-failed_defects = []
-timed_out_defects = []
-
-def process_structure(defect, df_plot, data_path):
-    temp_dir = tempfile.TemporaryDirectory()
-    try:
-        print(f"Processing defect: {defect}")
-        df_defect = df_plot[df_plot["vacancy_formation_energy"] == defect]
-        full_name = df_defect["full_name"].iloc[0]
-        formula = df_defect["formula"].iloc[0]
-        charge = df_plot["charge"].iloc[0]
-
-        with tarfile.open(glob(data_path + "oxygen_vacancies_db_data/" + formula + ".tar.gz")[0], "r:gz") as outer_tar:
-            print('check2')
-            outer_tar.extractall(path=temp_dir.name)
-            inner_tar_path = temp_dir.name + "/" + str(formula) + "/" + str(full_name) + "_" + str(charge) + ".tar.gz"
-
-            with tarfile.open(inner_tar_path, "r:gz") as inner_tar:
-                print('check2.1')
-                d = inner_tar.extractfile("CONTCAR-finish")
-                print('check2.15')
-                contcar = d.read().decode("utf-8")
-                print('check2.2')
-                poscar = Poscar.from_str(contcar)
-                #crystal = Crystal(poscar_string=poscar)
-                structure = poscar.structure
-                print(structure)
-                #assign oxidation states
-                print('check2.45')
-                oxi_states = {"O": -2, str(df_plot.loc[df_plot['full_name'] == full_name, "metal"].iloc[0]): float(df_plot.loc[df_plot['full_name'] == full_name, "oxi_state"].iloc[0])}
-                structure_copy = structure.copy()
-                structure_copy.add_oxidation_state_by_element(oxidation_states=oxi_states)
-                print('check2.47')
-                crystal = Crystal(pymatgen_structure=structure_copy)
-                print('check2.49')
-                print(crystal)
-                structures.append(crystal)
-                CN = crystal.cn_dicts
-                Eb = crystal.bond_dissociation_enthalpies
-                Vr = crystal.reduction_potentials
-                # Calculate CN-weighted Eb sum
-
-                for CN_dict, Eb_dict in zip(CN, Eb):
-                    CN_array = np.array(list(CN_dict.values()))
-                    Eb_array = np.array(list(Eb_dict.values()))
-                    Eb_sum.append(np.sum(CN_array * Eb_array))
-        return True
-        
-    except Exception as e:
-        print(f"Error processing defect {defect}: {e}")
-        return False
-    finally:
-        temp_dir.cleanup()
+from adjustText import adjust_text
 
 def main():
-    data_path = '../data/papers/kumagai/'
+    data_path = "../data/papers/kumagai/"
     # Li2O
     with tarfile.open(glob(data_path +"oxygen_vacancies_db_data/Li2O/*0.tar.gz")[0], "r:gz") as tar:
         # Read the member with the name "CONTCAR-finish"
@@ -116,8 +54,9 @@ def main():
     # Remove unnecessary columns
     df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
                          "vacancy_formation_energy", "charge"]].reset_index(drop=True)
-    df_plot.to_csv("../data/papers/kumagai/figures/Kumagai_binary_clean.csv")
+    df_plot.to_csv("Kumagai_binary_clean.csv")
     #exit(4)
+
 
     # Calculate crystal reduction potentials
     n_atoms = []  # number of atoms in the compound formula
@@ -140,35 +79,121 @@ def main():
     df_plot["n_metal"] = n_metals
     df_plot["oxi_state"] = oxi_states
     df_plot["vr"] = df_plot["n_atoms"] * df_plot["formation_energy"] / df_plot["n_metal"] / df_plot["oxi_state"]
+    #print(df_plot[["formula", "metal", "oxi_state"]])
+
+    # using corrected structure files
+    structures = []
+    Eb_sum = []
+
+    for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
+        df_defect = df_plot[df_plot["vacancy_formation_energy"] == defect]
+        #print(df_defect)
+        formula = df_defect["formula"].iloc[0]
+        print(formula)
+        full_name = df_defect["full_name"].iloc[0]
+        #print(full_name)
+        metal = df_defect["metal"].iloc[0]
+        #print(metal)
+        oxi_state_metal = df_defect["oxi_state"].iloc[0]
+        #print(oxi_state_metal)
+        with tarfile.open(glob(data_path + "site_info.tar.gz")[0], "r:gz") as tar:
+            tar.extractall(path=data_path)
+            #print("tarred file extracted")
+            cif_path = os.path.join(data_path, "site_info", formula, "supercell.cif")
+            #print(cif_path)
+            if os.path.exists(cif_path):
+                #print("path exisits")
+                parser = CifParser(cif_path)
+                #print(parser)
+                parser_list = parser.parse_structures(primitive=True)
+                print(f"parser list length: {len(parser_list)}")
+                if parser_list:
+                    structure = parser.parse_structures(primitive=True)[0]
+
+                    oxi_states = {"O": -2, metal: oxi_state_metal}
+                    # structure_copy = structure.copy()
+                    structure.add_oxidation_state_by_element(oxidation_states=oxi_states)
+                    #print("ox states added")
+                    structures.append(structure)
+                    crystal = Crystal(pymatgen_structure=structure)
+                    #print("structure passed to crystal object")
+
+                    CN = crystal.cn_dicts
+                    Eb = crystal.bond_dissociation_enthalpies
+
+                    # Eb_sum = [
+                    #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
+                    #     for cn, be in zip(CN, Eb)
+                    # ]
+
+                    # print(f"Eb_sum length: {len(Eb_sum)}")
+                    
+                    Eb_sum = []
+                    for CN_dict, Eb_dict in zip(CN, Eb):
+                        CN_array = np.array(list(CN_dict.values()))
+                        Eb_array = np.array(list(Eb_dict.values()))
+                        Eb_sum.append(np.sum(CN_array * Eb_array))
+                        print(CN_array, Eb_array)
+                    print("length is " + str(len(Eb_sum)))
+                else:
+                    print(f"Error: List empty - {parser_list}")
+            else:
+                print(f"Error: File not found - {cif_path}")
+    df_plot["Eb_sum"] = Eb_sum
+    print(df_plot["Eb_sum"])
+    exit(234)
 
     # calculate sum Eb
-    TIMEOUT_SECONDS = 120
+    structures = []
+    Eb_sum = []
+    for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
+    #for full_name in tqdm(df_plot["full_name"].unique()):
+        # these four lines might be unnecessary ... idrk
+        df_defect = df_plot[df_plot["vacancy_formation_energy"] == defect]
+        full_name = df_defect["full_name"].iloc[0]
+        print(full_name)
+        formula = df_defect["formula"].iloc[0]
+        charge = df_plot["charge"].iloc[0]
 
-    with ThreadPoolExecutor(max_workers=1) as executor:
-        for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
-            executor = ThreadPoolExecutor(max_workers=1)
-            future = executor.submit(process_structure, defect, df_plot, data_path)
-            try:
-                success = future.result(timeout=TIMEOUT_SECONDS)
-                if success:
-                    successful_defects.append(defect)
-                    print(f"Processing for defect {defect} succeeded.")
-                    logging.info(f"Processing for defect {defect} succeeded.")
-                if not success:
-                    failed_defects.append(defect)
-                    logging.info(f"Processing for defect {defect} failed.")
-            except TimeoutError:
-                timed_out_defects.append(defect)
-                print(f"Processing for defect {defect} timed out.")
-                logging.info(f"Processing for defect {defect} timed out.")
-    
-    logging.info(f"Total defects processed: {len(df_plot['vacancy_formation_energy'].unique())}")
-    logging.info(f"Successful defects: {successful_defects}")
-    logging.info(f"Failed defects: {failed_defects}")
-    logging.info(f"Timed out defects: {timed_out_defects}")
+        # Open the outer tar.gz file
+        with tarfile.open(glob(data_path + "oxygen_vacancies_db_data/" + formula + ".tar.gz")[0], "r:gz") as outer_tar:
+            # Specify the path to the inner tar.gz file within the outer tar.gz file
+            inner_tar_path = str(str(formula) + "/" + str(full_name) + "_" + str(charge) + ".tar.gz")
+
+            # Extract the inner tar.gz file from the outer tar.gz file
+            inner_tar_info = outer_tar.getmember(inner_tar_path)
+            inner_tar_file = outer_tar.extractfile(inner_tar_info)
+
+            # Open the inner tar.gz file
+            with tarfile.open(fileobj=inner_tar_file, mode="r:gz") as inner_tar:
+                # obtain the contcar file
+                d = inner_tar.extractfile("CONTCAR-finish")
+                contcar = d.read().decode("utf-8")
+                poscar = Poscar.from_str(contcar)
+                #crystal = Crystal(poscar_string=poscar)
+                #pass poscar to a structure object
+                structure = poscar.structure
+                #assign oxidation states
+                oxi_states = {"O": -2, str(df_plot.loc[df_plot['full_name'] == full_name, "metal"].iloc[0]): float(df_plot.loc[df_plot['full_name'] == full_name, "oxi_state"].iloc[0])}
+                structure_copy = structure.copy()
+                structure_copy.add_oxidation_state_by_element(oxidation_states=oxi_states)
+                #print(structure_copy)
+                crystal = Crystal(pymatgen_structure=structure_copy)
+                structures.append(crystal)
+                #print(structures)
+                CN = crystal.cn_dicts
+                Eb = crystal.bond_dissociation_enthalpies
+                #Vr = crystal.reduction_potentials
+
+                # Calculate CN-weighted Eb sum
+
+                for CN_dict, Eb_dict in zip(CN, Eb):
+                    CN_array = np.array(list(CN_dict.values()))
+                    Eb_array = np.array(list(Eb_dict.values()))
+                    Eb_sum.append(np.sum(CN_array * Eb_array))
 
     print(Eb_sum)
-    # exit(12)
+    exit(12)
 
     # Fit basic crystal feature model (cfm)
     fig, axs = plt.subplots(ncols=3, figsize=(12, 4))
@@ -208,7 +233,7 @@ def main():
             axs[i].set_ylabel("$E_v$ (eV)")
 
     plt.tight_layout()
-    plt.savefig("../data/papers/kumagai/figures/kumagai_fit_binary_test.png", dpi=300)
+    plt.savefig("kumagai_fit_binary_test.png", dpi=300)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,25 @@
+Space group: P4_2/mnm
+Transformation matrix: [0, 2, 0]  [-2, 0, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: Sn1
+        Wyckoff letter: a
+         Site symmetry: m.mm
+         Cutoff radius: 2.689
+          Coordination: {'O': [2.07, 2.07, 2.07, 2.07, 2.07, 2.07]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.2500000  0.2500000  0.1666667
+     Electronegativity: 1.96
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: g
+         Site symmetry: m.2m
+         Cutoff radius: 2.689
+          Coordination: {'Sn': [2.07, 2.07, 2.07], 'O': [2.62]}
+      Equivalent atoms: 24..71
+Fractional coordinates: 0.0968648  0.0968648  0.1666667
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

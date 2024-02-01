@@ -1,0 +1,65 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-2, 2, 0]  [0, 0, 2]
+Cell multiplicity: 8
+
+   Irreducible element: K1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.515
+          Coordination: {'K': [3.47], 'O': [2.7, 2.79, 2.79, 2.86, 2.89, 2.89, 3.21, 3.21]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.5115016  0.0000000  0.1181442
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.493
+          Coordination: {'O': [2.69, 2.77, 2.77, 2.78, 2.93, 2.93, 3.22, 3.22]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.1563232  0.0000000  0.3746041
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Mo1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.327
+          Coordination: {'O': [1.79, 1.79, 1.79, 1.79]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.1755193  0.0000000  0.1121334
+     Electronegativity: 2.16
+       Oxidation state: 6
+
+   Irreducible element: O1
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.327
+          Coordination: {'Mo': [1.79]}
+      Equivalent atoms: 48..79
+Fractional coordinates: 0.6415554  -0.1302815  0.0366606
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.33
+          Coordination: {'Mo': [1.79]}
+      Equivalent atoms: 80..95
+Fractional coordinates: 0.9116469  0.0000000  0.3194864
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.332
+          Coordination: {'Mo': [1.79]}
+      Equivalent atoms: 96..111
+Fractional coordinates: 0.3332337  0.0000000  0.1900388
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

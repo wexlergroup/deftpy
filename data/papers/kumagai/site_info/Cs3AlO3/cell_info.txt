@@ -1,0 +1,75 @@
+Space group: P2_1/c
+Transformation matrix: [2, 0, 0]  [0, 1, 0]  [0, 0, 2]
+Cell multiplicity: 4
+
+   Irreducible element: Cs1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.803
+          Coordination: {'Cs': [3.59, 3.72, 3.79, 3.79], 'Al': [3.36, 3.54], 'O': [2.93, 2.97, 3.01, 3.23, 3.24, 3.51]}
+      Equivalent atoms: 0..3 8..11 16..19 24..27
+Fractional coordinates: 0.0367357  0.3018424  0.4338475
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Cs2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.602
+          Coordination: {'Al': [3.4, 3.57], 'O': [2.77, 2.9, 3.07, 3.58]}
+      Equivalent atoms: 4..7 12..15 28..31 44..47
+Fractional coordinates: 0.2390545  0.6548466  0.2798453
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Cs3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 3.737
+          Coordination: {'Cs': [3.59, 3.72], 'Al': [3.53, 3.58], 'O': [2.87, 2.99, 3.03, 3.04, 3.13]}
+      Equivalent atoms: 20..23 32..43
+Fractional coordinates: 0.3639871  0.4416570  0.0072554
+     Electronegativity: 0.79
+       Oxidation state: 1
+
+   Irreducible element: Al1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.287
+          Coordination: {'O': [1.76, 1.77, 1.83, 1.84]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.4290585  0.5469637  0.2570924
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.304
+          Coordination: {'Al': [1.77]}
+      Equivalent atoms: 64..67 80..91
+Fractional coordinates: 0.1648879  0.1014713  0.1005350
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.383
+          Coordination: {'Al': [1.83, 1.84]}
+      Equivalent atoms: 68..75 92..95 104..107
+Fractional coordinates: 0.0447464  0.5882341  0.2639066
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.287
+          Coordination: {'Al': [1.76]}
+      Equivalent atoms: 76..79 96..103 108..111
+Fractional coordinates: 0.4173967  0.9302929  0.1236644
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

@@ -1,0 +1,55 @@
+Space group: Pbcm
+Transformation matrix: [3, 0, 0]  [0, 1, 0]  [0, 0, 1]
+Cell multiplicity: 3
+
+   Irreducible element: Mg1
+        Wyckoff letter: d
+         Site symmetry: ..m
+         Cutoff radius: 2.712
+          Coordination: {'O': [2.09, 2.1, 2.19, 2.19, 2.23, 2.23, 2.47, 2.47]}
+      Equivalent atoms: 0..11
+Fractional coordinates: 0.2909986  0.1524155  0.2500000
+     Electronegativity: 1.31
+       Oxidation state: 2
+
+   Irreducible element: Cu1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.358
+          Coordination: {'O': [1.81, 1.82, 1.83, 1.83]}
+      Equivalent atoms: 12..35
+Fractional coordinates: 0.1154401  0.3853827  0.0695294
+     Electronegativity: 1.9
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: e
+         Site symmetry: 1
+         Cutoff radius: 2.36
+          Coordination: {'Mg': [2.19, 2.23], 'Cu': [1.82, 1.83]}
+      Equivalent atoms: 36..41 45..50 54..56 66..68 78..83
+Fractional coordinates: 0.2117169  0.5434402  0.3831635
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: c
+         Site symmetry: 2..
+         Cutoff radius: 2.358
+          Coordination: {'Cu': [1.81, 1.81]}
+      Equivalent atoms: 42..44 60..65 75..77
+Fractional coordinates: 0.3313905  0.2500000  0.5000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: d
+         Site symmetry: ..m
+         Cutoff radius: 2.377
+          Coordination: {'Mg': [2.09, 2.1], 'Cu': [1.83, 1.83]}
+      Equivalent atoms: 51..53 57..59 69..74
+Fractional coordinates: 0.1231986  0.2006378  0.7500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

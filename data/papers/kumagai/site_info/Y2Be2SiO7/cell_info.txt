@@ -1,0 +1,65 @@
+Space group: P-42_1m
+Transformation matrix: [0, 2, 0]  [-2, 0, 0]  [0, 0, 3]
+Cell multiplicity: 12
+
+   Irreducible element: Y1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.912
+          Coordination: {'O': [2.24, 2.29, 2.34, 2.34, 2.38, 2.38, 2.61, 2.61]}
+      Equivalent atoms: 0..47
+Fractional coordinates: 0.1706343  0.4206343  0.1689714
+     Electronegativity: 1.22
+       Oxidation state: 3
+
+   Irreducible element: Be1
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.034
+          Coordination: {'O': [1.56, 1.58, 1.69, 1.69]}
+      Equivalent atoms: 48..95
+Fractional coordinates: 0.3186953  0.4313047  0.0138076
+     Electronegativity: 1.57
+       Oxidation state: 2
+
+   Irreducible element: Si1
+        Wyckoff letter: a
+         Site symmetry: -4..
+         Cutoff radius: 2.128
+          Coordination: {'O': [1.64, 1.64, 1.64, 1.64]}
+      Equivalent atoms: 96..119
+Fractional coordinates: 0.2500000  0.2500000  0.0000000
+     Electronegativity: 1.9
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.128
+          Coordination: {'Be': [1.69], 'Si': [1.64]}
+      Equivalent atoms: 120..215
+Fractional coordinates: 0.0815108  0.0409480  0.0675027
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: e
+         Site symmetry: ..m
+         Cutoff radius: 2.06
+          Coordination: {'Be': [1.58]}
+      Equivalent atoms: 216..263
+Fractional coordinates: 0.4292704  0.1792704  0.0975739
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: 2.mm
+         Cutoff radius: 2.034
+          Coordination: {'Be': [1.56, 1.56]}
+      Equivalent atoms: 264..287
+Fractional coordinates: 0.0000000  0.2500000  0.2722379
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

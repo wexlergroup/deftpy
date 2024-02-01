@@ -1,0 +1,35 @@
+Space group: I4/mmm
+Transformation matrix: [2, 0, 2]  [0, -2, -2]  [4, 4, 0]
+Cell multiplicity: 32
+
+   Irreducible element: Na1
+        Wyckoff letter: j
+         Site symmetry: m2m.
+         Cutoff radius: 2.993
+          Coordination: {'O': [2.3, 2.3, 2.32, 2.32]}
+      Equivalent atoms: 0..127
+Fractional coordinates: 0.1694444  0.5000000  0.1250000
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Ag1
+        Wyckoff letter: h
+         Site symmetry: m.2m
+         Cutoff radius: 2.658
+          Coordination: {'O': [2.04, 2.04]}
+      Equivalent atoms: 128..255
+Fractional coordinates: 0.1708359  0.3291641  0.1250000
+     Electronegativity: 1.93
+       Oxidation state: 1
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: m2m.
+         Cutoff radius: 2.658
+          Coordination: {'Na': [2.3, 2.3, 2.32, 2.32], 'Ag': [2.04, 2.04]}
+      Equivalent atoms: 256..383
+Fractional coordinates: 0.1551113  0.5000000  0.0000000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

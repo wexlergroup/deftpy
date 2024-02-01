@@ -1,0 +1,35 @@
+Space group: R3m
+Transformation matrix: [3, -3, 0]  [0, 3, -3]  [2, 2, 2]
+Cell multiplicity: 54
+
+   Irreducible element: Ba1
+        Wyckoff letter: a
+         Site symmetry: 3m
+         Cutoff radius: 3.609
+          Coordination: {'Ti': [3.41, 3.45, 3.45, 3.45, 3.49, 3.49, 3.49, 3.54], 'O': [2.78, 2.78, 2.78, 2.83, 2.83, 2.83, 2.83, 2.83, 2.83, 2.9, 2.9, 2.9]}
+      Equivalent atoms: 0..53
+Fractional coordinates: -0.0000000  0.0000000  0.4987195
+     Electronegativity: 0.89
+       Oxidation state: 2
+
+   Irreducible element: Ti1
+        Wyckoff letter: a
+         Site symmetry: 3m
+         Cutoff radius: 2.481
+          Coordination: {'O': [1.91, 1.91, 1.91, 2.1, 2.1, 2.1]}
+      Equivalent atoms: 54..107
+Fractional coordinates: 0.0000000  0.0000000  0.2536432
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: .m
+         Cutoff radius: 2.481
+          Coordination: {'Ti': [1.91, 2.1]}
+      Equivalent atoms: 108..269
+Fractional coordinates: -0.0551090  -0.1102180  0.3261291
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

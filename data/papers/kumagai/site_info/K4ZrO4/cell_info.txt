@@ -1,0 +1,95 @@
+Space group: P-1
+Transformation matrix: [3, 0, 0]  [0, 3, 0]  [0, 0, 2]
+Cell multiplicity: 18
+
+   Irreducible element: K1
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 3.554
+          Coordination: {'K': [3.53], 'Zr': [3.44, 3.48], 'O': [2.73, 2.75, 2.76, 2.84, 2.92]}
+      Equivalent atoms: 0..35
+Fractional coordinates: 0.3184580  0.0764304  0.3052063
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K2
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 3.49
+          Coordination: {'K': [3.41, 3.45], 'O': [2.68, 2.75, 2.76, 2.79, 3.43]}
+      Equivalent atoms: 36..71
+Fractional coordinates: 0.1329141  0.0897102  0.4129016
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K3
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 3.441
+          Coordination: {'K': [3.41], 'O': [2.65, 2.67, 2.69, 2.71]}
+      Equivalent atoms: 72..107
+Fractional coordinates: 0.0800816  0.2535586  0.4905655
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: K4
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 3.521
+          Coordination: {'K': [3.34], 'Zr': [3.46], 'O': [2.71, 2.74, 2.76, 2.79, 2.87]}
+      Equivalent atoms: 108..143
+Fractional coordinates: 0.1610168  0.2434031  0.2805962
+     Electronegativity: 0.82
+       Oxidation state: 1
+
+   Irreducible element: Zr1
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 2.561
+          Coordination: {'O': [1.97, 1.98, 1.98, 1.99]}
+      Equivalent atoms: 144..179
+Fractional coordinates: 0.2813905  0.2403928  0.3778650
+     Electronegativity: 1.33
+       Oxidation state: 4
+
+   Irreducible element: O1
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 2.572
+          Coordination: {'Zr': [1.98]}
+      Equivalent atoms: 180..215
+Fractional coordinates: 0.2355717  0.3215202  0.3136946
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 2.583
+          Coordination: {'Zr': [1.99]}
+      Equivalent atoms: 216..251
+Fractional coordinates: 0.2818490  0.1530160  0.1788876
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 2.574
+          Coordination: {'Zr': [1.98]}
+      Equivalent atoms: 252..287
+Fractional coordinates: 0.2175229  0.1782580  0.4026463
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: i
+         Site symmetry: 1
+         Cutoff radius: 2.561
+          Coordination: {'Zr': [1.97]}
+      Equivalent atoms: 288..323
+Fractional coordinates: 0.2822623  0.2830903  0.4609851
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

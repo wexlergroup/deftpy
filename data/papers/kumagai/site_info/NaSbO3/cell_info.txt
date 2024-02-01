@@ -1,0 +1,35 @@
+Space group: R-3
+Transformation matrix: [3, -3, 0]  [0, 3, -3]  [1, 1, 1]
+Cell multiplicity: 27
+
+   Irreducible element: Na1
+        Wyckoff letter: c
+         Site symmetry: 3.
+         Cutoff radius: 2.984
+          Coordination: {'O': [2.3, 2.3, 2.3, 2.52, 2.52, 2.52]}
+      Equivalent atoms: 0..53
+Fractional coordinates: 0.0000000  0.0000000  0.3612164
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Sb1
+        Wyckoff letter: c
+         Site symmetry: 3.
+         Cutoff radius: 2.597
+          Coordination: {'O': [2.0, 2.0, 2.0, 2.03, 2.03, 2.03]}
+      Equivalent atoms: 54..107
+Fractional coordinates: -0.0000000  -0.0000000  0.1604169
+     Electronegativity: 2.05
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.597
+          Coordination: {'Na': [2.3, 2.52], 'Sb': [2.0, 2.03], 'O': [2.59]}
+      Equivalent atoms: 108..269
+Fractional coordinates: -0.1292866  -0.0037710  0.4282800
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

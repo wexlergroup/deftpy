@@ -1,0 +1,45 @@
+Space group: R-3
+Transformation matrix: [2, -2, 0]  [0, 2, -2]  [1, 1, 1]
+Cell multiplicity: 12
+
+   Irreducible element: Ti1
+        Wyckoff letter: c
+         Site symmetry: 3.
+         Cutoff radius: 2.467
+          Coordination: {'O': [1.9, 1.9, 1.9, 2.1, 2.1, 2.1]}
+      Equivalent atoms: 0..23
+Fractional coordinates: -0.0000000  -0.0000000  0.2711135
+     Electronegativity: 1.54
+       Oxidation state: 4
+
+   Irreducible element: Nb1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.653
+          Coordination: {'O': [2.04, 2.08, 2.11, 2.15, 2.21]}
+      Equivalent atoms: 24..95
+Fractional coordinates: 0.1788228  -0.0565927  0.5890506
+     Electronegativity: 1.6
+       Oxidation state: 5
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.467
+          Coordination: {'Ti': [1.9], 'Nb': [2.04, 2.11]}
+      Equivalent atoms: 96..167
+Fractional coordinates: -0.0835088  0.0349385  0.3335766
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.707
+          Coordination: {'Ti': [2.1], 'Nb': [2.08, 2.15, 2.21], 'O': [2.68, 2.68, 2.7]}
+      Equivalent atoms: 168..239
+Fractional coordinates: 0.0772906  -0.1516576  0.4935884
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

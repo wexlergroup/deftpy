@@ -1,0 +1,55 @@
+Space group: Ama2
+Transformation matrix: [2, 0, 0]  [0, 2, -2]  [0, 3, 3]
+Cell multiplicity: 24
+
+   Irreducible element: Al1
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.284
+          Coordination: {'O': [1.76, 1.76, 1.77, 1.77]}
+      Equivalent atoms: 0..95
+Fractional coordinates: 0.2769468  -0.0862373  0.1560455
+     Electronegativity: 1.61
+       Oxidation state: 3
+
+   Irreducible element: Pb1
+        Wyckoff letter: b
+         Site symmetry: m..
+         Cutoff radius: 2.993
+          Coordination: {'O': [2.3, 2.41, 2.41, 2.76, 2.76]}
+      Equivalent atoms: 96..143
+Fractional coordinates: 0.3750000  0.2367458  0.1678982
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: b
+         Site symmetry: m..
+         Cutoff radius: 2.302
+          Coordination: {'Al': [1.77, 1.77]}
+      Equivalent atoms: 144..191
+Fractional coordinates: 0.3750000  -0.0943817  0.1161733
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: a
+         Site symmetry: ..2
+         Cutoff radius: 2.284
+          Coordination: {'Al': [1.76, 1.76]}
+      Equivalent atoms: 192..239
+Fractional coordinates: 0.2500000  -0.0000000  0.1163134
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: c
+         Site symmetry: 1
+         Cutoff radius: 2.293
+          Coordination: {'Al': [1.76, 1.77]}
+      Equivalent atoms: 240..335
+Fractional coordinates: 0.2778769  0.1561791  0.1045952
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

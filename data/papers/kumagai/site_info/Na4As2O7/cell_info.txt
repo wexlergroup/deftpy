@@ -1,0 +1,75 @@
+Space group: C2/c
+Transformation matrix: [2, 2, 0]  [-1, 1, 0]  [0, 0, 1]
+Cell multiplicity: 4
+
+   Irreducible element: Na1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 3.023
+          Coordination: {'O': [2.33, 2.33, 2.36, 2.37, 2.41, 2.97]}
+      Equivalent atoms: 0..15
+Fractional coordinates: 0.3287754  -0.3245092  0.3716797
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: Na2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.898
+          Coordination: {'O': [2.23, 2.31, 2.33, 2.42, 2.81]}
+      Equivalent atoms: 16..31
+Fractional coordinates: 0.3457314  -0.0105289  0.9047508
+     Electronegativity: 0.93
+       Oxidation state: 1
+
+   Irreducible element: As1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.195
+          Coordination: {'O': [1.69, 1.69, 1.69, 1.82]}
+      Equivalent atoms: 32..47
+Fractional coordinates: 0.1776306  0.3458362  0.1378392
+     Electronegativity: 2.18
+       Oxidation state: -3
+
+   Irreducible element: O1
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.199
+          Coordination: {'As': [1.69]}
+      Equivalent atoms: 48..63
+Fractional coordinates: 0.1157698  -0.2075391  0.6857636
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.195
+          Coordination: {'As': [1.69]}
+      Equivalent atoms: 64..79
+Fractional coordinates: 0.3375042  0.0346436  0.5920505
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: f
+         Site symmetry: 1
+         Cutoff radius: 2.198
+          Coordination: {'As': [1.69]}
+      Equivalent atoms: 80..95
+Fractional coordinates: 0.2847780  -0.3198344  0.5545711
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: e
+         Site symmetry: 2
+         Cutoff radius: 2.366
+          Coordination: {'As': [1.82, 1.82]}
+      Equivalent atoms: 96..103
+Fractional coordinates: 0.2500000  0.4346527  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials

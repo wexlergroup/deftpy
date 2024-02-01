@@ -1,0 +1,75 @@
+Space group: C2/m
+Transformation matrix: [1, 1, 0]  [-3, 3, 0]  [0, 0, 2]
+Cell multiplicity: 12
+
+   Irreducible element: Cr1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.16
+          Coordination: {'O': [1.66, 1.66, 1.66, 1.67]}
+      Equivalent atoms: 0..23
+Fractional coordinates: 0.8292773  -0.0000000  0.4188862
+     Electronegativity: 1.66
+       Oxidation state: 6
+
+   Irreducible element: Pb1
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.973
+          Coordination: {'O': [2.29, 2.29, 2.48, 2.63, 2.63]}
+      Equivalent atoms: 24..47
+Fractional coordinates: 0.5172848  0.0000000  0.3834312
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: Pb2
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 3.0
+          Coordination: {'O': [2.31, 2.31, 2.47, 2.73, 2.73]}
+      Equivalent atoms: 48..71
+Fractional coordinates: 0.8560486  0.0000000  0.1951461
+     Electronegativity: 2.33
+       Oxidation state: 2
+
+   Irreducible element: O1
+        Wyckoff letter: h
+         Site symmetry: 2
+         Cutoff radius: 2.973
+          Coordination: {'Pb': [2.29, 2.29, 2.31, 2.31], 'O': [2.8, 2.83]}
+      Equivalent atoms: 72..95
+Fractional coordinates: 0.5000000  -0.0828328  0.2500000
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O2
+        Wyckoff letter: j
+         Site symmetry: 1
+         Cutoff radius: 2.161
+          Coordination: {'Cr': [1.66]}
+      Equivalent atoms: 96..143
+Fractional coordinates: 0.6472063  -0.0876562  0.1384009
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O3
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.169
+          Coordination: {'Cr': [1.67]}
+      Equivalent atoms: 144..167
+Fractional coordinates: 0.0955740  0.0000000  0.4547055
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+   Irreducible element: O4
+        Wyckoff letter: i
+         Site symmetry: m
+         Cutoff radius: 2.16
+          Coordination: {'Cr': [1.66]}
+      Equivalent atoms: 168..191
+Fractional coordinates: 0.7022142  -0.0000000  0.3982500
+     Electronegativity: 3.44
+       Oxidation state: -2
+
+-- interstitials
