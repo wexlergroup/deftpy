@@ -14,7 +14,7 @@ from pymatgen.core import Structure, Composition, Element
 import subprocess
 import numpy as np
 from tqdm import tqdm
-from adjustText import adjust_text
+#from adjustText import adjust_text
 
 def main():
     data_path = "../data/papers/kumagai/"
@@ -43,23 +43,45 @@ def main():
     #print(df.loc[:, ["formula", "Ag", "Zn", "Bi"]])
 
     # Remove non-binary compounds
-    df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
-    df_binary = df.loc[df.is_binary].reset_index(drop=True)
+    #df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
+    #df_binary = df.loc[df.is_binary].reset_index(drop=True)
 
     # Remove compounds with transition metals
-    df_binary["has_transition_metal"] = df_binary.formula.apply(
-        lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
+    #df_binary["has_transition_metal"] = df_binary.formula.apply(
+        #lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    #df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
 
+    # **Remove compounds w/ transition metals including ternary compounds
+    #df["is_binary_or_ternary"] = df["formula"].apply(lambda x: 2 <= len(Composition(x).elements) <= 3)
+    #df_ternary = df.loc[df.is_binary_or_ternary].reset_index(drop=True)
+
+    #df_ternary["has_transition_metal"] = df_ternary.formula.apply(
+        #lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    #df_ternary = df_ternary.loc[~df_ternary.has_transition_metal].reset_index(drop=True)
+
+    # *** Remove compounds with transition metals for full set
+    df["has_transition_metal"] = df.formula.apply(
+        lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    df = df.loc[~df.has_transition_metal].reset_index(drop=True)
     # Remove unnecessary columns
-    df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-                         "vacancy_formation_energy", "charge"]].reset_index(drop=True)
-    df_plot.to_csv("Kumagai_binary_clean.csv")
+    #df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+                        # "vacancy_formation_energy", "charge"]].reset_index(drop=True)
+    #df_plot.to_csv("Kumagai_binary_clean.csv")
     #exit(4)
 
+    # ** Remove unnecessary columns including non-binary compounds
+    # To return to the binaries this line must be commented out
+    #df_plot = df_ternary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+                         #"vacancy_formation_energy", "charge"]].reset_index(drop=True)
+    #df_plot.to_csv("Kumagai_ternaries.csv")
 
-    # Calculate crystal reduction potentials
-    n_atoms = []  # number of atoms in the compound formula
+    # **** Remove unnecessary columns for full data set
+    df_plot = df[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+                        "vacancy_formation_energy", "charge"]].reset_index(drop=True)
+    #df_plot.to_csv("Kumagai_full.csv")
+
+    # Calculate crystal reduction potentials for binaries
+    '''n_atoms = []  # number of atoms in the compound formula
     metals = []  # metal in the compound formula
     n_metals = []  # number of metal atoms in the compound formula
     oxi_states = []  # oxidation state of the metal in the compound formula
@@ -79,10 +101,66 @@ def main():
     df_plot["n_metal"] = n_metals
     df_plot["oxi_state"] = oxi_states
     df_plot["vr"] = df_plot["n_atoms"] * df_plot["formation_energy"] / df_plot["n_metal"] / df_plot["oxi_state"]
-    #print(df_plot[["formula", "metal", "oxi_state"]])
+    df_plot["vr_max"] = df_plot["vr"].min()
+    df_plot.to_csv("Kumagai_binaries.csv")
+    #print(df_plot[["formula", "metal", "oxi_state"]])'''
+
+    # Calculate crystal reduction potentials including non-binaries
+    vr_list = []
+    for _, row in df_plot.iterrows():
+        formula = row["formula"]
+        formation_energy = row["formation_energy"]
+        composition = Composition(formula)
+        n_atoms = composition.num_atoms
+        metal_info = []  # For storing information about each metal in the formula
+        elements_list = [el.symbol for el in composition.elements]
+        for el in composition.elements:
+            if el.symbol != "O":
+                metal = el.symbol
+                print(metal)
+                n_metal = composition.get_el_amt_dict()[metal]
+                print(n_metal)
+                n_oxygen = composition.get_el_amt_dict()["O"]
+                print(n_oxygen)
+                if len(composition) != 2:
+                    element_amount_dict = composition.get_el_amt_dict()
+                    print(element_amount_dict)
+                    n_alt = [element_amount_dict[element] for element in element_amount_dict if element != "O" and element != metal][0]
+                    if metal in ["Li", "Na", "K", "Rb", "Cs"]:
+                        oxi_state = +1.0
+                    elif metal in ["Be", "Mg", "Ca", "Sr", "Ba"]:
+                        oxi_state = +2.0
+                    elif [el for el in elements_list if el != "O" and el != metal] in ["Li", "Na", "K", "Rb", "Cs"]:
+                        oxi_alt = +1.0
+                        oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
+                    elif [el for el in elements_list if el != "O" and el != metal] in ["Be", "Mg", "Ca", "Sr", "Ba"]:
+                        oxi_alt = +2.0
+                        oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
+                    else:
+                        oxi_state = 2 * n_oxygen / (n_metal + n_alt)
+                else:
+                    oxi_state = 2 * n_oxygen / n_metal
+                vr = n_atoms * formation_energy / n_metal / oxi_state
+                metal_info.append({
+                    "metal": metal,
+                    "n_metal": n_metal,
+                    "oxi_state": oxi_state,
+                    "vr": vr
+                })
+        #print(metal_info)
+        max_vr = min(d['vr'] for d in metal_info)
+        vr_list.append(max_vr)
+    #print(len(vr_list))
+    #print(vr_list)
+
+    # Calculate 'vr_max' for the entire DataFrame
+    df_plot["vr_max"] = vr_list
+
+    # Save to CSV
+    #df_plot.to_csv("Kumagai_ternaries_max.csv")
 
     # using corrected structure files
-    structures = []
+    '''structures = []
     Eb_sum = []
 
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
@@ -193,13 +271,13 @@ def main():
                     Eb_sum.append(np.sum(CN_array * Eb_array))
 
     print(Eb_sum)
-    exit(12)
+    exit(12)'''
 
     # Fit basic crystal feature model (cfm)
     fig, axs = plt.subplots(ncols=3, figsize=(12, 4))
     for i, charge in enumerate([0, 1, 2]):
         cfm = linear_model.HuberRegressor()
-        X = df_plot.loc[df_plot.charge == charge, ["vr", "band_gap"]]
+        X = df_plot.loc[df_plot.charge == charge, ["vr_max", "band_gap"]]
         y = df_plot.loc[df_plot.charge == charge, "vacancy_formation_energy"]
         cfm.fit(X, y)
         y_pred = cfm.predict(X)
@@ -233,8 +311,8 @@ def main():
             axs[i].set_ylabel("$E_v$ (eV)")
 
     plt.tight_layout()
-    plt.savefig("kumagai_fit_binary_test.png", dpi=300)
-
+    plt.savefig("kumagai_full_min.png", dpi=300)
+    plt.show()
 
 if __name__ == "__main__":
     main()
