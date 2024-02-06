@@ -125,6 +125,7 @@ def main():
                 if len(composition) != 2:
                     element_amount_dict = composition.get_el_amt_dict()
                     print(element_amount_dict)
+
                     n_alt = [element_amount_dict[element] for element in element_amount_dict if element != "O" and element != metal][0]
                     if metal in ["Li", "Na", "K", "Rb", "Cs"]:
                         oxi_state = +1.0
@@ -160,7 +161,7 @@ def main():
     #df_plot.to_csv("Kumagai_ternaries_max.csv")
 
     # using corrected structure files
-    '''structures = []
+    structures = []
     Eb_sum = []
 
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
@@ -198,7 +199,8 @@ def main():
 
                     CN = crystal.cn_dicts
                     Eb = crystal.bond_dissociation_enthalpies
-
+                    print(Eb)
+                    (exit(4))
                     # Eb_sum = [
                     #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
                     #     for cn, be in zip(CN, Eb)
@@ -271,7 +273,7 @@ def main():
                     Eb_sum.append(np.sum(CN_array * Eb_array))
 
     print(Eb_sum)
-    exit(12)'''
+    exit(12)
 
     # Fit basic crystal feature model (cfm)
     fig, axs = plt.subplots(ncols=3, figsize=(12, 4))
