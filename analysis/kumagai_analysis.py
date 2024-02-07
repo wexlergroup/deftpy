@@ -63,6 +63,7 @@ def main():
     df["has_transition_metal"] = df.formula.apply(
         lambda x: any([el.is_transition_metal for el in Composition(x)]))
     df = df.loc[~df.has_transition_metal].reset_index(drop=True)
+
     # Remove unnecessary columns
     #df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
                         # "vacancy_formation_energy", "charge"]].reset_index(drop=True)
@@ -122,7 +123,7 @@ def main():
                 print(n_metal)
                 n_oxygen = composition.get_el_amt_dict()["O"]
                 print(n_oxygen)
-                if len(composition) != 2:
+                '''if len(composition) != 2:
                     element_amount_dict = composition.get_el_amt_dict()
                     print(element_amount_dict)
 
@@ -140,17 +141,30 @@ def main():
                     else:
                         oxi_state = 2 * n_oxygen / (n_metal + n_alt)
                 else:
-                    oxi_state = 2 * n_oxygen / n_metal
-                vr = n_atoms * formation_energy / n_metal / oxi_state
-                metal_info.append({
-                    "metal": metal,
-                    "n_metal": n_metal,
-                    "oxi_state": oxi_state,
-                    "vr": vr
-                })
+                    oxi_state = 2 * n_oxygen / n_metal'''
+                composition = Composition.add_charges_from_oxi_state_guesses(composition)
+                print(composition)
+                oxidation_states = Composition.oxi_state_guesses(composition)
+                print(oxidation_states)
+                try:
+                    get_dict = oxidation_states[0]
+                    oxi_state = get_dict[metal]
+                    print(oxi_state)
+                    vr = n_atoms * formation_energy / n_metal / oxi_state
+                    metal_info.append({
+                        "metal": metal,
+                        "n_metal": n_metal,
+                        "oxi_state": oxi_state,
+                        "vr": vr
+                    })
+                except IndexError and ValueError:
+                    pass
         #print(metal_info)
         max_vr = min(d['vr'] for d in metal_info)
         vr_list.append(max_vr)
+    print(len.max_vr)
+    print(len.df_plot["formula"])
+    exit(12)
     #print(len(vr_list))
     #print(vr_list)
 
@@ -161,7 +175,7 @@ def main():
     #df_plot.to_csv("Kumagai_ternaries_max.csv")
 
     # using corrected structure files
-    structures = []
+    '''structures = []
     Eb_sum = []
 
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
@@ -273,7 +287,7 @@ def main():
                     Eb_sum.append(np.sum(CN_array * Eb_array))
 
     print(Eb_sum)
-    exit(12)
+    exit(12)'''
 
     # Fit basic crystal feature model (cfm)
     fig, axs = plt.subplots(ncols=3, figsize=(12, 4))
