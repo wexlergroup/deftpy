@@ -17,7 +17,6 @@ EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparis
 VR_DICT = {"filepath": "../data/features/Vr.csv", "column_name": "Vr", "comparison": "n"}
 
 
-
 class Crystal:
     """
     A class for analyzing crystal structures.
@@ -91,7 +90,8 @@ class Crystal:
             pymatgen_structure: Optional[Structure] = None,
             nn_finder: Optional[CrystalNN] = None,
             use_weights: Optional[bool] = False,
-            species_symbol: Optional[str] = "O"
+            species_symbol: Optional[str] = "O",
+            n: Optional[int] = None                  # attempt to allow for pre-emptive indexing
     ):
         
         """
@@ -123,6 +123,7 @@ class Crystal:
 
         self.nn_finder = nn_finder or CrystalNN()
         self.use_weights = use_weights
+        self.n = n
         self.species_symbol = species_symbol
         package_dir = Path(__file__).parent
         self.eb = pd.read_csv(package_dir / EB_DICT["filepath"])
@@ -152,13 +153,19 @@ class Crystal:
         # Check for oxidation states and add them if they are not present in the structure object already
         if sum([x.oxi_state != 0 for x in self.structure.species]) == 0:
             self.structure.add_oxidation_state_by_guess()
-        vacancy_generator = VacancyGenerator() # if available, take in a vacancy instead of generating (bottleneck)
+        vacancy_generator = VacancyGenerator()
+        # if available, take in a vacancy instead of generating (bottleneck)
+        if self.n is not None:
+            self.cn_dicts = [self.nn_finder.get_cn_dict(self.structure, n=self.n, use_weights=self.use_weights)]
+            self._cn_dicts_initialized = True
+            return self.cn_dicts
+        else:
         # bulk visual data json
-        vacancies = vacancy_generator.get_defects(self.structure)
-        indices = [v.defect_site_index for v in vacancies if v.site.specie.symbol == self.species_symbol]
-        self.cn_dicts = [self.nn_finder.get_cn_dict(self.structure, i, use_weights=self.use_weights) for i in indices]
-        self._cn_dicts_initialized = True
-        return self.cn_dicts
+            vacancies = vacancy_generator.get_defects(self.structure)
+            indices = [v.defect_site_index for v in vacancies if v.site.specie.symbol == self.species_symbol]
+            self.cn_dicts = [self.nn_finder.get_cn_dict(self.structure, i, use_weights=self.use_weights) for i in indices]
+            self._cn_dicts_initialized = True
+            return self.cn_dicts
 
     def _get_values(self, dataframe: pd.DataFrame, column_name: str, comparison: str) -> List[Dict[str, float]]:
         """

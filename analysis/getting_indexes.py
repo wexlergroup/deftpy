@@ -1,26 +1,29 @@
-import tarfile
 import pandas as pd
-from pymatgen.io.vasp import Poscar
-from pymatgen.io.cif import CifParser
-from glob import glob
 import os
 
 #path for scratch slightly different than for analysis scripts
 data_path = "/Users/isakov/PycharmProjects/deft_ethans_branch/deftpy/data/papers/kumagai/"
 
-#def NN_from_index(index, structure):
+# Get data
+df_0 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge0.csv")  # neutral vacancies
+df_1 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge1.csv")  # +1 charged vacancies
+df_2 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge2.csv")  # +2 charged vacancies
 
-sample_df = pd.DataFrame({
-    'formula': ['Al2Ge2O7', 'Al2Ge2O7', 'Ga2O3'],
-    'full_name': ['Al2Ge2O7_Va_O1', 'Al2Ge2O7_Va_O2', 'Ga2O3_Va_O3'],
-    'band_gap': [3.5, 3.0, 2.2],
-    'vacancy_formation_energy': [0.8, 1.2, 1.0],
-    'formation_energy': [-3.5, -4.0, -5.2],
-    'charge': [2, 0, 3]})
+# Add charge column
+df_0["charge"] = 0
+df_1["charge"] = 1
+df_2["charge"] = 2
 
+# Combine dataframes
+df = pd.concat([df_0, df_1, df_2], ignore_index=True).reset_index(drop=True)
+
+# Remove the column named "Unnamed: 0"
+df = df.drop("Unnamed: 0", axis=1)
+
+# Retrieve index sites for the vacancy in the supercell.vesta file
 vacancy_indexes = []
-for defect in (sample_df["vacancy_formation_energy"].unique()):
-    df_defect = sample_df[sample_df["vacancy_formation_energy"] == defect]
+for defect in (df["vacancy_formation_energy"].unique()):
+    df_defect = df[df["vacancy_formation_energy"] == defect]
     full_name = df_defect["full_name"].iloc[0]
     formula = full_name.split("_")[0]
     vacancy = full_name.split("Va_")[1]
@@ -33,12 +36,12 @@ for defect in (sample_df["vacancy_formation_energy"].unique()):
                 target_line_index = min(i + 5, len(lines) - 1)
                 target_line = lines[target_line_index]
                 vacancy_index = int(target_line.split("..")[-1])
-                vacancy_index = vacancy_index + 1
-                print(vacancy_index)
+                vacancy_index = vacancy_index
                 vacancy_indexes.append(vacancy_index)
                 break
-print(vacancy_indexes)
 
-cif_path = os.path.join(data_path, "site_info", formula, "supercell.cif")
-parser = CifParser(cif_path)
-structure = parser.parse_structures(primitive=True)
+# Add vacancy index data to the complete df
+df["vacancy_index"] = vacancy_indexes
+print(df.columns)
+
+df.to_csv("complete_df_indexed.csv")

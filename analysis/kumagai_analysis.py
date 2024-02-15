@@ -1,12 +1,14 @@
 """ Get crystal features for structures in Yu Kumagai's Physical Review Materials Paper """
 import os
 import tarfile
+import warnings
 from glob import glob
 
 import matplotlib.pyplot as plt
 import pandas as pd
 from pymatgen.io.cif import CifParser
 from pymatgen.io.vasp import Poscar
+from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 from crystal_analysis import Crystal
@@ -14,8 +16,7 @@ from pymatgen.core import Structure, Composition, Element
 import subprocess
 import numpy as np
 from tqdm import tqdm
-#from adjustText import adjust_text
-
+from pymatgen.analysis.bond_valence import BVAnalyzer as BVA
 def main():
     data_path = "../data/papers/kumagai/"
     # Li2O
@@ -25,61 +26,62 @@ def main():
         #print(f.read().decode("utf-8"))
 
     # Get data
-    df_0 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge0.csv")  # neutral vacancies
-    df_1 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge1.csv")  # +1 charged vacancies
-    df_2 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge2.csv")  # +2 charged vacancies
+    # df_0 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge0.csv")  # neutral vacancies
+    # df_1 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge1.csv")  # +1 charged vacancies
+    # df_2 = pd.read_csv(data_path + "vacancy_formation_energy_ml/charge2.csv")  # +2 charged vacancies
 
     # Add charge column
-    df_0["charge"] = 0
-    df_1["charge"] = 1
-    df_2["charge"] = 2
+    # df_0["charge"] = 0
+    # df_1["charge"] = 1
+    # df_2["charge"] = 2
 
     # Combine dataframes
-    df = pd.concat([df_0, df_1, df_2], ignore_index=True).reset_index(drop=True)
+    # df = pd.concat([df_0, df_1, df_2], ignore_index=True).reset_index(drop=True)
 
     # Remove the column named "Unnamed: 0"
-    df = df.drop("Unnamed: 0", axis=1)
-    df_column = df.columns
-    #print(df.loc[:, ["formula", "Ag", "Zn", "Bi"]])
+    # df = df.drop("Unnamed: 0", axis=1)
+
+    df = pd.read_csv("complete_df_indexed.csv")  # aquired using getting_indexes.py
 
     # Remove non-binary compounds
-    #df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
-    #df_binary = df.loc[df.is_binary].reset_index(drop=True)
-
-    # Remove compounds with transition metals
-    #df_binary["has_transition_metal"] = df_binary.formula.apply(
-        #lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    #df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
+    # df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
+    # df_binary = df.loc[df.is_binary].reset_index(drop=True)
+    #
+    # # Remove compounds with transition metals
+    # df_binary["has_transition_metal"] = df_binary.formula.apply(
+    #     lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    # df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
 
     # **Remove compounds w/ transition metals including ternary compounds
-    #df["is_binary_or_ternary"] = df["formula"].apply(lambda x: 2 <= len(Composition(x).elements) <= 3)
-    #df_ternary = df.loc[df.is_binary_or_ternary].reset_index(drop=True)
+    df["is_binary_or_ternary"] = df["formula"].apply(lambda x: 2 <= len(Composition(x).elements) <= 3)
+    df_ternary = df.loc[df.is_binary_or_ternary].reset_index(drop=True)
 
-    #df_ternary["has_transition_metal"] = df_ternary.formula.apply(
-        #lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    #df_ternary = df_ternary.loc[~df_ternary.has_transition_metal].reset_index(drop=True)
+    df_ternary["has_transition_metal"] = df_ternary.formula.apply(
+        lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    df_ternary = df_ternary.loc[~df_ternary.has_transition_metal].reset_index(drop=True)
 
     # *** Remove compounds with transition metals for full set
-    df["has_transition_metal"] = df.formula.apply(
-        lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    df = df.loc[~df.has_transition_metal].reset_index(drop=True)
+    # df["has_transition_metal"] = df.formula.apply(
+    #     lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    # df = df.loc[~df.has_transition_metal].reset_index(drop=True)
 
     # Remove unnecessary columns
-    #df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-                        # "vacancy_formation_energy", "charge"]].reset_index(drop=True)
-    #df_plot.to_csv("Kumagai_binary_clean.csv")
-    #exit(4)
+    # df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+    #                      "vacancy_formation_energy", "charge"]].reset_index(drop=True)
+    # df_plot.to_csv("Kumagai_binary_clean.csv")
+    # exit(4)
 
     # ** Remove unnecessary columns including non-binary compounds
     # To return to the binaries this line must be commented out
-    #df_plot = df_ternary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-                         #"vacancy_formation_energy", "charge"]].reset_index(drop=True)
-    #df_plot.to_csv("Kumagai_ternaries.csv")
+    df_plot = df_ternary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+                         "vacancy_formation_energy", "charge", "vacancy_index"]].reset_index(drop=True)
+
+    # df_plot.to_csv("Kumagai_ternary.csv")
 
     # **** Remove unnecessary columns for full data set
-    df_plot = df[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-                        "vacancy_formation_energy", "charge"]].reset_index(drop=True)
-    #df_plot.to_csv("Kumagai_full.csv")
+    # df_plot = df[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+    #                     "vacancy_formation_energy", "charge"]].reset_index(drop=True)
+    # df_plot.to_csv("Kumagai_full.csv")
 
     # Calculate crystal reduction potentials for binaries
     '''n_atoms = []  # number of atoms in the compound formula
@@ -102,7 +104,7 @@ def main():
     df_plot["n_metal"] = n_metals
     df_plot["oxi_state"] = oxi_states
     df_plot["vr"] = df_plot["n_atoms"] * df_plot["formation_energy"] / df_plot["n_metal"] / df_plot["oxi_state"]
-    df_plot["vr_max"] = df_plot["vr"].min()
+    df_plot["vr_max"] = df_plot["vr"].max()
     df_plot.to_csv("Kumagai_binaries.csv")
     #print(df_plot[["formula", "metal", "oxi_state"]])'''
 
@@ -118,11 +120,11 @@ def main():
         for el in composition.elements:
             if el.symbol != "O":
                 metal = el.symbol
-                print(metal)
+                # print(metal)
                 n_metal = composition.get_el_amt_dict()[metal]
-                print(n_metal)
+                # print(n_metal)
                 n_oxygen = composition.get_el_amt_dict()["O"]
-                print(n_oxygen)
+                # print(n_oxygen)
                 '''if len(composition) != 2:
                     element_amount_dict = composition.get_el_amt_dict()
                     print(element_amount_dict)
@@ -142,103 +144,152 @@ def main():
                         oxi_state = 2 * n_oxygen / (n_metal + n_alt)
                 else:
                     oxi_state = 2 * n_oxygen / n_metal'''
-                composition = Composition.add_charges_from_oxi_state_guesses(composition)
-                print(composition)
-                oxidation_states = Composition.oxi_state_guesses(composition)
-                print(oxidation_states)
+                try:
+                    composition = Composition.add_charges_from_oxi_state_guesses(composition)
+                    # print(composition)
+                    oxidation_states = Composition.oxi_state_guesses(composition)
+                    # print(oxidation_states)
+                except ValueError:
+                    metal_info.append({
+                        "metal": metal,
+                        "n_metal": n_metal,
+                        "oxi_state": np.nan,
+                        "vr": np.nan
+                    })
+                    pass
                 try:
                     get_dict = oxidation_states[0]
                     oxi_state = get_dict[metal]
-                    print(oxi_state)
-                    vr = n_atoms * formation_energy / n_metal / oxi_state
+                    # print(oxi_state)
+                    # print(metal)
+                    # get vr csv as df
+                    vr_df = pd.read_csv("../data/features/Vr.csv")
+                    # match to metal
+                    vr_m_df = vr_df[vr_df["elem"] == metal]
+                    # print(vr_m_df)
+                    # match to oxi_state
+                    vr_m_o_df = vr_m_df[vr_m_df["n"] == oxi_state]
+                    # print(vr_m_o_df)
+                    # choose optimal vr for oxidation
+                    vr_max_df = vr_m_o_df[vr_m_o_df['m'] == vr_m_o_df['m'].max()]
+                    # print(vr_max_df)
+                    vr = vr_max_df["Vr"].iloc[0]
+                    # print(vr)
+                    # vr = n_atoms * formation_energy / n_metal / oxi_state
                     metal_info.append({
                         "metal": metal,
                         "n_metal": n_metal,
                         "oxi_state": oxi_state,
                         "vr": vr
                     })
-                except IndexError and ValueError:
+                except IndexError or ValueError:
+                    metal_info.append({
+                        "metal": metal,
+                        "n_metal": n_metal,
+                        "oxi_state": np.nan,
+                        "vr": np.nan
+                    })
                     pass
-        #print(metal_info)
-        max_vr = min(d['vr'] for d in metal_info)
+        # print(metal_info)
+        max_vr = max(d['vr'] for d in metal_info)
         vr_list.append(max_vr)
-    print(len.max_vr)
-    print(len.df_plot["formula"])
-    exit(12)
-    #print(len(vr_list))
-    #print(vr_list)
+    # print(len(vr_list))
+    # print(len(oxi_states))
+    # print(len(df_plot))
 
     # Calculate 'vr_max' for the entire DataFrame
     df_plot["vr_max"] = vr_list
+    # df_plot["oxi_state"] = oxi_states
 
     # Save to CSV
-    #df_plot.to_csv("Kumagai_ternaries_max.csv")
+    # df_plot.to_csv("kumagai_ternary_vr_from_csv.csv")
+
+    # remove any values where oxi_state could not be assigned
+    df_plot = df_plot.dropna()
 
     # using corrected structure files
-    '''structures = []
+    structures = []
     Eb_sum = []
 
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
         df_defect = df_plot[df_plot["vacancy_formation_energy"] == defect]
-        #print(df_defect)
+        # print(df_defect)
         formula = df_defect["formula"].iloc[0]
-        print(formula)
+        # print(formula)
         full_name = df_defect["full_name"].iloc[0]
-        #print(full_name)
-        metal = df_defect["metal"].iloc[0]
-        #print(metal)
-        oxi_state_metal = df_defect["oxi_state"].iloc[0]
-        #print(oxi_state_metal)
+        # print(full_name)
+        # metal = df_defect["metal"].iloc[0]
+        # print(metal)
+        index = df_defect["vacancy_index"].iloc[0]
+
         with tarfile.open(glob(data_path + "site_info.tar.gz")[0], "r:gz") as tar:
             tar.extractall(path=data_path)
-            #print("tarred file extracted")
             cif_path = os.path.join(data_path, "site_info", formula, "supercell.cif")
-            #print(cif_path)
+            # print(cif_path)
             if os.path.exists(cif_path):
-                #print("path exisits")
-                parser = CifParser(cif_path)
-                #print(parser)
-                parser_list = parser.parse_structures(primitive=True)
-                print(f"parser list length: {len(parser_list)}")
-                if parser_list:
-                    structure = parser.parse_structures(primitive=True)[0]
+                    base_structure = Structure.from_file(cif_path)
+                # print(strucutre)
+                # exit(3)
+                # parser = CifParser(cif_path)
+                # parser_list = parser.parse_structures(primitive=True)
+                # print(f"parser list length: {len(parser_list)}")
+                # if parser_list:
+                #     structure = parser.parse_structures(primitive=True)[0]
+                    if base_structure:
+                        '''oxi_states = {"O": -2, metal: oxi_state_metal}
+                        # structure_copy = structure.copy()
+                        structure.add_oxidation_state_by_element(oxidation_states=oxi_states)
+                        #print("ox states added")
+                        structures.append(structure)'''
 
-                    oxi_states = {"O": -2, metal: oxi_state_metal}
-                    # structure_copy = structure.copy()
-                    structure.add_oxidation_state_by_element(oxidation_states=oxi_states)
-                    #print("ox states added")
-                    structures.append(structure)
-                    crystal = Crystal(pymatgen_structure=structure)
-                    #print("structure passed to crystal object")
+                        # potential alternative for oxidation states ... better way - avi
+                        try:
+                            structure = BVA().get_oxi_state_decorated_structure(base_structure)
 
-                    CN = crystal.cn_dicts
-                    Eb = crystal.bond_dissociation_enthalpies
-                    print(Eb)
-                    (exit(4))
-                    # Eb_sum = [
-                    #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
-                    #     for cn, be in zip(CN, Eb)
-                    # ]
+                            # # if you want to check symmetries/indexing
+                            # analyzer = SpacegroupAnalyzer(structure)
+                            # symmetry_dataset = analyzer.get_symmetry_dataset()
+                            #
+                            # wyckoff_symbols = symmetry_dataset['wyckoffs']
+                            # wyckoff = wyckoff_symbols[index]
+                            #
+                            # print(formula, index, f"wyckoff = {wyckoff}")
+                            # # structures.append(structure)
 
-                    # print(f"Eb_sum length: {len(Eb_sum)}")
-                    
-                    Eb_sum = []
-                    for CN_dict, Eb_dict in zip(CN, Eb):
-                        CN_array = np.array(list(CN_dict.values()))
-                        Eb_array = np.array(list(Eb_dict.values()))
-                        Eb_sum.append(np.sum(CN_array * Eb_array))
-                        print(CN_array, Eb_array)
-                    print("length is " + str(len(Eb_sum)))
-                else:
-                    print(f"Error: List empty - {parser_list}")
+                            crystal = Crystal(pymatgen_structure=structure, n=index)
+                            # print("structure passed to crystal object")
+
+                            CN = crystal.cn_dicts
+                            Eb = crystal.bond_dissociation_enthalpies
+
+                            # Eb_sum = [
+                            #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
+                            #     for cn, be in zip(CN, Eb)
+                            # ]
+
+                            # print(f"Eb_sum length: {len(Eb_sum)}")
+
+                            for CN_dict, Eb_dict in zip(CN, Eb):
+                                CN_array = np.array(list(CN_dict.values()))
+                                Eb_array = np.array(list(Eb_dict.values()))
+                                Eb_sum.append(np.sum(CN_array * Eb_array))
+                                # print(CN_array, Eb_array)
+                            # print("length is " + str(len(Eb_sum)))
+                        except ValueError:
+                            Eb_sum.append(np.nan)
+                            pass
+                    else:
+                        print(f"Error: List empty - {base_structure}")
+                        # print(f"Error: List empty - {parser_list}")
             else:
                 print(f"Error: File not found - {cif_path}")
     df_plot["Eb_sum"] = Eb_sum
-    print(df_plot["Eb_sum"])
+    df_plot = df_plot.dropna()
+    df_plot.to_csv("kumagai_Eb_Vr.csv")
     exit(234)
 
-    # calculate sum Eb
-    structures = []
+    #calculate sum Eb
+    '''structures = []
     Eb_sum = []
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
     #for full_name in tqdm(df_plot["full_name"].unique()):
@@ -327,7 +378,7 @@ def main():
             axs[i].set_ylabel("$E_v$ (eV)")
 
     plt.tight_layout()
-    plt.savefig("kumagai_full_min.png", dpi=300)
+    plt.savefig("kumagai_ternary_vr_from_csv.png", dpi=300)
     plt.show()
 
 if __name__ == "__main__":
