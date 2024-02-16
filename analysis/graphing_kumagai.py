@@ -2,10 +2,14 @@ import pandas as pd
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from pymatgen.core import Composition
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 
-df_plot = pd.read_csv("kumagai_Eb_Vr.csv")
+df_plot = pd.read_csv("kumagai_Eb_Vr_frac.csv")
+
+# get binaries from binaries/ternaries
+# df_plot["is_binary"] = df_plot.formula.apply(lambda x: len(Composition(x)) == 2)
 
 fig, axs = plt.subplots(ncols=3, figsize=(12, 4))
 
@@ -18,10 +22,15 @@ for i, charge in enumerate([0, 1, 2]):
     cfm.fit(X, y)
     y_pred = cfm.predict(X)
 
+    #define colors
+    # colors = ["blue" if binary else "red" for binary in df_plot.loc[df_plot.charge == charge, "is_binary"]]
+
     # Plot results
+    # axs[i].plot(y_pred, y, color=colors)
     axs[i].plot(y_pred, y, "o")
 
     # Plot parity line
+    # axs[i].plot([-4, 10], [-4, 10], "--", color="black")
     axs[i].plot([-4, 10], [-4, 10], "--")
 
     # Set axis limits
@@ -48,5 +57,5 @@ for i, charge in enumerate([0, 1, 2]):
         axs[i].set_ylabel("$E_v$ (eV)")
 
 plt.tight_layout()
-plt.savefig("kumagai_ternary_vr_from_csv_eb.png", dpi=300)
+plt.savefig("kumagai_ternary_vr_from_csv_eb_frac.png", dpi=300)
 plt.show()

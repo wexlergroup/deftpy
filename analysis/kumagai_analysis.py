@@ -1,22 +1,22 @@
 """ Get crystal features for structures in Yu Kumagai's Physical Review Materials Paper """
 import os
 import tarfile
-import warnings
 from glob import glob
 
 import matplotlib.pyplot as plt
 import pandas as pd
+from pymatgen.analysis.local_env import CrystalNN
 from pymatgen.io.cif import CifParser
 from pymatgen.io.vasp import Poscar
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 from crystal_analysis import Crystal
-from pymatgen.core import Structure, Composition, Element
-import subprocess
+from pymatgen.core import Structure, Composition
 import numpy as np
 from tqdm import tqdm
 from pymatgen.analysis.bond_valence import BVAnalyzer as BVA
+
 def main():
     data_path = "../data/papers/kumagai/"
     # Li2O
@@ -125,25 +125,25 @@ def main():
                 # print(n_metal)
                 n_oxygen = composition.get_el_amt_dict()["O"]
                 # print(n_oxygen)
-                '''if len(composition) != 2:
-                    element_amount_dict = composition.get_el_amt_dict()
-                    print(element_amount_dict)
-
-                    n_alt = [element_amount_dict[element] for element in element_amount_dict if element != "O" and element != metal][0]
-                    if metal in ["Li", "Na", "K", "Rb", "Cs"]:
-                        oxi_state = +1.0
-                    elif metal in ["Be", "Mg", "Ca", "Sr", "Ba"]:
-                        oxi_state = +2.0
-                    elif [el for el in elements_list if el != "O" and el != metal] in ["Li", "Na", "K", "Rb", "Cs"]:
-                        oxi_alt = +1.0
-                        oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
-                    elif [el for el in elements_list if el != "O" and el != metal] in ["Be", "Mg", "Ca", "Sr", "Ba"]:
-                        oxi_alt = +2.0
-                        oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
-                    else:
-                        oxi_state = 2 * n_oxygen / (n_metal + n_alt)
-                else:
-                    oxi_state = 2 * n_oxygen / n_metal'''
+                # if len(composition) != 2:
+                #     element_amount_dict = composition.get_el_amt_dict()
+                #     print(element_amount_dict)
+                # 
+                #     n_alt = [element_amount_dict[element] for element in element_amount_dict if element != "O" and element != metal][0]
+                #     if metal in ["Li", "Na", "K", "Rb", "Cs"]:
+                #         oxi_state = +1.0
+                #     elif metal in ["Be", "Mg", "Ca", "Sr", "Ba"]:
+                #         oxi_state = +2.0
+                #     elif [el for el in elements_list if el != "O" and el != metal] in ["Li", "Na", "K", "Rb", "Cs"]:
+                #         oxi_alt = +1.0
+                #         oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
+                #     elif [el for el in elements_list if el != "O" and el != metal] in ["Be", "Mg", "Ca", "Sr", "Ba"]:
+                #         oxi_alt = +2.0
+                #         oxi_state = (2 * n_oxygen - oxi_alt * n_alt) / n_metal
+                #     else:
+                #         oxi_state = 2 * n_oxygen / (n_metal + n_alt)
+                # else:
+                #     oxi_state = 2 * n_oxygen / n_metal
                 try:
                     composition = Composition.add_charges_from_oxi_state_guesses(composition)
                     # print(composition)
@@ -208,9 +208,7 @@ def main():
     df_plot = df_plot.dropna()
 
     # using corrected structure files
-    structures = []
     Eb_sum = []
-
     for defect in tqdm(df_plot["vacancy_formation_energy"].unique()):
         df_defect = df_plot[df_plot["vacancy_formation_energy"] == defect]
         # print(df_defect)
@@ -227,7 +225,7 @@ def main():
             cif_path = os.path.join(data_path, "site_info", formula, "supercell.cif")
             # print(cif_path)
             if os.path.exists(cif_path):
-                    base_structure = Structure.from_file(cif_path)
+                base_structure = Structure.from_file(cif_path)
                 # print(strucutre)
                 # exit(3)
                 # parser = CifParser(cif_path)
@@ -235,57 +233,59 @@ def main():
                 # print(f"parser list length: {len(parser_list)}")
                 # if parser_list:
                 #     structure = parser.parse_structures(primitive=True)[0]
-                    if base_structure:
-                        '''oxi_states = {"O": -2, metal: oxi_state_metal}
-                        # structure_copy = structure.copy()
-                        structure.add_oxidation_state_by_element(oxidation_states=oxi_states)
-                        #print("ox states added")
-                        structures.append(structure)'''
+                if base_structure:
+                    '''oxi_states = {"O": -2, metal: oxi_state_metal}
+                    # structure_copy = structure.copy()
+                    structure.add_oxidation_state_by_element(oxidation_states=oxi_states)
+                    #print("ox states added")
+                    structures.append(structure)'''
 
-                        # potential alternative for oxidation states ... better way - avi
-                        try:
-                            structure = BVA().get_oxi_state_decorated_structure(base_structure)
+                    # potential alternative for oxidation states ... better way - avi
+                    try:
+                        structure = BVA().get_oxi_state_decorated_structure(base_structure)
 
-                            # # if you want to check symmetries/indexing
-                            # analyzer = SpacegroupAnalyzer(structure)
-                            # symmetry_dataset = analyzer.get_symmetry_dataset()
-                            #
-                            # wyckoff_symbols = symmetry_dataset['wyckoffs']
-                            # wyckoff = wyckoff_symbols[index]
-                            #
-                            # print(formula, index, f"wyckoff = {wyckoff}")
-                            # # structures.append(structure)
+                        # # if you want to check symmetries/indexing
+                        # analyzer = SpacegroupAnalyzer(structure)
+                        # symmetry_dataset = analyzer.get_symmetry_dataset()
+                        #
+                        # wyckoff_symbols = symmetry_dataset['wyckoffs']
+                        # wyckoff = wyckoff_symbols[index]
+                        #
+                        # print(formula, index, f"wyckoff = {wyckoff}")
+                        # # structures.append(structure)
 
-                            crystal = Crystal(pymatgen_structure=structure, n=index)
-                            # print("structure passed to crystal object")
+                        crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
+                        # print("structure passed to crystal object")
 
-                            CN = crystal.cn_dicts
-                            Eb = crystal.bond_dissociation_enthalpies
+                        CN = crystal.cn_dicts
+                        Eb = crystal.bond_dissociation_enthalpies
 
-                            # Eb_sum = [
-                            #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
-                            #     for cn, be in zip(CN, Eb)
-                            # ]
+                        # Eb_sum = [
+                        #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
+                        #     for cn, be in zip(CN, Eb)
+                        # ]
 
-                            # print(f"Eb_sum length: {len(Eb_sum)}")
+                        # print(f"Eb_sum length: {len(Eb_sum)}")
 
-                            for CN_dict, Eb_dict in zip(CN, Eb):
-                                CN_array = np.array(list(CN_dict.values()))
-                                Eb_array = np.array(list(Eb_dict.values()))
-                                Eb_sum.append(np.sum(CN_array * Eb_array))
-                                # print(CN_array, Eb_array)
-                            # print("length is " + str(len(Eb_sum)))
-                        except ValueError:
-                            Eb_sum.append(np.nan)
-                            pass
-                    else:
-                        print(f"Error: List empty - {base_structure}")
-                        # print(f"Error: List empty - {parser_list}")
+                        for CN_dict, Eb_dict in zip(CN, Eb):
+                            CN_array = np.array(list(CN_dict.values()))
+                            Eb_array = np.array(list(Eb_dict.values()))
+                            Eb_sum.append(np.sum(CN_array * Eb_array))
+                            # print(CN_array, Eb_array)
+                        # print("length is " + str(len(Eb_sum)))
+
+                    except ValueError:
+                        Eb_sum.append(np.nan)
+                        pass
+                else:
+                    print(f"Error: List empty - {base_structure}")
+                    # print(f"Error: List empty - {parser_list}")
             else:
                 print(f"Error: File not found - {cif_path}")
     df_plot["Eb_sum"] = Eb_sum
+    # df_plot["Vr_max"] = Vr_max
     df_plot = df_plot.dropna()
-    df_plot.to_csv("kumagai_Eb_Vr.csv")
+    df_plot.to_csv("kumagai_Eb_Vr_frac.csv")
     exit(234)
 
     #calculate sum Eb
@@ -378,7 +378,7 @@ def main():
             axs[i].set_ylabel("$E_v$ (eV)")
 
     plt.tight_layout()
-    plt.savefig("kumagai_ternary_vr_from_csv.png", dpi=300)
+    # plt.savefig("kumagai_ternary_vr_from_csv.png", dpi=300)
     plt.show()
 
 if __name__ == "__main__":
