@@ -1,6 +1,5 @@
 from glob import glob
 
-import adjustText
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -11,7 +10,6 @@ from sklearn.linear_model import HuberRegressor
 from tqdm import tqdm
 
 from crystal_analysis import Crystal
-
 
 def get_unitcell_mesh(lattice):
     pass
@@ -143,8 +141,7 @@ def main():
             )
         except ValueError:
             pass
-    #print(df_cf)
-    #exit(4)
+
     df_cf = df_cf.reset_index(drop=True)
     df_cf.to_csv("../data/papers/witman/figures/witman_data_cleanup.csv", index=False)
 
