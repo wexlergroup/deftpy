@@ -166,10 +166,13 @@ def main():
 
                         # generate the crystal object - can supply nn_finder to weight cn appropriately
                         # crystal = Crystal(pymatgen_structure=structure, n=index)
-                        crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
+                        # crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
+                        crystal = Crystal(pymatgen_structure=structure, n=index,
+                                          nn_finder=BVA().get_valences(structure=structure), use_weights=True)
 
                         CN = crystal.cn_dicts
                         Eb = crystal.bond_dissociation_enthalpies
+                        BV = crystal.bond_valences
 
                         # Eb_sum = [
                         #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
@@ -180,6 +183,7 @@ def main():
 
                         for CN_dict, Eb_dict in zip(CN, Eb):
                             CN_array = np.array(list(CN_dict.values()))
+                            # BV_array = np.array(list(BV_dict.values()))
                             Eb_array = np.array(list(Eb_dict.values()))
                             Eb_sum.append(np.sum(CN_array * Eb_array))
                             # print(CN_array, Eb_array)
@@ -197,7 +201,7 @@ def main():
     df_plot = df_plot.dropna()
     # this data frame will have Vr and Eb_sum in addition to the original columns kept for analysis
     print('complete')
-    # df_plot.to_csv("kumagai_binary_Eb_frac_Vr_from_csv.csv")
+    df_plot.to_csv("kumagai_binary_Eb_BV_Vr_from_csv.csv")
 
 if __name__ == "__main__":
     main()

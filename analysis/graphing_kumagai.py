@@ -6,7 +6,7 @@ from pymatgen.core import Composition
 from pymatgen.core.periodic_table import ElementBase
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-from sklearn.model_selection import KFold, cross_val_score
+from sklearn.model_selection import KFold, StratifiedKFold, cross_val_score, train_test_split
 from mendeleev import element
 
 # Histogram
@@ -27,7 +27,7 @@ plt.show()'''
 # exit(23)
 
 # # CFM
-df_plot = pd.read_csv("kumagai_binary_Eb_frac_Vr_from_csv.csv")
+df_plot = pd.read_csv("kumagai_Vr_Eb_full_frac.csv")
 
 # # get binaries from binaries/ternaries
 df_plot["is_binary"] = df_plot.formula.apply(lambda x: len(Composition(x)) == 2)
@@ -40,9 +40,12 @@ for i, charge in enumerate([0, 1, 2]):
     # y = df_plot.loc[df_plot.charge == charge, "vacancy_formation_energy"]
     # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap"]]
     X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm"]]
+    # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm", 'formation_energy']]
     y = df_plot.loc[df_plot.charge == charge, "vacancy_formation_energy"]
+    # cfm.fit(X, y)
     cfm.fit(X, y)
     y_pred = cfm.predict(X)
+    cfm.score(X, y)
 
     # model tests
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=21)
@@ -52,9 +55,17 @@ for i, charge in enumerate([0, 1, 2]):
 
     kf = KFold(n_splits=5, shuffle=True, random_state=21)
     scores = cross_val_score(cfm, X, y, scoring='neg_mean_absolute_error', cv=kf)
+    for score in scores:
+        print('score for this fold is ', score)
+        print('coefficients', cfm.coef_)
+    # kf = StratifiedKFold(n_splits=12, shuffle=True, random_state=21)
+    # scores = cross_val_score(cfm, X, y, scoring='neg_mean_absolute_error', cv=12)
+    # scores = cross_val_score(cfm, X_train, y_train, scoring='neg_mean_absolute_error', cv=kf)
     mean = np.mean(scores)
     std = np.std(scores)
+    print('for model, mean score = ', mean)
     rmse = mean_squared_error(y, y_pred, squared=False)
+    # rmse = mean_squared_error(y_test, y_pred, squared=False)
     confidence = (np.quantile(scores, [0.025, .975]))
 
     # define colors for binary, ternary etc
@@ -82,23 +93,28 @@ for i, charge in enumerate([0, 1, 2]):
     # color_map = {1: 'red', 2: 'blue', 3: 'green', 4: 'orange', 5: 'purple', 6: 'brown', 7: 'pink', 8: 'gray', 9: 'olive', 10: 'cyan', 11: 'magenta', 12: 'yellow', 13: 'lime', 14: 'teal', 15: 'navy', 16: 'maroon', 17: 'skyblue', 18: 'black'}
     # color map w/o TM
     color_map = {1: 'red', 2: 'blue', 13: 'lime', 14: 'teal', 15: 'navy', 16: 'maroon', 17: 'skyblue', 18: 'black'}
+    shape_map = {1: '*', 2: 's', 13: 'h', 14: '+', 15: 'D', 16: '.', 17: 'o', 18: 'v'}
     def get_group(element):
         if element in periodic_table_groups:
             return periodic_table_groups[element]
         else:
             return None
 
-    df_colors['Groups'] = df_colors['formula'].str.findall(r'[A-Z][a-z]*').apply(lambda x: [get_group(e) for e in x])
-    df_colors['group'] = df_colors['Groups'].apply(lambda x: x[0])
-    print(df_colors['group'])
-    colors = df_colors['group'].map(color_map)
+    # df_colors['Groups'] = df_colors['formula'].str.findall(r'[A-Z][a-z]*').apply(lambda x: [get_group(e) for e in x])
+    # df_colors['group1'] = df_colors['Groups'].apply(lambda x: x[0])
+    # # df_colors['group2'] = df_colors['Groups'].apply(lambda x: x[1])
+    # # print(df_colors['group1'])
+    # colors = df_colors['group1'].map(color_map)
+    # markers = df_colors['group2'].map(shape_map)
 
     # # print(color_map)
     # # exit(32)
 
     # Plot results
-    axs[i].scatter(y_pred, y, c=colors)
-    # axs[i].plot(y_pred, y, "o")
+    axs[i].plot(y_pred, y, "o")
+    # axs[i].scatter(y_pred, y, c=colors)
+    # axs[i].scatter(y_pred, y_test)
+    # axs[i].scatter(y_pred, y, c=colors, marker=markers)
 
     # Plot parity line
     # axs[i].plot([-4, 10], [-4, 10], "--", color="black")
@@ -112,10 +128,12 @@ for i, charge in enumerate([0, 1, 2]):
     # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1],
     #                                                                        cfm.coef_[2])
     equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_p$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3])
+    # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_2p {:+.2f} E_f$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3], cfm.coef_[4])
     axs[i].set_xlabel(equation)
 
     # Add MAE
     mae = mean_absolute_error(y, y_pred)
+    # mae = mean_absolute_error(y_test, y_pred)
     axs[i].text(0.1, 0.9, "MAE = {:.2f} eV".format(mae), size=9, transform=axs[i].transAxes)
 
     # Add number of data points
@@ -137,10 +155,13 @@ for i, charge in enumerate([0, 1, 2]):
     # Add y-axis label
     if i == 0:
         axs[i].set_ylabel("$E_v$ (eV)")
-    if i == 2:
-        for x in color_map:
-            axs[i].scatter([], [], c=color_map[x], label=f'group {x}')
-        axs[i].legend(loc='lower right', bbox_to_anchor=(1.5, 0.15))
+    # if i == 2:
+    #     for x in color_map:
+    #         axs[i].scatter([], [], c=color_map[x], label=f'group {x}')
+    #     axs[i].legend(loc='lower right', bbox_to_anchor=(1.5, 0.15))
+        # for x in shape_map:
+        #     axs[i].scatter([], [], marker=shape_map[x], label=f'group {x}')
+        # axs[i].legend(loc='lower left', bbox_to_anchor=(2, 0.15))
 plt.tight_layout()
-plt.savefig("kumagai_binary_Eb_frac_Vr_fcsv_bygroup.png", dpi=300)
+plt.savefig("kumagai_full_vr_from_csv_eb_frac_K5_O2p.png", dpi=300)
 plt.show()

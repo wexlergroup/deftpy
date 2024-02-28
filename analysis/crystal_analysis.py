@@ -11,6 +11,7 @@ from pymatgen.analysis.defects.generators import VacancyGenerator
 from pymatgen.analysis.local_env import CrystalNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
+from pymatgen.analysis.bond_valence import BVAnalyzer as BVA
 from pymatgen.io.vasp import Poscar
 
 EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
@@ -89,6 +90,7 @@ class Crystal:
             poscar_string: Optional[str] = None,
             pymatgen_structure: Optional[Structure] = None,
             nn_finder: Optional[CrystalNN] = None,
+            # bv_finder: Optional[BVA] = None,
             use_weights: Optional[bool] = False,
             species_symbol: Optional[str] = "O",
             n: Optional[int] = None                  # attempt to allow for pre-emptive indexing
@@ -124,12 +126,14 @@ class Crystal:
         self.nn_finder = nn_finder or CrystalNN()
         self.use_weights = use_weights
         self.n = n
+        # self.bv_finder = bv_finder
         self.species_symbol = species_symbol
         package_dir = Path(__file__).parent
         self.eb = pd.read_csv(package_dir / EB_DICT["filepath"])
         self.vr = pd.read_csv(package_dir / VR_DICT["filepath"])
         self._cn_dicts_initialized = False
         self.cn_dicts = []
+        # self.bv_dicts = []
 
         self.bond_dissociation_enthalpies = self._get_values(self.eb, EB_DICT["column_name"], EB_DICT["comparison"])
 
@@ -157,8 +161,10 @@ class Crystal:
         # if available, take in a vacancy instead of generating (bottleneck)
         if self.n is not None:
             self.cn_dicts = [self.nn_finder.get_cn_dict(self.structure, n=self.n, use_weights=self.use_weights)]
+            # self.cn_dicts = self.nn_finder.BVA().get_valences(self.structure) # DOESNT WORK
             self._cn_dicts_initialized = True
             return self.cn_dicts
+            # self.bv_dicts = [self.bv_finder.get_valences(structure=self.structure)]
         else:
         # bulk visual data json
             vacancies = vacancy_generator.get_defects(self.structure)
