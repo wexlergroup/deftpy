@@ -36,17 +36,17 @@ def main():
     df = pd.read_csv("complete_df_indexed.csv")  # aquired using getting_indexes.py
 
     # Remove non-binary compounds
-    df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
-    df_binary = df.loc[df.is_binary].reset_index(drop=True)
+    # df["is_binary"] = df.formula.apply(lambda x: len(Composition(x)) == 2)
+    # df_binary = df.loc[df.is_binary].reset_index(drop=True)
 
     # Remove compounds with transition metals
-    df_binary["has_transition_metal"] = df_binary.formula.apply(
-        lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
+    # df_binary["has_transition_metal"] = df_binary.formula.apply(
+    #     lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    # df_binary = df_binary.loc[~df_binary.has_transition_metal].reset_index(drop=True)
 
     # Remove unnecessary columns for binaries
-    df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-                         "vacancy_formation_energy", "charge", "vacancy_index"]].reset_index(drop=True)
+    # df_plot = df_binary[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+    #                      "vacancy_formation_energy", "charge", "vacancy_index"]].reset_index(drop=True)
     # df_plot.to_csv("Kumagai_binary_clean.csv")
 
     # **Binary/Ternary compounds + Removes compounds w/ transition metals
@@ -63,18 +63,30 @@ def main():
     # df_plot.to_csv("Kumagai_ternary.csv")
 
     # *** Remove compounds with transition metals for full set
-    # df["has_transition_metal"] = df.formula.apply(
-    #     lambda x: any([el.is_transition_metal for el in Composition(x)]))
-    # df = df.loc[~df.has_transition_metal].reset_index(drop=True)
+    df["has_transition_metal"] = df.formula.apply(
+        lambda x: any([el.is_transition_metal for el in Composition(x)]))
+    df = df.loc[~df.has_transition_metal].reset_index(drop=True)
 
     # **** Remove unnecessary columns for full data set
-    # df_plot = df[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
-    #               "vacancy_formation_energy", "charge", "vacancy_index"]].reset_index(drop=True)
+    df_plot = df[["formula", "full_name", "band_gap", "formation_energy", "nn_ave_eleneg", "o2p_center_from_vbm",
+                  "vacancy_formation_energy", "charge", "vacancy_index"]].reset_index(drop=True)
     # df_plot.to_csv("Kumagai_full.csv")
+
+    # merge bond valence analysis onto the df
+    df_bva = pd.read_csv("valence_data_full.csv")
+    df_bva['vacancy_index'] = df_bva['site'] + 1
+    df_bva['merge_on'] = df_bva['full_name'] + df_bva['vacancy_index'].astype(str)
+    df_bva = df_bva[["merge_on", 'valence', 'bv_sum_Crystal', 'bv_sum_nn']].reset_index(drop=True)
+    df_plot['merge_on'] = df_plot['full_name'] + df_plot['vacancy_index'].astype(str)
+    # print(df_bva['merge_on'], df_plot['merge_on'])
+    df_plot2 = pd.merge(df_plot, df_bva, on='merge_on', how='outer')
+    df_plot = df_plot2.drop_duplicates()
+    # df_plot.to_csv('test.csv')
 
     # Calculate crystal reduction potentials for binaries and non-binaries - from Vr CSV files
     vr_list = []
     for _, row in df_plot.iterrows():
+        # formula = row['formula']
         formula = row["formula"]
         composition = Composition(formula)
         metal_info = []  # For storing information about each metal in the formula
@@ -135,6 +147,7 @@ def main():
 
     # remove any values where oxi_state could not be assigned
     df_plot = df_plot.dropna()
+    # print(df_plot)
 
     # using corrected structure files
     Eb_sum = []
@@ -166,13 +179,14 @@ def main():
 
                         # generate the crystal object - can supply nn_finder to weight cn appropriately
                         # crystal = Crystal(pymatgen_structure=structure, n=index)
-                        # crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
-                        crystal = Crystal(pymatgen_structure=structure, n=index,
-                                          nn_finder=BVA().get_valences(structure=structure), use_weights=True)
-
+                        # print("at crystal")
+                        crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
+                        # crystal = Crystal(pymatgen_structure=structure, n=index,
+                        #                   nn_finder=BVA().get_valences(structure=structure), use_weights=True)
+                        # print('crystal initialized')
                         CN = crystal.cn_dicts
                         Eb = crystal.bond_dissociation_enthalpies
-                        BV = crystal.bond_valences
+                        # BV = crystal.bond_valences
 
                         # Eb_sum = [
                         #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
@@ -186,11 +200,12 @@ def main():
                             # BV_array = np.array(list(BV_dict.values()))
                             Eb_array = np.array(list(Eb_dict.values()))
                             Eb_sum.append(np.sum(CN_array * Eb_array))
-                            # print(CN_array, Eb_array)
+                        #     print(CN_array, Eb_array)
                         # print("length is " + str(len(Eb_sum)))
 
                     except ValueError:
                         Eb_sum.append(np.nan)
+                        print("Eb is nan")
                         pass
                 else:
                     print(f"Error: List empty - {base_structure}")
@@ -201,7 +216,7 @@ def main():
     df_plot = df_plot.dropna()
     # this data frame will have Vr and Eb_sum in addition to the original columns kept for analysis
     print('complete')
-    df_plot.to_csv("kumagai_binary_Eb_BV_Vr_from_csv.csv")
+    df_plot.to_csv("kumagai_full_Eb_BV_Vr_from_csv_BVA.csv")
 
 if __name__ == "__main__":
     main()

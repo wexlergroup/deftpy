@@ -1,13 +1,11 @@
-import pandas as pd
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pymatgen.core import Composition
-from pymatgen.core.periodic_table import ElementBase
 from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.model_selection import KFold, StratifiedKFold, cross_val_score, train_test_split
-from mendeleev import element
+
 
 # Histogram
 '''
@@ -28,6 +26,14 @@ plt.show()'''
 
 # # CFM
 df_plot = pd.read_csv("kumagai_Vr_Eb_full_frac.csv")
+df_bva = pd.read_csv("valence_data_full.csv")
+df_bva['vacancy_index'] = df_bva['site'] + 1
+df_bva['merge_on'] = df_bva['full_name'] + df_bva['vacancy_index'].astype(str)
+df_bva = df_bva[["merge_on", 'valence', 'bv_sum_Crystal', 'bv_sum_nn']].reset_index(drop=True)
+df_plot['merge_on'] = df_plot['full_name'] + df_plot['vacancy_index'].astype(str)
+df_plot2 = pd.merge(df_plot, df_bva, on='merge_on', how='inner')
+df_plot = df_plot2.drop_duplicates().reset_index(drop=True)
+
 
 # # get binaries from binaries/ternaries
 df_plot["is_binary"] = df_plot.formula.apply(lambda x: len(Composition(x)) == 2)
@@ -39,8 +45,10 @@ for i, charge in enumerate([0, 1, 2]):
     # X = df_plot.loc[df_plot.charge == charge, ["vr_max", "band_gap"]]
     # y = df_plot.loc[df_plot.charge == charge, "vacancy_formation_energy"]
     # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap"]]
-    X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm"]]
-    # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm", 'formation_energy']]
+    # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm"]]
+    # X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", "o2p_center_from_vbm", 'bv_sum_Crystal']]
+    X = df_plot.loc[df_plot.charge == charge, ["Eb_sum", "vr_max", "band_gap", 'bv_sum_Crystal']]
+
     y = df_plot.loc[df_plot.charge == charge, "vacancy_formation_energy"]
     # cfm.fit(X, y)
     cfm.fit(X, y)
@@ -69,13 +77,6 @@ for i, charge in enumerate([0, 1, 2]):
     confidence = (np.quantile(scores, [0.025, .975]))
 
     # define colors for binary, ternary etc
-    # df_colors = df_plot[df_plot["charge"] == i]
-    # colors = {True: 'blue', False: 'red'}
-    # color_map = df_colors["is_binary"].map(colors)
-    # df_colors = df_plot[df_plot["charge"] == i]
-    # df_colors["element_num"] = df_colors.formula.apply(lambda x: int(len(Composition(x))))
-    # colors = {2: 'blue', 3: 'red', 4: 'green', 5: 'orange'}
-    # # color_map = df_colors["element_num"].map(colors)
 
     # define colors for element groups
     df_colors = df_plot[df_plot["charge"] == i]
@@ -93,7 +94,7 @@ for i, charge in enumerate([0, 1, 2]):
     # color_map = {1: 'red', 2: 'blue', 3: 'green', 4: 'orange', 5: 'purple', 6: 'brown', 7: 'pink', 8: 'gray', 9: 'olive', 10: 'cyan', 11: 'magenta', 12: 'yellow', 13: 'lime', 14: 'teal', 15: 'navy', 16: 'maroon', 17: 'skyblue', 18: 'black'}
     # color map w/o TM
     color_map = {1: 'red', 2: 'blue', 13: 'lime', 14: 'teal', 15: 'navy', 16: 'maroon', 17: 'skyblue', 18: 'black'}
-    shape_map = {1: '*', 2: 's', 13: 'h', 14: '+', 15: 'D', 16: '.', 17: 'o', 18: 'v'}
+    shape_map = {1: '*', 2: 's', 13: 'h', 14: 'x', 15: 'D', 16: '.', 17: 'o', 18: 'v'}
     def get_group(element):
         if element in periodic_table_groups:
             return periodic_table_groups[element]
@@ -102,11 +103,15 @@ for i, charge in enumerate([0, 1, 2]):
 
     # df_colors['Groups'] = df_colors['formula'].str.findall(r'[A-Z][a-z]*').apply(lambda x: [get_group(e) for e in x])
     # df_colors['group1'] = df_colors['Groups'].apply(lambda x: x[0])
-    # # df_colors['group2'] = df_colors['Groups'].apply(lambda x: x[1])
+    # df_colors['group2'] = df_colors['Groups'].apply(lambda x: x[1])
     # # print(df_colors['group1'])
     # colors = df_colors['group1'].map(color_map)
     # markers = df_colors['group2'].map(shape_map)
-
+    #
+    # for yy, pred, cc, mm in zip(y, y_pred, colors, markers):
+    #     axs[i].scatter(pred, yy, marker=mm)
+    # plt.show()
+    # exit(23)
     # # print(color_map)
     # # exit(32)
 
@@ -127,8 +132,11 @@ for i, charge in enumerate([0, 1, 2]):
     # Add equation
     # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1],
     #                                                                        cfm.coef_[2])
-    equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_p$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3])
-    # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_2p {:+.2f} E_f$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3], cfm.coef_[4])
+    # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_p$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3])
+    # equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} O_2p {:+.2f} BV_sum$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3], cfm.coef_[4])
+    equation = "$E_v = {:.2f} {:+.2f} E_b {:+.2f} V_r {:+.2f} E_g {:+.2f} BVS$".format(cfm.intercept_, cfm.coef_[0], cfm.coef_[1], cfm.coef_[2], cfm.coef_[3])
+
+
     axs[i].set_xlabel(equation)
 
     # Add MAE
@@ -163,5 +171,5 @@ for i, charge in enumerate([0, 1, 2]):
         #     axs[i].scatter([], [], marker=shape_map[x], label=f'group {x}')
         # axs[i].legend(loc='lower left', bbox_to_anchor=(2, 0.15))
 plt.tight_layout()
-plt.savefig("kumagai_full_vr_from_csv_eb_frac_K5_O2p.png", dpi=300)
+# plt.savefig("kumagai_full_vr_eb_frac_K5_BVA.png", dpi=300)
 plt.show()

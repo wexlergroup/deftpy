@@ -15,7 +15,7 @@ def get_unitcell_mesh(lattice):
     pass
 
 def main():
-    data_path = '../data/papers/witman/structures_production/data_01_03_22/'
+    data_path = '../data/papers/witman/structures_production/data_01_03_22/'  #this path will not work as currently set
     csv_paths = sorted(glob(data_path + "csvs/*.csv"))
     #poscar_path = "playground/witman_data/data_01_03_22/poscars"
     poscar_path = data_path + "poscars"
