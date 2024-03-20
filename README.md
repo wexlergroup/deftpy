@@ -7,3 +7,5 @@ unit testing for ^
 clarification about data/features/Ehull
 
 better data handling? data/papers/kumagai is massive (almost 1GB) (pickle? BZ2?)
+
+^ can also look into parquet/feather as more lightweight data storage
