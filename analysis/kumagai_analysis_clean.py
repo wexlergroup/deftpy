@@ -178,15 +178,15 @@ def main():
                         # # structures.append(structure)
 
                         # generate the crystal object - can supply nn_finder to weight cn appropriately
-                        # crystal = Crystal(pymatgen_structure=structure, n=index)
+                        crystal = Crystal(pymatgen_structure=structure, n=index)
                         # print("at crystal")
-                        crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
+                        # crystal = Crystal(pymatgen_structure=structure, n=index, nn_finder=CrystalNN(weighted_cn=True, cation_anion=True), use_weights=True)
                         # crystal = Crystal(pymatgen_structure=structure, n=index,
                         #                   nn_finder=BVA().get_valences(structure=structure), use_weights=True)
                         # print('crystal initialized')
                         CN = crystal.cn_dicts
                         Eb = crystal.bond_dissociation_enthalpies
-                        # BV = crystal.bond_valences
+                        # BV = crystal.bond_valence_sum_ratios
 
                         # Eb_sum = [
                         #     np.sum(np.array(list(cn.values())) * np.array(list(be.values())))
@@ -196,12 +196,12 @@ def main():
                         # print(f"Eb_sum length: {len(Eb_sum)}")
 
                         for CN_dict, Eb_dict in zip(CN, Eb):
+                        # for CN_dict, BV_dict, Eb_dict in zip(CN, BV, Eb):
                             CN_array = np.array(list(CN_dict.values()))
                             # BV_array = np.array(list(BV_dict.values()))
                             Eb_array = np.array(list(Eb_dict.values()))
                             Eb_sum.append(np.sum(CN_array * Eb_array))
-                        #     print(CN_array, Eb_array)
-                        # print("length is " + str(len(Eb_sum)))
+                            # Eb_sum.append(np.sum(CN_array * BV_array * Eb_array))
 
                     except ValueError:
                         Eb_sum.append(np.nan)

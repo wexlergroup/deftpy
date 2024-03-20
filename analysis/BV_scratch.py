@@ -75,6 +75,7 @@ def main():
                 "valence": site_valence,
                 "bv_sum_Crystal": bv_sum_defined,
                 "bv_sum_nn": bv_sum_Neighbors,
+                "BVS_ratio": bv_sum_defined/site_valence,
                 "element": el,
             })
         except ValueError:
@@ -95,13 +96,14 @@ def main():
                 "valence": np.nan,
                 "bv_sum_Crystal": bv_sum_defined,
                 "bv_sum_nn": bv_sum_Neighbors,
+                "BVS_ratio": bv_sum_defined / site_valence,
                 "element": el,
             })
             pass
     csv_file_path = "valence_data_full.csv"
 
     # Define the field names
-    field_names = ["site", "formula", "full_name", "valence", "bv_sum_Crystal", "bv_sum_nn", "element"]
+    field_names = ["site", "formula", "full_name", "valence", "bv_sum_Crystal", "bv_sum_nn", "BVS_ratio", "element"]
 
     # Write the data to the CSV file
     with open(csv_file_path, mode='w', newline='') as file:
