@@ -13,3 +13,6 @@ better data handling? data/papers/kumagai is massive (almost 1GB) (pickle? BZ2?)
 graphing_kumagai, graphing_witman -> visualization.py (deftpy website/dashboard? (if we do this, likely using django)
 
 BV_scratch, corr, getting_indexes should all be transitioned from scripts into functions
+
+pandas, numpy, pymatgen, tqdm, ase, pymatgen.analysis.defects, 
+^pyproject.toml

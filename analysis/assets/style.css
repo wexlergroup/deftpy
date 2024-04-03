@@ -1,0 +1,64 @@
+/* External stylesheet for the Dash app */
+
+/* Style for the main container */
+.container {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 15px;
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h6 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Upload component style */
+.upload-data {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.upload-data:hover {
+    background-color: #f8f9fa;
+}
+
+/* Graph styles */
+.graph {
+    margin-bottom: 40px;
+}
+
+/* Miscellaneous */
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 32px;
+}
+
+/* Make sure this class matches the className in your dcc.Upload component */
+.upload-div {
+    padding: 16px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.upload-div:hover {
+    background-color: #f8f9fa;
+}
