@@ -1,0 +1,35 @@
+import pandas as pd
+import dash
+from dash import dcc, html
+from dash.dependencies import Input, Output, State
+
+eb_df = pd.read_csv("../data/features/Eb.csv")
+vr_df = pd.read_csv("../data/features/Vr.csv")
+bv_df = pd.read_csv("../data/features/Bv.csv")
+
+app = dash.Dash(__name__)
+
+app.layout = html.Div([
+    dcc.Tabs(id="tabs", value='tab-lookup', children=[
+        dcc.Tab(label='Dataset Lookup', value='tab-lookup'),
+        dcc.Tab(label='Crystal File Analysis', value='tab-crystal-analysis'),
+        dcc.Tab(label='Data Trends', value='tab-trends'),
+    ]),
+    html.Div(id='tabs-content')
+])
+
+@app.callback(Output('tabs-content', 'children'),
+              Input('tabs', 'value'))
+def render_content(tab):
+    if tab == 'tab-lookup':
+        return html.Div([
+            # Include the dataset lookup functionality here
+        ])
+    elif tab == 'tab-crystal-analysis':
+        return html.Div([
+            # Layout for uploading a crystal file and displaying analysis results
+        ])
+    elif tab == 'tab-trends':
+        return html.Div([
+            # Interface elements for exploring data trends
+        ])

@@ -16,7 +16,7 @@ from pymatgen.io.vasp import Poscar
 
 EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
 VR_DICT = {"filepath": "../data/features/Vr.csv", "column_name": "Vr", "comparison": "n"}
-BV_DICT = {"filepath": "../data/features/valence_data_full.csv", "column_name": "BVS_ratio", "comparison": "full_name"}
+BV_DICT = {"filepath": "../data/features/Bv.csv", "column_name": "BVS_ratio", "comparison": "full_name"}
 
 class Crystal:
     """

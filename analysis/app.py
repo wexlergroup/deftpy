@@ -1,89 +1,102 @@
-import base64
-import re
+import pandas as pd
 import dash
-from dash import html, dcc, Input, Output, State, callback
-from io import StringIO
-from pymatgen.io.cif import CifParser
-from pymatgen.io.vasp import Poscar
-import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
-from crystal_analysis import Crystal
+from dash import dcc, html
+from dash.dependencies import Input, Output, State
+from dash.dash_table import DataTable
 
-# initialize Dash app
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+eb_df = pd.read_csv("../data/features/Eb.csv")
+vr_df = pd.read_csv("../data/features/Vr.csv")
+bv_df = pd.read_csv("../data/features/Bv.csv")
+
+app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    dbc.Container([
-        dbc.Row([
-            dbc.Col(html.H1("Crystal Feature Dashboard"), className="mb-2")
-        ]),
-        dbc.Row([
-            dbc.Col(html.H6("Upload a crystal file to analyze"), className="mb-4")
-        ]),
-        dbc.Row([
-            dbc.Col(dcc.Upload(
-                id='upload-data',
-                children=html.Div(['Drag and Drop or ', html.A('Select a File')]),
-                className="upload-div"  
-            ), className="mb-4"),
-        ]),
-        dbc.Row([
-            dbc.Col(dcc.Graph(id='eb-graph'), className="graph mb-4"), 
-            dbc.Col(dcc.Graph(id='vr-graph'), className="graph mb-4"),  
-            dbc.Col(dcc.Graph(id='bv-graph'), className="graph mb-4"), 
-        ])
-    ], className="container")  
+    dcc.Tabs(id="tabs", value='tab-lookup', children=[
+        dcc.Tab(label='Dataset Lookup', value='tab-lookup'),
+        dcc.Tab(label='Crystal File Analysis', value='tab-crystal-analysis'),
+        dcc.Tab(label='Data Trends', value='tab-trends'),
+    ]),
+    html.Div(id='tabs-content')
 ])
 
-def parse_contents(contents, filename):
-    content_type, content_string = contents.split(',')
-    
-    decoded = base64.b64decode(content_string)
-    
-    if filename.lower().endswith('.cif'):
-        content_string = decoded.decode('utf-8')
-        parser = CifParser(StringIO(content_string))
-        structure = parser.parse_structures(primitive=True)[0]
-        crystal = Crystal(pymatgen_structure=structure)
-    elif filename.lower().endswith('.vasp') or filename.lower().endswith('.poscar'):
-        content_string = decoded.decode('utf-8')
-        poscar = Poscar.from_string(content_string)
-        crystal = Crystal(pymatgen_structure=poscar.structure)
-    else:
-        raise ValueError("File format not supported. Please upload a CIF or POSCAR file.")
-    
-    eb = crystal.bond_dissociation_enthalpies
-    vr = crystal.reduction_potentials
-    bv = crystal.bond_valence_sum_ratios
-    
-    return {
-        'Eb': eb, 
-        'Vr': vr, 
-        'Bv': bv,
-    }
+@app.callback(Output('tabs-content', 'children'),
+              Input('tabs', 'value'))
+def render_content(tab):
+    if tab == 'tab-lookup':
+        return html.Div([
+            dcc.Dropdown(
+                id='dataset-dropdown',
+                options=[
+                    {'label': 'Eb - Crystal Bond Dissociation Energy', 'value': 'eb'},
+                    {'label': 'Vr - Crystal Reduction Potential', 'value': 'vr'},
+                    {'label': 'Bv - Bond Valence Ratios', 'value': 'bv'},
+                ],
+                value='eb'
+            ),
+            html.Div(id='lookup-content')
+        ])
+    elif tab == 'tab-crystal-analysis':
+        return html.Div([
+            # Layout for uploading a crystal file and displaying analysis results
+        ])
+    elif tab == 'tab-trends':
+        return html.Div([
+            # Interface elements for exploring data trends
+        ])
 
-@callback(
-    [Output('eb-graph', 'figure'),
-     Output('vr-graph', 'figure'),
-     Output('bv-graph', 'figure')],
-    [Input('upload-data', 'contents')],
-    [State('upload-data', 'filename')]
+@app.callback(Output('lookup-content', 'children'),
+              Input('dataset-dropdown', 'value'),
+              prevent_initial_call=True)
+def update_lookup(selected_dataset):
+    if selected_dataset == 'eb':
+        return html.Div([
+            html.Label('Search by Formula:'),
+            dcc.Input(id='eb-search', type='text', placeholder='Enter formula...'),
+            html.Button('Search Eb', id='search-eb', n_clicks=0),
+            html.Div(id='eb-results') 
+        ])
+    elif selected_dataset == 'vr':
+        # Similar setup for 'vr', adjusting for dataset specifics
+        return html.Div([
+            html.Label('Search by Element:'),
+            dcc.Input(id='vr-search', type='text', placeholder='Enter element...'),
+            html.Button('Search Vr', id='search-vr', n_clicks=0),
+            html.Div(id='vr-results')
+        ])
+    elif selected_dataset == 'bv':  # 'bv'
+        # And for 'bv', also tailored to its specifics
+        return html.Div([
+            html.Label('Search by Site:'),
+            dcc.Input(id='bv-search', type='text', placeholder='Enter site...'),
+            html.Button('Search Bv', id='search-bv', n_clicks=0),
+            html.Div(id='bv-results')
+        ])
+    
+@app.callback(
+    Output('eb-results', 'children'),
+    Input('search-eb', 'n_clicks'),
+    State('eb-search', 'value'),
+    prevent_initial_call=True 
 )
-def update_graph(contents, filename):
-    if contents is not None:
-        data = parse_contents(contents, filename)
-        eb_trace = go.Scatter(x=list(range(len(data['Eb']))), y=data['Eb'], mode='lines+markers')
-        vr_trace = go.Scatter(x=list(range(len(data['Vr']))), y=data['Vr'], mode='lines+markers')
-        bv_trace = go.Scatter(x=list(range(len(data['Bv']))), y=data['Bv'], mode='lines+markers')
-
-        eb_graph = {'data': [eb_trace], 'layout': go.Layout(title='Eb Trend')}
-        vr_graph = {'data': [vr_trace], 'layout': go.Layout(title='Vr Trend')}
-        bv_graph = {'data': [bv_trace], 'layout': go.Layout(title='Bv Trend')}
-
-        return eb_graph, vr_graph, bv_graph
+def search_eb(n_clicks, search_value):
+    if n_clicks > 0:
+        
+        filtered_df = eb_df[eb_df['formula'].str.contains(search_value, case=False, na=False)]
+    
+        return DataTable(
+            id='eb-table',
+            columns=[{"name": i, "id": i} for i in filtered_df.columns],
+            data=filtered_df.to_dict('records'),
+            style_table={'overflowX': 'auto'}, 
+            filter_action="native",  
+            sort_action="native", 
+            sort_mode="multi",
+            page_action="native",
+            page_size=10,
+        )
     else:
-        # If no data has been uploaded return empty graphs
-        return {}, {}, {}
-
+        return ''
+    
 if __name__ == '__main__':
     app.run_server(debug=True)
