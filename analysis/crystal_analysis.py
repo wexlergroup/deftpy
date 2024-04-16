@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from ase.visualize import view
 from pymatgen.analysis.defects.generators import VacancyGenerator
-from pymatgen.analysis.local_env import CrystalNN
+from pymatgen.analysis.local_env import CrystalNN, VoronoiNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.analysis.bond_valence import BVAnalyzer as BVA
@@ -89,10 +89,11 @@ class Crystal:
             filepath: Optional[str] = None,
             poscar_string: Optional[str] = None,
             pymatgen_structure: Optional[Structure] = None,
-            nn_finder: Optional[CrystalNN] = None,
+            nn_finder_type: str = 'crystalnn', # crystalnn or voronoinn
             use_weights: Optional[bool] = False,
             species_symbol: Optional[str] = "O",
-            n: Optional[int] = None                  # attempt to allow for pre-emptive indexing
+            n: Optional[int] = None,  # attempt to allow for pre-emptive indexing
+            oxi_states_override = None,
     ):
         
         """
@@ -102,7 +103,7 @@ class Crystal:
             filepath: The filepath to the POSCAR file.
             poscar_string: The POSCAR string.
             pymatgen_structure: The pymatgen Structure object.
-            nn_finder: The CrystalNN object.
+            nn_finder_type: The type of nearest neighbor finder to use.
 
         Raises:
             ValueError: If neither filepath, poscar_string, nor pymatgen_structure is specified.
@@ -116,13 +117,20 @@ class Crystal:
                 self.structure.add_oxidation_state_by_guess()
         elif poscar_string:
             self.structure = Structure.from_str(poscar_string, fmt="poscar")
-            self.structure.add_oxidation_state_by_guess()
         elif pymatgen_structure:
             self.structure = pymatgen_structure
         else:
             raise ValueError("Specify either filepath, poscar_string, or pymatgen_structure.")
+        
+        self.guess_oxidation_states(oxi_states_override=oxi_states_override)
 
-        self.nn_finder = nn_finder or CrystalNN()
+        if nn_finder_type.lower() == 'voronoinn':
+            self.nn_finder = VoronoiNN()
+        else: # default to crystalnn
+            self.nn_finder = CrystalNN()
+        
+
+
         self.use_weights = use_weights
         self.n = n
         # self.bv_finder = bv_finder
@@ -143,6 +151,21 @@ class Crystal:
 
         # self.bond_valence_sum_ratios = self._get_values(self.bvs, BV_DICT["column_name"], BV_DICT["comparison"])
 
+    def guess_oxidation_states(self, oxi_states_override=None):
+        
+        if all(sp.oxi_state != 0 for sp in self.structure.species):
+            return
+        
+        try:
+            if oxi_states_override:
+                self.structure.add_oxidation_state_by_element(oxi_states_override)
+            else:
+                self.structure.add_oxidation_state_by_guess()
+
+            if not all(element.oxi_state != 0 for element in self.structure.species):
+                raise ValueError("Oxidation states could not be guessed for all elements in the structure.")
+        except Exception as e:
+            raise ValueError(f"Failed to set oxidation states: {e}")
 
     def _initialize_structure_analysis(self) -> List[Dict[str, int]]:
         """
@@ -175,7 +198,7 @@ class Crystal:
             self.cn_dicts = [self.nn_finder.get_cn_dict(self.structure, i, use_weights=self.use_weights) for i in indices]
             self._cn_dicts_initialized = True
             return self.cn_dicts
-
+# determine number of unique vacancies then spit them out
     def _get_values(self, dataframe: pd.DataFrame, column_name: str, comparison: str) -> List[Dict[str, float]]:
         """
         Gets the values from the dataframe.
