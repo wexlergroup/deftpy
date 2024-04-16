@@ -116,7 +116,7 @@ class Crystal:
             if filepath.endswith(".txt"):  # Assuming your POSCAR files have a .txt extension
                 self.structure.add_oxidation_state_by_guess()
         elif poscar_string:
-            self.structure = Structure.from_str(poscar_string, fmt="poscar")
+            self.structure = Structure.from_str(poscar_string, fmt="poscar") #giving nan for binding energies, fix
         elif pymatgen_structure:
             self.structure = pymatgen_structure
         else:
@@ -156,18 +156,26 @@ class Crystal:
         if all(sp.oxi_state != 0 for sp in self.structure.species):
             return
         
-        try:
+        try: # user provided oxi states
             if oxi_states_override:
                 self.structure.add_oxidation_state_by_element(oxi_states_override)
-            else:
+            else: # alternative method 1
                 self.structure.add_oxidation_state_by_guess()
 
             if not all(element.oxi_state != 0 for element in self.structure.species):
+                self.structure = self.structure.add_charges_from_oxi_state_guesses(
+                oxi_states_override=oxi_states_override,
+                target_charge=0,
+                all_oxi_states=False,
+                max_sites=None
+            )
+            # potential specification to decide which method to use
+            if not all(element.oxi_state != 0 for element in self.structure.species): # alternative method 2
                 raise ValueError("Oxidation states could not be guessed for all elements in the structure.")
-        except Exception as e:
+        except Exception as e: 
             raise ValueError(f"Failed to set oxidation states: {e}")
 
-    def _initialize_structure_analysis(self) -> List[Dict[str, int]]:
+    def _initialize_structure_analysis(self) -> List[Dict[str, int]]: 
         """
         Initializes the structure analysis.
 
