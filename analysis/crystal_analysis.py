@@ -11,7 +11,7 @@ from pymatgen.analysis.defects.generators import VacancyGenerator
 from pymatgen.analysis.local_env import CrystalNN, VoronoiNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
-from pymatgen.analysis.bond_valence import BVAnalyzer as BVA
+from pymatgen.analysis.bond_valence import BVAnalyzer, calculate_bv_sum
 from pymatgen.io.vasp import Poscar
 
 EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
@@ -249,6 +249,37 @@ class Crystal:
             raise ValueError(f"An unexpected error occurred: {e}")
         return values
 
+    def calculate_bond_valence(self):
+        """
+        Calculate the bond valence sum (BVS) for each site in the structure.
+        """
+        bv_analyzer = BVAnalyzer()
+        self.bv_data = []
+
+        self.guess_oxidation_states()
+        self._initialize_structure_analysis()
+
+        for i, site in enumerate(self.structure):
+            try:
+                decorated_structure = bv_analyzer.get_oxi_state_decorated_structure(self.structure)
+
+                nearest_neighbors = self.nn_finder.get_nn_info(decorated_structure, i)
+
+                bv_sum = calculate_bv_sum(site=site, nn_list=nearest_neighbors)
+
+                self.bv_data.append({
+                    'site': i,
+                    'element': site.species_string,
+                    'bv_sum': bv_sum,
+                })
+
+            except ValueError as e:
+                print(f"BVS could not be calculated for site {i}: {e}")
+                self.bv_data.append({
+                    'site': i,
+                    'element': site.species_string,
+                    'bv_sum': None,
+                })
 
     def visualize(self):
         """
