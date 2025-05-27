@@ -8,11 +8,13 @@ import numpy as np
 import pandas as pd
 from ase.visualize import view
 from pymatgen.analysis.defects.generators import VacancyGenerator
-from pymatgen.analysis.local_env import CrystalNN, VoronoiNN
+from pymatgen.analysis.local_env import CrystalNN, VoronoiNN, CutOffDictNN
 from pymatgen.core import Species, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.analysis.bond_valence import BVAnalyzer, calculate_bv_sum
 from pymatgen.io.vasp import Poscar
+from collections import Counter
+
 
 EB_DICT = {"filepath": "../data/features/Eb.csv", "column_name": "Eb", "comparison": "os"}
 VR_DICT = {"filepath": "../data/features/Vr.csv", "column_name": "Vr", "comparison": "n"}
@@ -90,11 +92,12 @@ class Crystal:
             poscar_string: Optional[str] = None,
             pymatgen_structure: Optional[Structure] = None,
             nn_finder_type: str = 'crystalnn', # crystalnn or voronoinn
+            cut_off_dict: Optional[dict] = None,
             use_weights: Optional[bool] = False,
             species_symbol: Optional[str] = "O",
             n: Optional[int] = None,  # attempt to allow for pre-emptive indexing
             oxi_states_override = None,
-    ):
+            ):
         
         """
         Initializes the Crystal object.
@@ -113,8 +116,10 @@ class Crystal:
         """
         if filepath:
             self.structure = Structure.from_file(filepath)
-            if filepath.endswith(".txt"):  # Assuming your POSCAR files have a .txt extension
-                self.structure.add_oxidation_state_by_guess()
+            ## -------> Commented by Manish
+            # if filepath.endswith(".txt"):  # Assuming your POSCAR files have a .txt extension
+            #     self.structure.add_oxidation_state_by_guess()
+            ## <------- I think the guessed oxidation states will be replaced, which make the guessing redundant here
         elif poscar_string:
             self.structure = Structure.from_str(poscar_string, fmt="poscar") #giving nan for binding energies, fix
         elif pymatgen_structure:
@@ -126,9 +131,10 @@ class Crystal:
 
         if nn_finder_type.lower() == 'voronoinn':
             self.nn_finder = VoronoiNN()
+        elif nn_finder_type.lower == 'cutoffdictnn':
+            self.nn_finder = CutOffDictNN(cut_off_dict=cut_off_dict)
         else: # default to crystalnn
-            self.nn_finder = CrystalNN()
-        
+            self.nn_finder = CrystalNN()   
 
 
         self.use_weights = use_weights
@@ -163,12 +169,11 @@ class Crystal:
                 self.structure.add_oxidation_state_by_guess()
 
             if not all(element.oxi_state != 0 for element in self.structure.species):
-                self.structure = self.structure.add_charges_from_oxi_state_guesses(
-                oxi_states_override=oxi_states_override,
-                target_charge=0,
-                all_oxi_states=False,
-                max_sites=None
-            )
+                self.structure = self.structure.add_charges_from_oxi_state_guesses(oxi_states_override=oxi_states_override,
+                                                                                   target_charge=0,
+                                                                                   all_oxi_states=False,
+                                                                                   max_sites=None
+                                                                                   )
             # potential specification to decide which method to use
             if not all(element.oxi_state != 0 for element in self.structure.species): # alternative method 2
                 raise ValueError("Oxidation states could not be guessed for all elements in the structure.")
